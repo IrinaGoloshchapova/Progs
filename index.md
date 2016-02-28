@@ -119,17 +119,6 @@ $(function() {
 ## Interactive graphics and presentations  
 #### Simple graphs
 
-
-```
-Warning in read.dcf(file.path(p, "DESCRIPTION"), c("Package", "Version")):
-cannot open compressed file 'C:/Program Files/R/R-3.2.3/library/zoo/
-DESCRIPTION', probable reason 'No such file or directory'
-```
-
-```
-Error: package 'zoo' required by 'xts' could not be found
-```
-
-<iframe src=' assets/fig/rcharts_2-1.html ' scrolling='no' frameBorder='0' seamless class='rChart nvd3 ' id=iframe- chart138444472fa4 ></iframe> <style>iframe.rChart{ width: 100%; height: 400px;}</style>
+<iframe src=' assets/fig/rcharts_2-1.html ' scrolling='no' frameBorder='0' seamless class='rChart nvd3 ' id=iframe- chartd7461a9b73 ></iframe> <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
 ---
