@@ -33,13 +33,13 @@ $(function() {
 *Expert CMASF*
 
 --- 
-## Основные темы
+## Main Themes
 
-### 1. Визуализация
+### 1. Visualization
 
-### 2. Автоматизация
+### 2. Automatization
 
-### 3. Машинное обучение
+### 3. Machine Learning
 
 ---
 ## Visualization
@@ -230,7 +230,7 @@ n1 <- nPlot(Freq ~ Hair,
             data = subset(haireye, Sex = 'Male'),
             type = 'multiBarChart')
 n1$set(width = 700, height = 350)
-n1$print('chart1')
+n1
 ```
 
 ---
