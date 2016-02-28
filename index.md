@@ -110,8 +110,26 @@ $(function() {
 <iframe src = 'http://revolution-computing.typepad.com/.a/6a010534b1db25970b01b8d1a4d670970c-pi' width = '600px' height = '600px'> </iframe>
 
 ---
-## Interactive graphics and presentations
+## Interactive graphics and presentations  
+#### Simple graphs
 
-<iframe src=' assets/fig/rcharts_1-1.html ' scrolling='no' frameBorder='0' seamless class='rChart nvd3 ' id=iframe- chart5e074f13a58 ></iframe> <style>iframe.rChart{ width: 100%; height: 400px;}</style>
+<iframe src=' assets/fig/rcharts_1-1.html ' scrolling='no' frameBorder='0' seamless class='rChart nvd3 ' id=iframe- chart13844e6d4316 ></iframe> <style>iframe.rChart{ width: 100%; height: 400px;}</style>
+
+---
+## Interactive graphics and presentations  
+#### Simple graphs
+
+
+```
+Warning in read.dcf(file.path(p, "DESCRIPTION"), c("Package", "Version")):
+cannot open compressed file 'C:/Program Files/R/R-3.2.3/library/zoo/
+DESCRIPTION', probable reason 'No such file or directory'
+```
+
+```
+Error: package 'zoo' required by 'xts' could not be found
+```
+
+<iframe src=' assets/fig/rcharts_2-1.html ' scrolling='no' frameBorder='0' seamless class='rChart nvd3 ' id=iframe- chart138444472fa4 ></iframe> <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
 ---
