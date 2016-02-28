@@ -239,42 +239,6 @@ n1
 ## Interactive graphics and presentations  
 #### Simple graphs
 
-```{r rcharts_2, echo = FALSE, message = FALSE, results = 'asis', comment = NA, warning = FALSE}
-library(zoo)
-library(xts)
-library(xlsx)
-library(reshape)
-
-data_raw <- read.xlsx2(file = "Comp_an1.xlsx", sheetIndex = 1, header = TRUE, 
-                       colClasses = "numeric", stringsAsFactors = FALSE)
-
-data_raw$Date <- as.Date(data_raw$Date-25569, origin="1970-01-01")
-
-for (i in 2:11) {
-  data_raw[, i] <- as.numeric(data_raw[, i])
-}
-
-# data <- xts(data_raw[, 2:11], order.by = data_raw$Date)
-
-data_md <- melt(data_raw, id.vars = "Date")
-data_md$variable <- iconv(data_md$variable, from = "cp1251", to = "utf-8")
-# data_md$Date <- as.character(data_md$Date)
-
-p8 <- nPlot(value ~ Date, group =  'variable', data = data_md, 
-            type = 'stackedAreaChart', id = 'chart')
-p8$xAxis(
-  tickFormat =   "#!
-      function(d) {return d3.time.format('%Y-%m-%d')(new Date(d*1000*3600*24));}
-    !#"
-  )
-
-p8
-```
-
----
-## Interactive graphics and presentations  
-#### Simple graphs
-
-<iframe src = 'figures/compan.html' width = '800px' height = '650px'> </iframe>
+<iframe src = 'figures/compan.html' width = '960px' height = '750px'> </iframe>
 
 ---
