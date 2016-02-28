@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<title>MaternityLeaveResults</title>
+	<meta name="description" content="MaternityLeaveResults">
+	<meta name="author" content="Irina Goloshchapova">
+	<meta name="generator" content="slidify" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+	
+	<!-- Required stylesheet -->
+	<link rel="stylesheet" href="libraries/frameworks/deckjs/core/deck.core.css">
+	<link rel="stylesheet" href="libraries/frameworks/deckjs/extensions/goto/deck.goto.css">
+<link rel="stylesheet" href="libraries/frameworks/deckjs/extensions/hash/deck.hash.css">
+<link rel="stylesheet" href="libraries/frameworks/deckjs/extensions/menu/deck.menu.css">
+<link rel="stylesheet" href="libraries/frameworks/deckjs/extensions/navigation/deck.navigation.css">
+<link rel="stylesheet" href="libraries/frameworks/deckjs/extensions/scale/deck.scale.css">
+<link rel="stylesheet" href="libraries/frameworks/deckjs/extensions/status/deck.status.css">
+<!-- Style theme. More available in /themes/style/  -->
+	<link rel="stylesheet" href="libraries/frameworks/deckjs/themes/style/swiss.css">
+	
+	<!-- Transition theme. More available in /themes/transition/  -->
+	<link rel="stylesheet" href="libraries/frameworks/deckjs/themes/transition/vertical-slide.css">
+	<script src="libraries/frameworks/deckjs/modernizr.custom.js"></script>
+	
+	<!-- LOAD STYLE SHEETS -->
+	<link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css">
+	
+	  
+</head>
+
+<body class="deck-container">
+
+  <!-- Begin slides -->
+  <section class="slide " id="slide-1">
+  
+  <!-- Limit image width and height -->
+
+<style type='text/css'>
+img {
+    max-height: 560px;
+    max-width: 1000px;
+}
+</style>
+
+<!-- Center image on slide -->
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+
+<script type='text/javascript'>
+$(function() {
+    $("p:has(img)").addClass('centered');
+});
+</script>
+
+<h1>Maternity Leave Results</h1>
+
+<p><strong>Irina Goloshchapova</strong><br>
+<em>Expert CMASF</em></p>
+
+</section>
+<section class="slide " id="slide-2">
+  <h2>Основные темы</h2>
+  <h3>1. Визуализация</h3>
+
+<h3>2. Автоматизация</h3>
+
+<h3>3. Машинное обучение</h3>
+
+</section>
+<section class="slide " id="slide-3">
+  <h2>Visualization</h2>
+  <ol>
+<li><p><strong>Any kind of static graphs</strong>  </p>
+
+<ul>
+<li>from simple ggplot2 to complex spatial models and panel graphics<br></li>
+</ul></li>
+<li><p><strong>Animated graphics</strong>  </p></li>
+<li><p><strong>Interactive graphics and presentations</strong>  </p>
+
+<ul>
+<li><em>graphics</em>: from simple time series to complex interaction with user<br></li>
+<li>html-based <em>analytical reports</em> with graphs and tables</li>
+<li><em>presentations</em><br></li>
+</ul></li>
+</ol>
+
+</section>
+<section class="slide " id="slide-4">
+  <h2>Static graphs: simple</h2>
+  <p><img src="assets/fig/simple_graphs_1-1.png" alt="plot of chunk simple_graphs_1"></p>
+
+</section>
+<section class="slide " id="slide-5">
+  <h2>Static graphs: medium</h2>
+  <p><img src="assets/fig/medium_graphs_1-1.png" alt="plot of chunk medium_graphs_1"></p>
+
+</section>
+<section class="slide " id="slide-6">
+  <h2>Static graphs: medium</h2>
+  <p><img src="assets/fig/medium_graphs_2-1.png" alt="plot of chunk medium_graphs_2"></p>
+
+</section>
+<section class="slide " id="slide-7">
+  <h2>Static graphs: interesting</h2>
+  <h4>Correlogram</h4>
+
+<p><img src="assets/fig/unteresting_graphs_1-1.png" alt="plot of chunk unteresting_graphs_1"></p>
+
+</section>
+<section class="slide " id="slide-8">
+  <h2>Static graphs: interesting</h2>
+  <h4>Mosaic plot</h4>
+
+<p><img src="assets/fig/interesting_graphs_2-1.png" alt="plot of chunk interesting_graphs_2"></p>
+
+</section>
+<section class="slide " id="slide-9">
+  <h2>Static graphs: interesting</h2>
+  <h4>Diagnostic plots</h4>
+
+<p><img src="assets/fig/interesting_graphs_3-1.png" alt="plot of chunk interesting_graphs_3"></p>
+
+</section>
+<section class="slide " id="slide-10">
+  <h2>Static graphs: interesting</h2>
+  <h4>Panel maps</h4>
+
+<p><img src="figures/facet_london.png" alt="image_london"></p>
+
+</section>
+<section class="slide " id="slide-11">
+  <h2>Static graphs: interesting</h2>
+  <h4>Chord Diagram</h4>
+
+<p><img src="figures/chordiag.png" alt="chord"></p>
+
+</section>
+<section class="slide " id="slide-12">
+  <h2>Animated graphics</h2>
+  <iframe src = 'http://revolution-computing.typepad.com/.a/6a010534b1db25970b01b8d1a4d670970c-pi' width = '600px' height = '600px'> </iframe>
+
+</section>
+<section class="slide " id="slide-13">
+  <h2>Interactive graphics and presentations</h2>
+  <div id = 'chart1' class = 'rChart nvd3'></div>
+
+<script type='text/javascript'>
+ $(document).ready(function(){
+      drawchart1()
+    });
+    function drawchart1(){  
+      var opts = {
+ "dom": "chart1",
+"width":    700,
+"height":    350,
+"x": "Hair",
+"y": "Freq",
+"group": "Eye",
+"type": "multiBarChart",
+"id": "chart1" 
+},
+        data = [
+ {
+ "Hair": "Black",
+"Eye": "Brown",
+"Sex": "Male",
+"Freq":             32 
+},
+{
+ "Hair": "Brown",
+"Eye": "Brown",
+"Sex": "Male",
+"Freq":             53 
+},
+{
+ "Hair": "Red",
+"Eye": "Brown",
+"Sex": "Male",
+"Freq":             10 
+},
+{
+ "Hair": "Blond",
+"Eye": "Brown",
+"Sex": "Male",
+"Freq":              3 
+},
+{
+ "Hair": "Black",
+"Eye": "Blue",
+"Sex": "Male",
+"Freq":             11 
+},
+{
+ "Hair": "Brown",
+"Eye": "Blue",
+"Sex": "Male",
+"Freq":             50 
+},
+{
+ "Hair": "Red",
+"Eye": "Blue",
+"Sex": "Male",
+"Freq":             10 
+},
+{
+ "Hair": "Blond",
+"Eye": "Blue",
+"Sex": "Male",
+"Freq":             30 
+},
+{
+ "Hair": "Black",
+"Eye": "Hazel",
+"Sex": "Male",
+"Freq":             10 
+},
+{
+ "Hair": "Brown",
+"Eye": "Hazel",
+"Sex": "Male",
+"Freq":             25 
+},
+{
+ "Hair": "Red",
+"Eye": "Hazel",
+"Sex": "Male",
+"Freq":              7 
+},
+{
+ "Hair": "Blond",
+"Eye": "Hazel",
+"Sex": "Male",
+"Freq":              5 
+},
+{
+ "Hair": "Black",
+"Eye": "Green",
+"Sex": "Male",
+"Freq":              3 
+},
+{
+ "Hair": "Brown",
+"Eye": "Green",
+"Sex": "Male",
+"Freq":             15 
+},
+{
+ "Hair": "Red",
+"Eye": "Green",
+"Sex": "Male",
+"Freq":              7 
+},
+{
+ "Hair": "Blond",
+"Eye": "Green",
+"Sex": "Male",
+"Freq":              8 
+},
+{
+ "Hair": "Black",
+"Eye": "Brown",
+"Sex": "Female",
+"Freq":             36 
+},
+{
+ "Hair": "Brown",
+"Eye": "Brown",
+"Sex": "Female",
+"Freq":             66 
+},
+{
+ "Hair": "Red",
+"Eye": "Brown",
+"Sex": "Female",
+"Freq":             16 
+},
+{
+ "Hair": "Blond",
+"Eye": "Brown",
+"Sex": "Female",
+"Freq":              4 
+},
+{
+ "Hair": "Black",
+"Eye": "Blue",
+"Sex": "Female",
+"Freq":              9 
+},
+{
+ "Hair": "Brown",
+"Eye": "Blue",
+"Sex": "Female",
+"Freq":             34 
+},
+{
+ "Hair": "Red",
+"Eye": "Blue",
+"Sex": "Female",
+"Freq":              7 
+},
+{
+ "Hair": "Blond",
+"Eye": "Blue",
+"Sex": "Female",
+"Freq":             64 
+},
+{
+ "Hair": "Black",
+"Eye": "Hazel",
+"Sex": "Female",
+"Freq":              5 
+},
+{
+ "Hair": "Brown",
+"Eye": "Hazel",
+"Sex": "Female",
+"Freq":             29 
+},
+{
+ "Hair": "Red",
+"Eye": "Hazel",
+"Sex": "Female",
+"Freq":              7 
+},
+{
+ "Hair": "Blond",
+"Eye": "Hazel",
+"Sex": "Female",
+"Freq":              5 
+},
+{
+ "Hair": "Black",
+"Eye": "Green",
+"Sex": "Female",
+"Freq":              2 
+},
+{
+ "Hair": "Brown",
+"Eye": "Green",
+"Sex": "Female",
+"Freq":             14 
+},
+{
+ "Hair": "Red",
+"Eye": "Green",
+"Sex": "Female",
+"Freq":              7 
+},
+{
+ "Hair": "Blond",
+"Eye": "Green",
+"Sex": "Female",
+"Freq":              8 
+} 
+]
+  
+      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+        var data = d3.nest()
+          .key(function(d){
+            //return opts.group === undefined ? 'main' : d[opts.group]
+            //instead of main would think a better default is opts.x
+            return opts.group === undefined ? opts.y : d[opts.group];
+          })
+          .entries(data);
+      }
+      
+      if (opts.disabled != undefined){
+        data.map(function(d, i){
+          d.disabled = opts.disabled[i]
+        })
+      }
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .width(opts.width)
+          .height(opts.height)
+          
+        if (opts.type != "bulletChart"){
+          chart
+            .x(function(d) { return d[opts.x] })
+            .y(function(d) { return d[opts.y] })
+        }
+          
+         
+        
+          
+        
+
+        
+        
+        
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+    };
+</script>
+
+</section>
+<section class="slide " id="slide-14">
+  
+  
+</section>
+</body>
+  <!-- deck.navigation snippet -->
+  <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+  <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+  
+  <!-- deck.status snippet -->
+  <p class="deck-status">
+  <span class="deck-status-current"></span>
+    /
+  <span class="deck-status-total"></span>
+  </p>
+  
+  <!-- deck.goto snippet -->
+  <form action="." method="get" class="goto-form">
+  	<label for="goto-slide">Go to slide:</label>
+  	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+  	<datalist id="goto-datalist"></datalist>
+  	<input type="submit" value="Go">
+  </form>
+  
+  <!-- deck.hash snippet -->
+  <a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+  
+  
+  <!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/frameworks/deckjs/jquery-1.7.min.js"><\/script>')</script>
+  
+  <!-- Add Slide Class to Build Elements -->
+  <script type='text/javascript'>
+  $('ol.build li').addClass('slide')
+  $('ul.build li').addClass('slide')
+  </script>
+  
+  <!-- Deck Core and extensions -->
+  <script src="libraries/frameworks/deckjs/core/deck.core.js"></script>
+  <script src="libraries/frameworks/deckjs/extensions/goto/deck.goto.js"></script>
+<script src="libraries/frameworks/deckjs/extensions/hash/deck.hash.js"></script>
+<script src="libraries/frameworks/deckjs/extensions/menu/deck.menu.js"></script>
+<script src="libraries/frameworks/deckjs/extensions/navigation/deck.navigation.js"></script>
+<script src="libraries/frameworks/deckjs/extensions/scale/deck.scale.js"></script>
+<script src="libraries/frameworks/deckjs/extensions/status/deck.status.js"></script>
+<!-- Initialize the deck -->
+  <script>
+  $(function() {
+  	$.deck('.slide');
+  });
+  </script>  <!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+ 
+
+</html>
