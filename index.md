@@ -122,3 +122,9 @@ $(function() {
 <iframe src=' assets/fig/rcharts_2-1.html ' scrolling='no' frameBorder='0' seamless class='rChart nvd3 ' id=iframe- chartd7461a9b73 ></iframe> <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
 ---
+## Interactive graphics and presentations  
+#### Simple graphs
+
+<iframe src = 'figures/compan.html' width = '800px' height = '650px'> </iframe>
+
+---

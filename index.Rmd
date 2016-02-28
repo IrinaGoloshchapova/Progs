@@ -272,3 +272,9 @@ p8
 ```
 
 ---
+## Interactive graphics and presentations  
+#### Simple graphs
+
+<iframe src = 'figures/compan.html' width = '800px' height = '650px'> </iframe>
+
+---
