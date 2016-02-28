@@ -239,7 +239,8 @@ n1
 ## Interactive graphics and presentations  
 #### Simple graphs
 
-```{r rcharts_2, echo = FALSE, message = FALSE, results = 'asis', comment = NA}
+```{r rcharts_2, echo = FALSE, message = FALSE, results = 'asis', comment = NA, warning = FALSE}
+library(zoo)
 library(xts)
 library(xlsx)
 library(reshape)
