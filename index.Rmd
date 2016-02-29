@@ -243,24 +243,6 @@ n1
 
 ---
 ## Interactive graphics and presentations  
-#### Maps 1
-
-```{r rcharts_3, echo = FALSE, message = FALSE, results = 'asis', comment = NA, cache = FALSE}
-# library(leaflet)
-# library(rgdal)
-# countries <- readOGR("files/countries.geojson", "OGRGeoJSON", verbose = FALSE)
-# qpal <- colorQuantile("RdYlBu", countries$gdp_md_est, n = 5)
-# map <- leaflet(countries) %>% addTiles() %>%
-#   addPolygons(stroke = FALSE, smoothFactor = 0.2, fillOpacity = 1,
-#     color = ~qpal(gdp_md_est)
-#   ) %>%
-#   addLegend(pal = qpal, values = ~gdp_md_est, opacity = 1)
-# htmlwidgets:: saveWidget(map, 'map_gdp.html')
-```
-<iframe src = "map_gdp.html" width = '600px' height = '500px'> </iframe>
-
---- 
-## Interactive graphics and presentations  
 #### Maps 2
 ```{r rcharts_4, echo = FALSE, message = FALSE, results = 'asis', comment = NA, cache = FALSE}
 # library(highcharter)
@@ -283,7 +265,7 @@ n1
 # 
 # htmlwidgets:: saveWidget(h1, 'highmap.html')
 ```
-<iframe src = "highmap.html" width = '650px' height = '500px'> </iframe>
+<iframe src = "highmap.html" width = '750px' height = '600px'> </iframe>
 
 ---
 
