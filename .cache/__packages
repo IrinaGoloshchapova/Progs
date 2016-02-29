@@ -21,3 +21,6 @@ leaflet
 sp
 rgdal
 htmlwidgets
+shiny
+XML
+devtools

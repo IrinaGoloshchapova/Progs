@@ -6,7 +6,7 @@ job         : Expert CMASF
 framework   : deckjs      # {io2012, html5slides, shower, dzslides, ...}
 deckjs      : {theme: swiss, transition: vertical-slide}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-widgets     : []            # {mathjax, quiz, bootstrap}
+widgets     : [bootstrap, quiz, shiny, interactive]    
 ext_widgets : {rCharts: ['libraries/nvd3', 'libraries/leaflet']}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
@@ -246,17 +246,38 @@ n1
 #### Maps
 
 ```{r rcharts_3, echo = FALSE, message = FALSE, results = 'asis', comment = NA, cache = FALSE}
-library(leaflet)
-library(rgdal)
-countries <- readOGR("files/countries.geojson", "OGRGeoJSON", verbose = FALSE)
-qpal <- colorQuantile("RdYlBu", countries$gdp_md_est, n = 5)
-map <- leaflet(countries) %>% addTiles() %>%
-  addPolygons(stroke = FALSE, smoothFactor = 0.2, fillOpacity = 1,
-    color = ~qpal(gdp_md_est)
-  ) %>%
-  addLegend(pal = qpal, values = ~gdp_md_est, opacity = 1)
-htmlwidgets:: saveWidget(map, 'map_gdp.html')
+# library(leaflet)
+# library(rgdal)
+# countries <- readOGR("files/countries.geojson", "OGRGeoJSON", verbose = FALSE)
+# qpal <- colorQuantile("RdYlBu", countries$gdp_md_est, n = 5)
+# map <- leaflet(countries) %>% addTiles() %>%
+#   addPolygons(stroke = FALSE, smoothFactor = 0.2, fillOpacity = 1,
+#     color = ~qpal(gdp_md_est)
+#   ) %>%
+#   addLegend(pal = qpal, values = ~gdp_md_est, opacity = 1)
+# htmlwidgets:: saveWidget(map, 'map_gdp.html')
 ```
 <iframe src = "map_gdp.html" width = '600px' height = '500px'> </iframe>
 
----
+--- &interactive
+## Interactive graphics and presentations  
+#### Graphs with controls
+
+```{r opts.label = 'shiny'}
+# install_github('shiny', 'rstudio')
+# add shiny to widgets
+# create directory apps/ and place app1.R
+# here is UI
+library(shiny)
+slidifyUI(
+  sidebarPanel(
+    selectInput('sex', 'Choose Sex', c('Male', 'Female')),
+    selectInput('type', 'Choose Type',
+      c('multiBarChart', 'multiBarHorizontalChart')
+    )
+  ),
+  mainPanel(
+    tags$div(id = 'nvd3plot', class='shiny-html-output nvd3 rChart')
+  )
+)
+```
