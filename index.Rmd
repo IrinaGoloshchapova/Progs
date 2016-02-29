@@ -6,7 +6,7 @@ job         : Expert CMASF
 framework   : deckjs      # {io2012, html5slides, shower, dzslides, ...}
 deckjs      : {theme: swiss, transition: vertical-slide}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-widgets     : [bootstrap, quiz, shiny, interactive]    
+widgets     : []    
 ext_widgets : {rCharts: ['libraries/nvd3', 'libraries/leaflet']}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
@@ -259,25 +259,8 @@ n1
 ```
 <iframe src = "map_gdp.html" width = '600px' height = '500px'> </iframe>
 
---- &interactive
+--- 
 ## Interactive graphics and presentations  
-#### Graphs with controls
+#### Medium
 
-```{r opts.label = 'shiny'}
-# install_github('shiny', 'rstudio')
-# add shiny to widgets
-# create directory apps/ and place app1.R
-# here is UI
-library(shiny)
-slidifyUI(
-  sidebarPanel(
-    selectInput('sex', 'Choose Sex', c('Male', 'Female')),
-    selectInput('type', 'Choose Type',
-      c('multiBarChart', 'multiBarHorizontalChart')
-    )
-  ),
-  mainPanel(
-    tags$div(id = 'nvd3plot', class='shiny-html-output nvd3 rChart')
-  )
-)
-```
+---
