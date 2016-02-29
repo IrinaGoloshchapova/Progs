@@ -123,13 +123,16 @@ $(function() {
 
 ---
 ## Interactive graphics and presentations  
-#### Maps
+#### Maps 1
 
 
 <iframe src = "map_gdp.html" width = '600px' height = '500px'> </iframe>
 
 --- 
 ## Interactive graphics and presentations  
-#### Medium
+#### Maps 2
+
+<iframe src = "highmap.html" width = '650px' height = '500px'> </iframe>
 
 ---
+

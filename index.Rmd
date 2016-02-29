@@ -243,7 +243,7 @@ n1
 
 ---
 ## Interactive graphics and presentations  
-#### Maps
+#### Maps 1
 
 ```{r rcharts_3, echo = FALSE, message = FALSE, results = 'asis', comment = NA, cache = FALSE}
 # library(leaflet)
@@ -261,6 +261,29 @@ n1
 
 --- 
 ## Interactive graphics and presentations  
-#### Medium
+#### Maps 2
+```{r rcharts_4, echo = FALSE, message = FALSE, results = 'asis', comment = NA, cache = FALSE}
+# library(highcharter)
+# library(viridisLite)
+# library(htmlwidgets)
+# 
+# data(worldgeojson, package = "highcharter")
+# data("GNI2010", package = "treemap")
+# 
+# dshmstops <- data.frame(q = c(0, exp(1:5)/exp(5)),
+#                         c = substring(viridis(5 + 1, option = "D"), 0, 7)) %>% 
+#   list.parse2()
+# 
+# h1 <- highchart() %>% 
+#   hc_add_series_map(worldgeojson, GNI2010, value = "population", joinBy = "iso3") %>% 
+#   hc_colorAxis(stops = dshmstops) %>% 
+#   hc_legend(enabled = TRUE) %>% 
+#   hc_add_theme(hc_theme_db()) %>% 
+#   hc_mapNavigation(enabled = TRUE)
+# 
+# htmlwidgets:: saveWidget(h1, 'highmap.html')
+```
+<iframe src = "highmap.html" width = '650px' height = '500px'> </iframe>
 
 ---
+
