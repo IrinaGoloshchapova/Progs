@@ -119,6 +119,6 @@ $(function() {
 ## Interactive graphics and presentations  
 #### Simple graphs
 
-<iframe src = 'figures/compan.html' width = '800px' height = '450px'> </iframe>
+<iframe src = 'figures/compan.html' width = '850px' height = '450px'> </iframe>
 
 ---
