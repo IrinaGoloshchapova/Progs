@@ -125,8 +125,5 @@ $(function() {
 ## Interactive graphics and presentations  
 #### Maps
 
-OGR data source with driver: GeoJSON 
-Source: "files/countries.geojson", layer: "OGRGeoJSON"
-with 177 features
-It has 63 fields
-<iframe src = "map_gdp.html" STYLE = "width:100%;height:125%"> </iframe>
+
+<iframe src = "map_gdp.html" STYLE = "width:85% ;height:200%"> </iframe>
