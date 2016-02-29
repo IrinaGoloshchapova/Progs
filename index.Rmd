@@ -242,3 +242,15 @@ n1
 <iframe src = 'figures/compan.html' width = '850px' height = '450px'> </iframe>
 
 ---
+## Interactive graphics and presentations  
+#### Graphs with controls
+
+```{r rcharts_3, echo = FALSE, message = FALSE, results = 'asis', comment = NA}
+HairEye <- subset(as.data.frame(HairEyeColor), Sex == "Male")
+n1 <- nPlot(Freq ~ Eye, data = HairEye, group = 'Hair', type = 'multiBarChart')
+n1$addControls("x", "Eye", c('Eye', 'Hair'))
+n1$addControls("group", "Hair", c('Eye', 'Hair'))
+n1$addControls("type", "multiBarChart", values = c('multiBarChart', 'multiBarHorizontalChart'))
+n1$setTemplate(script = system.file('libraries', 'nvd3', 'controls', 'datgui.html', package = 'rCharts'))
+n1
+```
