@@ -243,14 +243,18 @@ n1
 
 ---
 ## Interactive graphics and presentations  
-#### Graphs with controls
+#### Maps
 
-```{r rcharts_3, echo = FALSE, message = FALSE, results = 'asis', comment = NA}
-HairEye <- subset(as.data.frame(HairEyeColor), Sex == "Male")
-n1 <- nPlot(Freq ~ Eye, data = HairEye, group = 'Hair', type = 'multiBarChart')
-n1$addControls("x", "Eye", c('Eye', 'Hair'))
-n1$addControls("group", "Hair", c('Eye', 'Hair'))
-n1$addControls("type", "multiBarChart", values = c('multiBarChart', 'multiBarHorizontalChart'))
-n1$setTemplate(script = system.file('libraries', 'nvd3', 'controls', 'datgui.html', package = 'rCharts'))
-n1
+```{r rcharts_3, echo = FALSE, message = FALSE, results = 'asis', comment = NA, cache = FALSE}
+library(leaflet)
+library(rgdal)
+countries <- readOGR("files/countries.geojson", "OGRGeoJSON")
+map <- leaflet(countries) %>% addTiles()
+qpal <- colorQuantile("RdYlBu", countries$gdp_md_est, n = 5)
+map %>%
+  addPolygons(stroke = FALSE, smoothFactor = 0.2, fillOpacity = 1,
+    color = ~qpal(gdp_md_est)
+  ) %>%
+  addLegend(pal = qpal, values = ~gdp_md_est, opacity = 1)
 ```
+
