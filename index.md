@@ -126,4 +126,6 @@ $(function() {
 #### Maps
 
 
-<iframe src = "map_gdp.html" STYLE = "width:85% ;height:200%"> </iframe>
+<iframe src = "map_gdp.html" width = '600px' height = '500px'> </iframe>
+
+---

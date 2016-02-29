@@ -257,4 +257,6 @@ map <- leaflet(countries) %>% addTiles() %>%
   addLegend(pal = qpal, values = ~gdp_md_est, opacity = 1)
 htmlwidgets:: saveWidget(map, 'map_gdp.html')
 ```
-<iframe src = "map_gdp.html" STYLE = "width:85% ;height:200%"> </iframe>
+<iframe src = "map_gdp.html" width = '600px' height = '500px'> </iframe>
+
+---
