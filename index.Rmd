@@ -249,12 +249,12 @@ n1
 library(leaflet)
 library(rgdal)
 countries <- readOGR("files/countries.geojson", "OGRGeoJSON")
-map <- leaflet(countries) %>% addTiles()
 qpal <- colorQuantile("RdYlBu", countries$gdp_md_est, n = 5)
-map %>%
+map <- leaflet(countries) %>% addTiles() %>%
   addPolygons(stroke = FALSE, smoothFactor = 0.2, fillOpacity = 1,
     color = ~qpal(gdp_md_est)
   ) %>%
   addLegend(pal = qpal, values = ~gdp_md_est, opacity = 1)
+htmlwidgets:: saveWidget(map, 'map_gdp.html')
 ```
-
+<iframe src = "map_gdp.html" STYLE = "width:100%;height:125%"> </iframe>

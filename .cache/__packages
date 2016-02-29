@@ -17,3 +17,7 @@ reshape
 zoo
 xts
 base64enc
+leaflet
+sp
+rgdal
+htmlwidgets
