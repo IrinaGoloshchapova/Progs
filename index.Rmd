@@ -51,7 +51,6 @@ $(function() {
 
 3. **Interactive graphics and presentations**  
    - *graphics*: from simple time series to complex interaction with user  
-   - html-based *analytical reports* with graphs and tables
    - *presentations*  
 
 ---
@@ -243,8 +242,8 @@ n1
 
 ---
 ## Interactive graphics and presentations  
-#### Maps 2
-```{r rcharts_4, echo = FALSE, message = FALSE, results = 'asis', comment = NA, cache = FALSE}
+#### Maps
+```{r htmlwidgets_1, echo = FALSE, message = FALSE, results = 'asis', comment = NA, cache = FALSE}
 # library(highcharter)
 # library(viridisLite)
 # library(htmlwidgets)
@@ -268,4 +267,10 @@ n1
 <iframe src = "highmap.html" width = '750px' height = '600px'> </iframe>
 
 ---
+## Interactive graphics and presentations  
+#### Time Series
 
+```{r htmlwidgets_2, echo = FALSE, message = FALSE, results = 'asis', comment = NA, cache = FALSE}
+# two dygraphs from DVis_1 Coursera Projects
+```
+<iframe src = "DVis_PA1.html" width = '800px' height = '700px'> </iframe>

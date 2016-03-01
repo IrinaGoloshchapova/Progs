@@ -51,7 +51,6 @@ $(function() {
 
 3. **Interactive graphics and presentations**  
    - *graphics*: from simple time series to complex interaction with user  
-   - html-based *analytical reports* with graphs and tables
    - *presentations*  
 
 ---
@@ -123,9 +122,13 @@ $(function() {
 
 ---
 ## Interactive graphics and presentations  
-#### Maps 2
+#### Maps
 
 <iframe src = "highmap.html" width = '750px' height = '600px'> </iframe>
 
 ---
+## Interactive graphics and presentations  
+#### Time Series
 
+
+<iframe src = "DVis_PA1.html" width = '800px' height = '700px'> </iframe>
