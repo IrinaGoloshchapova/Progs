@@ -273,7 +273,7 @@ n1
 ```{r htmlwidgets_2, echo = FALSE, message = FALSE, results = 'asis', comment = NA, cache = FALSE}
 # two dygraphs from DVis_1 Coursera Projects
 ```
-<iframe src = "DVis_PA1_for_pres.html" width = '950px' height = '750px'> </iframe>
+<iframe src = "DVis_PA1_for_pres.html" width = '850px' height = '700px'> </iframe>
 
 ---
 
