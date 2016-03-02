@@ -282,7 +282,7 @@ n1
 
 ```{r googleMotion, echo = FALSE, message = FALSE, results = 'asis'}
 suppressPackageStartupMessages(library(googleVis))
-M1 <- gvisMotionChart(Fruits, idvar="Fruit", timevar="Year")
+M1 <- gvisMotionChart(Fruits, idvar="Fruit", timevar="Year", options = list(width=450, height=450))
 plot(M1, tag = "chart")
 ```
 
