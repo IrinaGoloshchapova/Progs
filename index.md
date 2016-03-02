@@ -138,14 +138,13 @@ $(function() {
 #### Interesting: Calendar plot
 
 
-<iframe src = "calendar.html" width = '750px' height = '600px'> </iframe>
+<iframe src = "calendar.html" width = '900px' height = '600px'> </iframe>
 
 ---
 ## Interactive graphics and presentations  
 #### Interesting: Sankey plot
 
-
-<iframe src = "sankeyplot.html" width = '750px' height = '600px'> </iframe>
+<iframe src=' assets/fig/rcharts_3-1.html ' scrolling='no' frameBorder='0' seamless class='rChart http://timelyportfolio.github.io/rCharts_d3_sankey/libraries/widgets/d3_sankey ' id=iframe- chart8807cd24d70 ></iframe> <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
 ---
 ## Interactive graphics and presentations  
