@@ -280,19 +280,21 @@ n1
 #### Interesting: Calendar plot
 
 ```{r rcharts_2, echo = FALSE, message = FALSE, results = 'asis', comment = NA}
-# dat <- read.csv('http://t.co/mN2RgcyQFc')[,c('date', 'pts')]
-# library(rChartsCalendar)
-# r1 <- plotCalMap(x = 'date', y = 'pts',
-#   data = dat, 
-#   domain = 'month',
-#   start = "2012-10-27",
-#   legend = seq(10, 50, 10),
-#   itemName = 'point',
-#   range = 7
-# )
+dat <- read.csv('http://t.co/mN2RgcyQFc')[,c('date', 'pts')]
+library(rChartsCalendar)
+r1 <- plotCalMap(x = 'date', y = 'pts',
+  data = dat, 
+  domain = 'month',
+  start = "2012-10-27",
+  legend = seq(10, 50, 10),
+  itemName = 'point',
+  range = 7
+)
+r1
 # r1$save('calendar.html', standalone = TRUE)
+# <iframe src = "calendar.html" width = '900px' height = '600px'> </iframe>
 ```
-<iframe src = "calendar.html" width = '900px' height = '600px'> </iframe>
+
 
 ---
 ## Interactive graphics and presentations  

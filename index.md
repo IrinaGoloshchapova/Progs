@@ -137,8 +137,8 @@ $(function() {
 ## Interactive graphics and presentations  
 #### Interesting: Calendar plot
 
+<iframe src=' assets/fig/rcharts_2-1.html ' scrolling='no' frameBorder='0' seamless class='rChart C:/Program Files/R/R-3.2.3/library/rChartsCalendar/calmap ' id=iframe- chart88053d533d ></iframe> <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
-<iframe src = "calendar.html" width = '900px' height = '600px'> </iframe>
 
 ---
 ## Interactive graphics and presentations  
