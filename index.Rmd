@@ -243,6 +243,7 @@ n1
 ---
 ## Interactive graphics and presentations  
 #### Maps
+
 ```{r htmlwidgets_1, echo = FALSE, message = FALSE, results = 'asis', comment = NA, cache = FALSE}
 # library(highcharter)
 # library(viridisLite)
@@ -277,24 +278,31 @@ n1
 
 ---
 ## Interactive graphics and presentations  
-#### Interesting: Calendar plot
+#### Simple graphs with controls
 
-```{r rcharts_2, echo = FALSE, message = FALSE, results = 'asis', comment = NA}
-dat <- read.csv('http://t.co/mN2RgcyQFc')[,c('date', 'pts')]
-library(rChartsCalendar)
-r1 <- plotCalMap(x = 'date', y = 'pts',
-  data = dat, 
-  domain = 'month',
-  start = "2012-10-27",
-  legend = seq(10, 50, 10),
-  itemName = 'point',
-  range = 7
-)
-r1
-# r1$save('calendar.html', standalone = TRUE)
-# <iframe src = "calendar.html" width = '900px' height = '600px'> </iframe>
+```{r googleMotion, echo = FALSE, message = FALSE, results = 'asis'}
+suppressPackageStartupMessages(library(googleVis))
+M1 <- gvisMotionChart(Fruits, idvar="Fruit", timevar="Year")
+plot(M1, tag = "chart")
 ```
 
+---
+## Interactive graphics and presentations  
+#### Combinations of simple graphs
+
+```{r googleMerge, echo = FALSE, message = FALSE, results = 'asis'}
+G1 <- gvisGeoChart(Exports, "Country", "Profit", 
+                   options = list(width = 350, height = 200))
+G2 <- gvisTable(Exports, options = list(width=350, height=300))
+GT <- gvisMerge(G1, G2, horizontal = FALSE)
+column <- gvisColumnChart(OpenClose, "Weekday", c("Open", "Close"), 
+                          options=list(legend='none', width=350, height=250))
+area <- gvisAreaChart(OpenClose, "Weekday", c("Open", "Close"), 
+                      options=list(legend='none', width=350, height=250))
+colar <- gvisMerge(column, area, horizontal = FALSE)
+p <- gvisMerge(GT, colar, horizontal = TRUE)
+plot(p, tag = "chart")
+```
 
 ---
 ## Interactive graphics and presentations  
@@ -342,6 +350,5 @@ sankeyPlot
 
 ---
 ## Interactive graphics and presentations  
-#### Interesting: Sankey plot
-
+#### Interesting: 
 ---
