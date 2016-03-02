@@ -139,14 +139,14 @@ $(function() {
 #### Simple graphs with controls
 
 <!-- MotionChart generated in R 3.2.3 by googleVis 0.5.10 package -->
-<!-- Wed Mar 02 23:34:52 2016 -->
+<!-- Wed Mar 02 23:39:55 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMotionChartID8802627231c () {
+function gvisDataMotionChartID8801067f26 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -244,15 +244,15 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMotionChartID8802627231c() {
-var data = gvisDataMotionChartID8802627231c();
+function drawChartMotionChartID8801067f26() {
+var data = gvisDataMotionChartID8801067f26();
 var options = {};
-options["width"] =    450;
+options["width"] =    550;
 options["height"] =    450;
 options["state"] = "";
 
     var chart = new google.visualization.MotionChart(
-    document.getElementById('MotionChartID8802627231c')
+    document.getElementById('MotionChartID8801067f26')
     );
     chart.draw(data,options);
     
@@ -276,9 +276,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMotionChartID8802627231c);
+callbacks.push(drawChartMotionChartID8801067f26);
 })();
-function displayChartMotionChartID8802627231c() {
+function displayChartMotionChartID8801067f26() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -302,12 +302,12 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMotionChartID8802627231c"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMotionChartID8801067f26"></script>
  
 <!-- divChart -->
   
-<div id="MotionChartID8802627231c" 
-  style="width: 450; height: 450;">
+<div id="MotionChartID8801067f26" 
+  style="width: 550; height: 450;">
 </div>
 
 ---
