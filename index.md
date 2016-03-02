@@ -134,4 +134,21 @@ $(function() {
 <iframe src = "DVis_PA1_for_pres.html" width = '900px' height = '700px'> </iframe>
 
 ---
+## Interactive graphics and presentations  
+#### Interesting: Calendar plot
 
+
+<iframe src = "calendar.html" width = '750px' height = '600px'> </iframe>
+
+---
+## Interactive graphics and presentations  
+#### Interesting: Sankey plot
+
+
+<iframe src = "sankeyplot.html" width = '750px' height = '600px'> </iframe>
+
+---
+## Interactive graphics and presentations  
+#### Interesting: Sankey plot
+
+---

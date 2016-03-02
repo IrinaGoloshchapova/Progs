@@ -24,3 +24,6 @@ htmlwidgets
 shiny
 XML
 devtools
+plyr
+rChartsCalendar
+rjson

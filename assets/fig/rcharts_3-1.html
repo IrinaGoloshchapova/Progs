@@ -1,0 +1,164 @@
+<!doctype HTML>
+<meta charset = 'utf-8'>
+<html>
+  <head>
+    <link rel='stylesheet' href='http://timelyportfolio.github.io/rCharts_d3_sankey/css/sankey.css'>
+    
+    <script src='http://d3js.org/d3.v3.min.js' type='text/javascript'></script>
+    <script src='http://timelyportfolio.github.io/rCharts_d3_sankey/js/sankey.js' type='text/javascript'></script>
+    
+    <style>
+    .rChart {
+      display: block;
+      margin-left: auto; 
+      margin-right: auto;
+      width: 960px;
+      height: 500px;
+    }  
+    </style>
+    
+  </head>
+  <body >
+    
+    <div id = 'chart88078a05c9f' class = 'rChart d3_sankey'></div>    
+    ﻿<!--Attribution:
+Mike Bostock https://github.com/d3/d3-plugins/tree/master/sankey
+Mike Bostock http://bost.ocks.org/mike/sankey/
+-->
+
+<script>
+(function(){
+var params = {
+ "dom": "chart88078a05c9f",
+"width":    960,
+"height":    500,
+"data": {
+ "source": [ "Agricultural 'waste'", "Bio-conversion", "Bio-conversion", "Bio-conversion", "Bio-conversion", "Biofuel imports", "Biomass imports", "Coal imports", "Coal reserves", "Coal", "District heating", "District heating", "District heating", "Electricity grid", "Electricity grid", "Electricity grid", "Electricity grid", "Electricity grid", "Electricity grid", "Electricity grid", "Electricity grid", "Electricity grid", "Electricity grid", "Electricity grid", "Gas imports", "Gas reserves", "Gas", "Gas", "Gas", "Gas", "Gas", "Geothermal", "H2 conversion", "H2 conversion", "H2", "Hydro", "Liquid", "Liquid", "Liquid", "Liquid", "Liquid", "Liquid", "Liquid", "Liquid", "Marine algae", "Ngas", "Nuclear", "Oil imports", "Oil reserves", "Oil", "Other waste", "Other waste", "Pumped heat", "Pumped heat", "Solar PV", "Solar Thermal", "Solar", "Solar", "Solid", "Solid", "Solid", "Thermal generation", "Thermal generation", "Thermal generation", "Tidal", "UK land based bioenergy", "Wave", "Wind" ],
+"target": [ "Bio-conversion", "Liquid", "Losses", "Solid", "Gas", "Liquid", "Solid", "Coal", "Coal", "Solid", "Industry", "Heating and cooling - commercial", "Heating and cooling - homes", "Over generation / exports", "Heating and cooling - homes", "H2 conversion", "Industry", "Road transport", "Agriculture", "Heating and cooling - commercial", "Losses", "Rail transport", "Lighting & appliances - commercial", "Lighting & appliances - homes", "Ngas", "Ngas", "Heating and cooling - commercial", "Losses", "Thermal generation", "Agriculture", "Industry", "Electricity grid", "H2", "Losses", "Road transport", "Electricity grid", "Industry", "International shipping", "Road transport", "Domestic aviation", "International aviation", "Agriculture", "National navigation", "Rail transport", "Bio-conversion", "Gas", "Thermal generation", "Oil", "Oil", "Liquid", "Solid", "Bio-conversion", "Heating and cooling - homes", "Heating and cooling - commercial", "Electricity grid", "Heating and cooling - homes", "Solar Thermal", "Solar PV", "Agriculture", "Thermal generation", "Industry", "Electricity grid", "Losses", "District heating", "Electricity grid", "Bio-conversion", "Electricity grid", "Electricity grid" ],
+"value": [ 124.73,  0.597, 26.862, 280.32, 81.144,     35,     35, 11.606, 63.965, 75.571, 10.639, 22.505, 46.184, 104.45, 113.73,  27.14, 342.17, 37.797,  4.412, 40.858, 56.691,  7.863, 90.008, 93.494, 40.719, 82.233,  0.129,  1.401, 151.89,  2.096,  48.58,  7.013, 20.897,  6.242, 20.897,  6.995, 121.07, 128.69, 135.84, 14.458, 206.27,   3.64, 33.218,  4.413,  4.375, 122.95, 839.98, 504.29,  107.7, 611.99, 56.587,  77.81, 193.03, 70.672, 59.901, 19.263, 19.263, 59.901,  0.882, 400.12, 46.477, 525.53, 787.13, 79.329,  9.452, 182.01, 19.013, 289.37 ] 
+},
+"nodeWidth":     15,
+"nodePadding":     10,
+"layout":     32,
+"units": "TWh",
+"title": "Sankey Diagram",
+"id": "chart88078a05c9f" 
+};
+
+params.units ? units = " " + params.units : units = "";
+
+//hard code these now but eventually make available
+var formatNumber = d3.format("0,.0f"),    // zero decimal places
+    format = function(d) { return formatNumber(d) + units; },
+    color = d3.scale.category20();
+
+if(params.labelFormat){
+  formatNumber = d3.format(".2%");
+}
+
+var svg = d3.select('#' + params.id).append("svg")
+    .attr("width", params.width)
+    .attr("height", params.height);
+    
+var sankey = d3.sankey()
+    .nodeWidth(params.nodeWidth)
+    .nodePadding(params.nodePadding)
+    .layout(params.layout)
+    .size([params.width,params.height]);
+    
+var path = sankey.link();
+    
+var data = params.data,
+    links = [],
+    nodes = [];
+    
+//get all source and target into nodes
+//will reduce to unique in the next step
+//also get links in object form
+data.source.forEach(function (d, i) {
+    nodes.push({ "name": data.source[i] });
+    nodes.push({ "name": data.target[i] });
+    links.push({ "source": data.source[i], "target": data.target[i], "value": +data.value[i] });
+}); 
+
+//now get nodes based on links data
+//thanks Mike Bostock https://groups.google.com/d/msg/d3-js/pl297cFtIQk/Eso4q_eBu1IJ
+//this handy little function returns only the distinct / unique nodes
+nodes = d3.keys(d3.nest()
+                .key(function (d) { return d.name; })
+                .map(nodes));
+
+//it appears d3 with force layout wants a numeric source and target
+//so loop through each link replacing the text with its index from node
+links.forEach(function (d, i) {
+    links[i].source = nodes.indexOf(links[i].source);
+    links[i].target = nodes.indexOf(links[i].target);
+});
+
+//now loop through each nodes to make nodes an array of objects rather than an array of strings
+nodes.forEach(function (d, i) {
+    nodes[i] = { "name": d };
+});
+
+sankey
+  .nodes(nodes)
+  .links(links)
+  .layout(params.layout);
+  
+var link = svg.append("g").selectAll(".link")
+  .data(links)
+.enter().append("path")
+  .attr("class", "link")
+  .attr("d", path)
+  .style("stroke-width", function (d) { return Math.max(1, d.dy); })
+  .sort(function (a, b) { return b.dy - a.dy; });
+
+link.append("title")
+  .text(function (d) { return d.source.name + " → " + d.target.name + "\n" + format(d.value); });
+
+var node = svg.append("g").selectAll(".node")
+  .data(nodes)
+.enter().append("g")
+  .attr("class", "node")
+  .attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; })
+.call(d3.behavior.drag()
+  .origin(function (d) { return d; })
+  .on("dragstart", function () { this.parentNode.appendChild(this); })
+  .on("drag", dragmove));
+
+node.append("rect")
+  .attr("height", function (d) { return d.dy; })
+  .attr("width", sankey.nodeWidth())
+  .style("fill", function (d) { return d.color = color(d.name.replace(/ .*/, "")); })
+  .style("stroke", function (d) { return d3.rgb(d.color).darker(2); })
+.append("title")
+  .text(function (d) { return d.name + "\n" + format(d.value); });
+
+node.append("text")
+  .attr("x", -6)
+  .attr("y", function (d) { return d.dy / 2; })
+  .attr("dy", ".35em")
+  .attr("text-anchor", "end")
+  .attr("transform", null)
+  .text(function (d) { return d.name; })
+.filter(function (d) { return d.x < params.width / 2; })
+  .attr("x", 6 + sankey.nodeWidth())
+  .attr("text-anchor", "start");
+
+// the function for moving the nodes
+  function dragmove(d) {
+    d3.select(this).attr("transform", 
+        "translate(" + (
+                   d.x = Math.max(0, Math.min(params.width - d.dx, d3.event.x))
+                ) + "," + (
+                   d.y = Math.max(0, Math.min(params.height - d.dy, d3.event.y))
+                ) + ")");
+        sankey.relayout();
+        link.attr("d", path);
+  }
+})();
+</script>
+    
+    <script></script>    
+  </body>
+</html>
