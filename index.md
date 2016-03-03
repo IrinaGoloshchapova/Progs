@@ -837,7 +837,7 @@ callbacks.shift()();
 ## Interactive graphics and presentations  
 #### Interesting: graph analysis
 
-<iframe src = "http://timelyportfolio.github.io/rCharts_512paths/" width = '950px' height = '750px'> </iframe>
+<iframe src = "http://timelyportfolio.github.io/rCharts_512paths/" width = '1050px' height = '800px'> </iframe>
 
 ---
 
