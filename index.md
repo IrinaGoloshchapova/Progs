@@ -835,6 +835,12 @@ callbacks.shift()();
 
 ---
 ## Interactive graphics and presentations  
+#### Interesting: graph analysis
+
+<iframe src = "network2.html" width = '1000px' height = '750px'> </iframe>
+
+---
+## Interactive graphics and presentations  
 #### Interesting: path diagram
 
 <iframe src = "http://timelyportfolio.github.io/rCharts_512paths/" width = '1050px' height = '800px'> </iframe>
