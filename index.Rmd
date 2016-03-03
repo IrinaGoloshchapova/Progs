@@ -301,6 +301,7 @@ area <- gvisAreaChart(OpenClose, "Weekday", c("Open", "Close"),
                       options=list(legend='none', width=350, height=250))
 colar <- gvisMerge(column, area, horizontal = FALSE)
 p <- gvisMerge(GT, colar, horizontal = TRUE)
+plot(p)
 plot(p, tag = "chart")
 ```
 
