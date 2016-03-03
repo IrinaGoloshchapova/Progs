@@ -841,8 +841,12 @@ callbacks.shift()();
 
 ---
 ## Interactive graphics and presentations  
-#### Plot.ly possibilities
+#### Plot.ly
 
 <iframe src = "https://plot.ly/r/" width = '1050px' height = '800px'> </iframe>
 
 ---
+## Interactive graphics and presentations  
+#### Tableau
+
+<iframe src = "https://public.tableau.com/s/gallery" width = '1050px' height = '800px'> </iframe>
