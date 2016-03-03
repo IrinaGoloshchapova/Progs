@@ -831,7 +831,7 @@ callbacks.shift()();
 ## Interactive graphics and presentations  
 #### Interesting: graph analysis
 
-<iframe src = "network.html" width = '900px' height = '700px'> </iframe>
+<iframe src = "network.html" width = '1000px' height = '750px'> </iframe>
 
 ---
 ## Interactive graphics and presentations  
