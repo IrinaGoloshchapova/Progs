@@ -350,5 +350,21 @@ sankeyPlot
 
 ---
 ## Interactive graphics and presentations  
-#### Interesting: 
+#### Interesting: graph analysis
+```{r htmlwidgets_3, echo = FALSE, message = FALSE, results = 'asis', comment = NA, cache = TRUE}
+# library(networkD3)
+# # Load data
+# data(MisLinks)
+# data(MisNodes)
+# 
+# # Plot
+# network <- forceNetwork(Links = MisLinks, Nodes = MisNodes,
+#             Source = "source", Target = "target",
+#             Value = "value", NodeID = "name",
+#             Group = "group", opacity = 0.8, zoom = TRUE)
+# saveNetwork(network, file = 'network.html')
+```
+<iframe src = "DVis_PA1_for_pres.html" width = '900px' height = '700px'> </iframe>
+
 ---
+
