@@ -835,13 +835,13 @@ callbacks.shift()();
 
 ---
 ## Interactive graphics and presentations  
-#### Interesting: graph analysis
+#### Interesting: path diagram
 
 <iframe src = "http://timelyportfolio.github.io/rCharts_512paths/" width = '1050px' height = '800px'> </iframe>
 
 ---
 ## Interactive graphics and presentations  
-#### Interesting: graph analysis
+#### Plot.ly possibilities
 
 <iframe src = "https://plot.ly/r/" width = '1050px' height = '800px'> </iframe>
 
