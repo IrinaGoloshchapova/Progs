@@ -361,7 +361,8 @@ sankeyPlot
 # network <- forceNetwork(Links = MisLinks, Nodes = MisNodes,
 #             Source = "source", Target = "target",
 #             Value = "value", NodeID = "name",
-#             Group = "group", opacity = 0.8, zoom = TRUE)
+#             Group = "group", opacity = 0.8, zoom = TRUE, fontSize = 14, 
+#             legend = TRUE)
 # saveNetwork(network, file = 'network.html')
 ```
 <iframe src = "network.html" width = '900px' height = '700px'> </iframe>
