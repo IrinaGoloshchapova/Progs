@@ -315,14 +315,14 @@ callbacks.shift()();
 #### Combinations of simple graphs
 
 <!-- GeoChart generated in R 3.2.3 by googleVis 0.5.10 package -->
-<!-- Thu Mar 03 16:09:54 2016 -->
+<!-- Thu Mar 03 16:17:04 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataGeoChartID51061b25d27 () {
+function gvisDataGeoChartID5102cbe642 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -375,7 +375,7 @@ return(data);
 
 
 // jsData 
-function gvisDataTableID51054d9772d () {
+function gvisDataTableID510ce169d5 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -439,7 +439,7 @@ return(data);
 
 
 // jsData 
-function gvisDataColumnChartID51069f01f81 () {
+function gvisDataColumnChartID5105fc07484 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -478,7 +478,7 @@ return(data);
 
 
 // jsData 
-function gvisDataAreaChartID5108dd66f5 () {
+function gvisDataAreaChartID51011bb5ad3 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -516,14 +516,14 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartGeoChartID51061b25d27() {
-var data = gvisDataGeoChartID51061b25d27();
+function drawChartGeoChartID5102cbe642() {
+var data = gvisDataGeoChartID5102cbe642();
 var options = {};
 options["width"] =    350;
 options["height"] =    200;
 
     var chart = new google.visualization.GeoChart(
-    document.getElementById('GeoChartID51061b25d27')
+    document.getElementById('GeoChartID5102cbe642')
     );
     chart.draw(data,options);
     
@@ -533,15 +533,15 @@ options["height"] =    200;
 
 
 // jsDrawChart
-function drawChartTableID51054d9772d() {
-var data = gvisDataTableID51054d9772d();
+function drawChartTableID510ce169d5() {
+var data = gvisDataTableID510ce169d5();
 var options = {};
 options["allowHtml"] = true;
-options["width"] =    350;
-options["height"] =    300;
+options["width"] =    300;
+options["height"] =    200;
 
     var chart = new google.visualization.Table(
-    document.getElementById('TableID51054d9772d')
+    document.getElementById('TableID510ce169d5')
     );
     chart.draw(data,options);
     
@@ -551,8 +551,8 @@ options["height"] =    300;
 
 
 // jsDrawChart
-function drawChartColumnChartID51069f01f81() {
-var data = gvisDataColumnChartID51069f01f81();
+function drawChartColumnChartID5105fc07484() {
+var data = gvisDataColumnChartID5105fc07484();
 var options = {};
 options["allowHtml"] = true;
 options["legend"] = "none";
@@ -560,7 +560,7 @@ options["width"] =    350;
 options["height"] =    250;
 
     var chart = new google.visualization.ColumnChart(
-    document.getElementById('ColumnChartID51069f01f81')
+    document.getElementById('ColumnChartID5105fc07484')
     );
     chart.draw(data,options);
     
@@ -570,8 +570,8 @@ options["height"] =    250;
 
 
 // jsDrawChart
-function drawChartAreaChartID5108dd66f5() {
-var data = gvisDataAreaChartID5108dd66f5();
+function drawChartAreaChartID51011bb5ad3() {
+var data = gvisDataAreaChartID51011bb5ad3();
 var options = {};
 options["allowHtml"] = true;
 options["legend"] = "none";
@@ -579,7 +579,7 @@ options["width"] =    350;
 options["height"] =    250;
 
     var chart = new google.visualization.AreaChart(
-    document.getElementById('AreaChartID5108dd66f5')
+    document.getElementById('AreaChartID51011bb5ad3')
     );
     chart.draw(data,options);
     
@@ -603,9 +603,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartGeoChartID51061b25d27);
+callbacks.push(drawChartGeoChartID5102cbe642);
 })();
-function displayChartGeoChartID51061b25d27() {
+function displayChartGeoChartID5102cbe642() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -642,9 +642,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartTableID51054d9772d);
+callbacks.push(drawChartTableID510ce169d5);
 })();
-function displayChartTableID51054d9772d() {
+function displayChartTableID510ce169d5() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -681,9 +681,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartColumnChartID51069f01f81);
+callbacks.push(drawChartColumnChartID5105fc07484);
 })();
-function displayChartColumnChartID51069f01f81() {
+function displayChartColumnChartID5105fc07484() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -720,9 +720,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartAreaChartID5108dd66f5);
+callbacks.push(drawChartAreaChartID51011bb5ad3);
 })();
-function displayChartAreaChartID5108dd66f5() {
+function displayChartAreaChartID51011bb5ad3() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -746,19 +746,19 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartGeoChartID51061b25d27"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartGeoChartID5102cbe642"></script>
 
 
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID51054d9772d"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID510ce169d5"></script>
 
 
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartColumnChartID51069f01f81"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartColumnChartID5105fc07484"></script>
 
 
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartAreaChartID5108dd66f5"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartAreaChartID51011bb5ad3"></script>
  
 <table border="0">
 <tr>
@@ -770,7 +770,7 @@ callbacks.shift()();
 
 <!-- divChart -->
   
-<div id="GeoChartID51061b25d27" 
+<div id="GeoChartID5102cbe642" 
   style="width: 350; height: 200;">
 </div>
 
@@ -781,8 +781,8 @@ callbacks.shift()();
 
 <!-- divChart -->
   
-<div id="TableID51054d9772d" 
-  style="width: 350; height: 300;">
+<div id="TableID510ce169d5" 
+  style="width: 300; height: 200;">
 </div>
 
 </td>
@@ -798,7 +798,7 @@ callbacks.shift()();
 
 <!-- divChart -->
   
-<div id="ColumnChartID51069f01f81" 
+<div id="ColumnChartID5105fc07484" 
   style="width: 350; height: 250;">
 </div>
 
@@ -809,7 +809,7 @@ callbacks.shift()();
 
 <!-- divChart -->
   
-<div id="AreaChartID5108dd66f5" 
+<div id="AreaChartID51011bb5ad3" 
   style="width: 350; height: 250;">
 </div>
 

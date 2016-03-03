@@ -293,7 +293,7 @@ plot(M1, tag = "chart")
 ```{r googleMerge, echo = FALSE, message = FALSE, results = 'asis'}
 G1 <- gvisGeoChart(Exports, "Country", "Profit", 
                    options = list(width = 350, height = 200))
-G2 <- gvisTable(Exports, options = list(width=350, height=300))
+G2 <- gvisTable(Exports, options = list(width=300, height=200))
 GT <- gvisMerge(G1, G2, horizontal = FALSE)
 column <- gvisColumnChart(OpenClose, "Weekday", c("Open", "Close"), 
                           options=list(legend='none', width=350, height=250))
@@ -301,7 +301,6 @@ area <- gvisAreaChart(OpenClose, "Weekday", c("Open", "Close"),
                       options=list(legend='none', width=350, height=250))
 colar <- gvisMerge(column, area, horizontal = FALSE)
 p <- gvisMerge(GT, colar, horizontal = TRUE)
-plot(p)
 plot(p, tag = "chart")
 ```
 
