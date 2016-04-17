@@ -35,7 +35,7 @@ $(function() {
 --- 
 ## Main Themes
 
-### 1. Visualization
+### 1. Визуализация
 #### All what you want to know but are afraid to ask...
 
 ### 2. Automatization
