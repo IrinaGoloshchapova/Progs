@@ -19,7 +19,7 @@ my_publish <- function (repo, username = getOption("github.user"))
   system("git add .")
   system("git commit -a -m \"publishing deck\"")
   system(sprintf("git push"))
-  link = sprintf("http://%s.github.com/%s", username, repo)
+  link = sprintf("http://%s.github.io/%s", username, repo)
   message("You can now view your slide deck at ", link)
   browseURL(link)
 }
