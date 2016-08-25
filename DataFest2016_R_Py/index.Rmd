@@ -11,16 +11,21 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
-## Read-And-Delete
+## Why
 
-1. Edit YAML front matter
-2. Write using R Markdown
-3. Use an empty line followed by three dashes to separate slides!
+1. Synergy of results by connecting powerful libs for specific themes of research
+2. 
+3. Different language knowledge of your colleagues
+4. etc.
 
 --- .class #id 
 
-## Slide 2
+## When
 
+1. Exploratory data analysis
+2. Prototyping
+3. Wide by science or practical areas project
+4. Very ~~close deadline~~ short time limits for the task
 
-
+## How
 
