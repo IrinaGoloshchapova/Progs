@@ -27,6 +27,8 @@ knit        : slidify::knit2slides
 3. Wide by science or practical areas project
 4. Very ~~close deadline~~ short time limits for the task
 
+--- .class #id 
+
 ## How
 
 1. Verifying my_publish function
