@@ -1,4 +1,4 @@
-my_publish <- function (repo, username = getOption("github.user")) 
+my_publish <- function (repo, username = getOption("github.user"), browse_URL = FALSE, folder = FALSE) 
 {
   if (!file.exists("libraries")) {
     message("Please set mode to selfcontained and run Slidify")
@@ -16,7 +16,12 @@ my_publish <- function (repo, username = getOption("github.user"))
   system("git add .")
   system("git commit -a -m \"publishing deck\"")
   system(sprintf("git push"))
-  link = sprintf("http://%s.github.io/%s", username, repo)
-  message("You can now view your slide deck at ", link)
-  browseURL(link)
+  if (browse_URL == TRUE) {
+    if (folder == TRUE) {
+      folder_name = basename(getwd())
+    }
+    link = sprintf("http://%s.github.io/%s/%s", username, repo, folder_name)
+    message("You can now view your slide deck at ", link)
+    browseURL(link)
+  }
 }
