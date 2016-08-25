@@ -13,10 +13,8 @@ knit        : slidify::knit2slides
 
 ## Why
 
-1. Synergy of results by connecting powerful libs for specific themes of research
-2. 
-3. Different language knowledge of your colleagues
-4. etc.
+1. **_Synergy of inference_**: connecting powerful libs of two languages for specific themes of research 
+2. **_Speed and comfort_**: Different language knowledge degree of your colleagues, your relevant experience in specific tasks, syntactic preferences for concrete tasks.
 
 --- .class #id 
 
@@ -32,4 +30,3 @@ knit        : slidify::knit2slides
 ## How
 
 1. Verifying my_publish function
-2. Let us ask them to heat!!!!! :-))))
