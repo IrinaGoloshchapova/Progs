@@ -32,3 +32,4 @@ knit        : slidify::knit2slides
 ## How
 
 1. Verifying my_publish function
+2. Let us ask them to heat!!!!! :-))))
