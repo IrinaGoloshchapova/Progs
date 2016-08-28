@@ -1,6 +1,6 @@
 ---
 title       : Connecting R and Python
-subtitle    : Why, when and where
+subtitle    : Why, when and how
 author      : Irina Goloshchapova
 job         : Expert, CMASF
 logo        : logo2.jpg
