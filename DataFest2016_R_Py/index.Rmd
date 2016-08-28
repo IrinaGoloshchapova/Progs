@@ -1,8 +1,8 @@
 ---
-title       : Совмещение R и Python
-subtitle    : Зачем, когда и как
-author      : Ирина Голощапова
-job         : Эксперт направления анализа денежно-кредитной политики и банковского сектора ЦМАКП
+title       : Connecting R and Python
+subtitle    : Why, when and where
+author      : Irina Goloshchapova
+job         : Expert, CMASF
 logo        : logo2.jpg
 framework   : io2012      # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
