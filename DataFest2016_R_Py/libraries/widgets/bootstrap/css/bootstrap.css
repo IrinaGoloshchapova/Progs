@@ -3945,16 +3945,21 @@ input[type="submit"].btn.btn-mini {
   margin-bottom: 20px;
   margin-left: 0;
   list-style: none;
+  list-style-type: none;
 }
 
 .nav > li > a {
   display: block;
+  list-style: none;
+  list-style-type: none;
 }
 
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
   background-color: #eeeeee;
+  list-style: none;
+  list-style-type: none;
 }
 
 .nav > li > a > img {
@@ -3974,16 +3979,22 @@ input[type="submit"].btn.btn-mini {
   color: #dfdfdf;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
+  list-style: none;
+  list-style-type: none;
 }
 
 .nav li + .nav-header {
   margin-top: 9px;
+  list-style: none;
+  list-style-type: none;
 }
 
 .nav-list {
   padding-right: 15px;
   padding-left: 15px;
   margin-bottom: 0;
+  list-style: none;
+  list-style-type: none;
 }
 
 .nav-list > li > a,
@@ -3991,6 +4002,8 @@ input[type="submit"].btn.btn-mini {
   margin-right: -15px;
   margin-left: -15px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  list-style: none;
+  list-style-type: none;
 }
 
 .nav-list > li > a {
@@ -4287,6 +4300,8 @@ input[type="submit"].btn.btn-mini {
 .tabs-left > .nav-tabs > li,
 .tabs-right > .nav-tabs > li {
   float: none;
+  list-style: none;
+  list-style-type: none;
 }
 
 .tabs-left > .nav-tabs > li > a,
@@ -4294,12 +4309,16 @@ input[type="submit"].btn.btn-mini {
   min-width: 74px;
   margin-right: 0;
   margin-bottom: 3px;
+  list-style: none;
+  list-style-type: none;
 }
 
 .tabs-left > .nav-tabs {
   float: left;
   margin-right: 19px;
   border-right: 1px solid #ddd;
+  list-style: none;
+  list-style-type: none;
 }
 
 .tabs-left > .nav-tabs > li > a {

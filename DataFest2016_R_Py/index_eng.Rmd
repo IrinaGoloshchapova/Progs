@@ -1,5 +1,5 @@
 ---
-title       : Совмещение R и Python
+title       : Connecting R and Python
 subtitle    : Why, when and how
 author      : Irina Goloshchapova
 job         : Expert, CMASF
@@ -36,14 +36,14 @@ bigfont {
 
 </style>
 
-<bigfont>РџРѕС‡РµРјСѓ</bigfont>
+<bigfont>Why</bigfont>
 
 --- .class #id 
 
-## РџРѕС‡РµРјСѓ
+## Why
 
-1. **_РЎРёРЅРµСЂРіРёСЏ РїСЂРµРёРјСѓС‰РµСЃС‚РІ_**: СЃРѕРІРјРµС‰РµРЅРёРµ РјРѕС‰РЅС‹С… СЃС‚Р°Р±РёР»СЊРЅС‹С… Р±РёР±Р»РёРѕС‚РµРє R Рё Python РґР»СЏ РІС‹РїРѕР»РЅРµРЅРёСЏ РѕС‚РґРµР»СЊРЅС‹С… Р·Р°РґР°С‡ 
-2. **_РЎРєРѕСЂРѕСЃС‚СЊ Рё СѓРґРѕР±СЃС‚РІРѕ_**: РєРѕРјР±РёРЅР°С†РёСЏ РЅР°РІС‹РєРѕРІ РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ РЅР° R Рё Python
+1. **_Synergy of inference_**: connecting powerful libs of two languages for specific themes of research 
+2. **_Speed and comfort_**: combination of various skills in both languages
 
 --- .class #id 
 

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Connecting R and Python</title>
+  <title>РЎРѕРІРјРµС‰РµРЅРёРµ R Рё Python</title>
   <meta charset="utf-8">
-  <meta name="description" content="Connecting R and Python">
+  <meta name="description" content="РЎРѕРІРјРµС‰РµРЅРёРµ R Рё Python">
   <meta name="author" content="Irina Goloshchapova">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,7 +36,7 @@
     <img src="assets/img/logo2.jpg">
   </aside>
   <hgroup class="auto-fadein">
-    <h1>Connecting R and Python</h1>
+    <h1>РЎРѕРІРјРµС‰РµРЅРёРµ R Рё Python</h1>
     <h2>Why, when and how</h2>
     <p>Irina Goloshchapova<br/>Expert, CMASF</p>
   </hgroup>
@@ -75,19 +75,19 @@ bigfont {
 
 </style>
 
-<p><bigfont>Why</bigfont></p>
+<p><bigfont>РџРѕС‡РµРјСѓ</bigfont></p>
 
 </article>
 <!-- Presenter Notes -->
 </slide>
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Why</h2>
+    <h2>РџРѕС‡РµРјСѓ</h2>
   </hgroup>
   <article data-timings="">
     <ol>
-<li><strong><em>Synergy of inference</em></strong>: connecting powerful libs of two languages for specific themes of research </li>
-<li><strong><em>Speed and comfort</em></strong>: combination of various skills in both languages</li>
+<li><strong><em>РЎРёРЅРµСЂРіРёСЏ РїСЂРµРёРјСѓС‰РµСЃС‚РІ</em></strong>: СЃРѕРІРјРµС‰РµРЅРёРµ РјРѕС‰РЅС‹С… СЃС‚Р°Р±РёР»СЊРЅС‹С… Р±РёР±Р»РёРѕС‚РµРє R Рё Python РґР»СЏ РІС‹РїРѕР»РЅРµРЅРёСЏ РѕС‚РґРµР»СЊРЅС‹С… Р·Р°РґР°С‡ </li>
+<li><strong><em>РЎРєРѕСЂРѕСЃС‚СЊ Рё СѓРґРѕР±СЃС‚РІРѕ</em></strong>: РєРѕРјР±РёРЅР°С†РёСЏ РЅР°РІС‹РєРѕРІ РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ РЅР° R Рё Python</li>
 </ol>
 
   </article>
@@ -185,9 +185,10 @@ bigfont {
   </hgroup>
   <article data-timings="">
     <ol>
-<li><p><strong><em>Command line tools</em></strong>. Command line + medium storage combination.<br>
+<li><p><strong><em>Command line tools</em></strong>. Command line + medium storage as an &#39;air gap&#39; combination.<br>
 Executing from one of the languages by system commands or directly through command line.  </p></li>
 <li><p><strong><em>Interfacing</em></strong>. Running two persistent R and Python processes at once, and passing data between them. </p></li>
+<li><p><strong><em>Other ways</em></strong>.</p></li>
 </ol>
 
   </article>
@@ -200,18 +201,17 @@ Executing from one of the languages by system commands or directly through comma
   </hgroup>
   <article data-timings="">
     
-<div class="tabbable">
-  <ul class="nav nav-pills">
-    <li class="tab active"><a data-toggle="pill" href="#cmd" >cmd</a></li>
-    <li class="tab "><a data-toggle="pill" href="#medium_storage" >medium_storage</a></li>
-    <li class="tab "><a data-toggle="pill" href="#examples" >examples</a></li>
-    <li class="tab "><a data-toggle="pill" href="#pros_cons" >pros_cons</a></li>
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs" style="list-style-type: none;"> 
+    <li class="tab active"><a data-toggle="tab" href="#cmd" >cmd</a></li>
+    <li class="tab "><a data-toggle="tab" href="#air_gap" >air_gap</a></li>
+    <li class="tab "><a data-toggle="tab" href="#benchmark" >benchmark</a></li>
   </ul>
   <div class="tab-content">
     <div class="tab-pane fade in active" id="cmd">
-      <p>Command line commands</p>
+      <p>Command line scripting</p>
 
-<p><code>&lt;command_to_run&gt; &lt;path_to_script&gt; &lt;any_additional_arguments&gt;</code>  </p>
+<p><code>&lt;cmd_to_run&gt; &lt;path_to_script&gt; &lt;any_additional_args&gt;</code>  </p>
 
 <table><thead>
 <tr>
@@ -221,19 +221,19 @@ Executing from one of the languages by system commands or directly through comma
 </tr>
 </thead><tbody>
 <tr>
-<td><em>Cmd scripting</em></td>
+<td><em>Cmd</em></td>
 <td><code>python path/to/myscript.py arg1 arg2 arg3</code></td>
 <td><code>Rscript path/to/myscript.R arg1 arg2 arg3</code></td>
 </tr>
 <tr>
 <td><em>Fetch arguments</em></td>
-<td><code>#character vector of all arguments</code><br><code>myArgs &lt;- commandArgs(trailingOnly = TRUE)</code></td>
+<td><code>#character vector of args</code><br><code>myArgs &lt;- commandArgs(trailingOnly = TRUE)</code></td>
 <td><code>#list, 1st el. - file executed</code><br><code>import sys</code> <br><code>my_args = sys.argv</code></td>
 </tr>
 </tbody></table>
 
     </div>
-    <div class="tab-pane fade in " id="medium_storage">
+    <div class="tab-pane fade in " id="air_gap">
       <p>Medium storage strategy</p>
 
 <table><thead>
@@ -251,7 +251,7 @@ Executing from one of the languages by system commands or directly through comma
 <tr>
 <td>csv</td>
 <td>csv</td>
-<td>readr</td>
+<td>readr, data.table</td>
 </tr>
 <tr>
 <td>json</td>
@@ -270,8 +270,8 @@ Executing from one of the languages by system commands or directly through comma
 </tr>
 <tr>
 <td>SQL</td>
-<td>sqlalchemy<br>pyodbc</td>
-<td>sqlite, RODBS,<br>RMySQL, dplyr</td>
+<td>sqlalchemy, pandasql<br>pyodbc</td>
+<td>sqlite, RODBS,<br>RMySQL, sqldf, dplyr</td>
 </tr>
 <tr>
 <td>NoSQL</td>
@@ -279,41 +279,108 @@ Executing from one of the languages by system commands or directly through comma
 <td>RMongo</td>
 </tr>
 <tr>
-<td><em>FEATHER</em></td>
+<td><em>Feather</em></td>
 <td>=======</td>
 <td>=======</td>
 </tr>
 <tr>
-<td>feather format</td>
+<td>for data frames</td>
 <td>feather</td>
 <td>feather</td>
 </tr>
 </tbody></table>
 
     </div>
-    <div class="tab-pane fade in " id="examples">
-      <table><thead>
-<tr>
-<th>Ex</th>
-<th>Python</th>
-<th>R</th>
-</tr>
-</thead><tbody>
-<tr>
-<td></td>
-<td>Row 1</td>
-<td>Row 1</td>
-</tr>
-<tr>
-<td></td>
-<td>Row 2</td>
-<td>Row 2</td>
-</tr>
-</tbody></table>
+    <div class="tab-pane fade in " id="benchmark">
+      <p><img src="assets/img/Mbchm_r_py.png" alt="bench_feather"></p>
 
     </div>
-    <div class="tab-pane fade in " id="pros_cons">
-      <p>Tab3</p>
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>How - Command line tools - Examples</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs" style="list-style-type: none;"> 
+    <li class="tab active"><a data-toggle="tab" href="#max_R" >max_R</a></li>
+    <li class="tab "><a data-toggle="tab" href="#splitstr_py" >splitstr_py</a></li>
+    <li class="tab "><a data-toggle="tab" href="#RfromPy" >RfromPy</a></li>
+    <li class="tab "><a data-toggle="tab" href="#PyfromR" >PyfromR</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade in active" id="max_R">
+      <pre><code class="r"># max.R
+randomvals &lt;- rnorm(75, 5, 0.5)
+par(mfrow = c(1, 2))
+hist(randomvals, xlab = &#39;Some random numbers&#39;)
+plot(randomvals, xlab = &#39;Some random numbers&#39;, ylab = &#39;value&#39;, pch = 3)
+</code></pre>
+
+    </div>
+    <div class="tab-pane fade in " id="splitstr_py">
+      <pre><code class="r"># splitstr.py
+import sys
+
+# Get the arguments passed in
+string = sys.argv[1]
+pattern = sys.argv[2]
+
+# Perform the splitting
+ans = string.split(pattern)
+
+# Join the resulting list of elements into a single newline
+# delimited string and print
+print(&#39;\n&#39;.join(ans))
+</code></pre>
+
+    </div>
+    <div class="tab-pane fade in " id="RfromPy">
+      <pre><code class="r"># calling R from Python
+import subprocess
+
+# Define command and arguments
+command = &#39;Rscript&#39;
+path2script = &#39;path/to your script/max.R&#39;
+
+# Variable number of args in a list
+args = [&#39;11&#39;, &#39;3&#39;, &#39;9&#39;, &#39;42&#39;]
+
+# Build subprocess command
+cmd = [command, path2script] + args
+
+# check_output will run the command and store to result
+x = subprocess.check_output(cmd, universal_newlines=True)
+
+print(&#39;The maximum of the numbers is:&#39;, x)
+</code></pre>
+
+    </div>
+    <div class="tab-pane fade in " id="PyfromR">
+      <pre><code class="r"># calling Python from R
+command = &quot;python&quot;
+
+# Note the single + double quotes in the string (needed if paths have spaces)
+path2script =&#39;&quot;path/to your script/splitstr.py&quot;&#39;
+
+# Build up args in a vector
+string = &quot;3523462---12413415---4577678---7967956---5456439&quot;
+pattern = &quot;---&quot;
+args = c(string, pattern)
+
+# Add path to script as first arg
+allArgs = c(path2script, args)
+
+output = system2(command, args=allArgs, stdout=TRUE)
+
+print(paste(&quot;The Substrings are:\n&quot;, output))
+</code></pre>
 
     </div>
   </div>
@@ -324,31 +391,24 @@ Executing from one of the languages by system commands or directly through comma
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>How</h2>
+    <h2>How - Command line tools - Pros&amp;Cons</h2>
   </hgroup>
   <article data-timings="">
-    <h3>Command line tools</h3>
+    <h3>Pros</h3>
 
-<table><thead>
-<tr>
-<th>Column X</th>
-<th>Column Y</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Row 1</td>
-<td>Row 1</td>
-</tr>
-<tr>
-<td>Row 2</td>
-<td>Row 2</td>
-</tr>
-</tbody></table>
+<ul>
+<li>Simplest method, so commonly the quickest</li>
+<li>Can view the intermediate outputs easily</li>
+<li>Parsers already exist for many common file formats</li>
+</ul>
 
-<p>Medium storage/Intermediate files:<br>
-      - flat files (mango solutions great post series - link!!!)<br>
-      - databases (sqlite, etc.)<br>
-      - feather format - especially for data frames</p>
+<h3>Cons</h3>
+
+<ul>
+<li>Need to agree upfront on a common schema or file format</li>
+<li>Can become cumbersome to manage intermediate outputs and paths if the pipeline grows.</li>
+<li>Reading and writing to disk can become a bottleneck if data becomes large.</li>
+</ul>
 
 <div class='source'>
   Source: <a href='http://www.mango-solutions.com/wp/2015/12/integrating-python-and-r-part-iii-an-extended-example/'>Mango-solutions posts series</a>
@@ -358,59 +418,119 @@ Executing from one of the languages by system commands or directly through comma
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="class" id="id" style="background:;">
-  <hgroup>
-    <h2>How</h2>
-  </hgroup>
-  <article data-timings="">
-    <h3>Interfacing R and Python</h3>
-
-<p><strong>Blocks</strong></p>
-
-<div class="alert alert-info">
- <p>This is an alert info block which should render in blue</p>
-</div>
-  
-
-<p><strong>Tooltips</strong></p>
-
-<p>This is to check out tooltips in bootstrap <a href="#" rel="tooltip" data-original-title="Default tooltip">you probably</a></p>
-
-<p><strong>Popover</strong></p>
-
-<p><a class="btn btn-large btn-danger" rel="popover" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A Title" id='example'>Click to toggle popover</a></p>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
 <slide class="" id="slide-12" style="background:;">
   <hgroup>
-    <h2>Put your header here</h2>
+    <h2>How - Interfacing R and Python</h2>
   </hgroup>
   <article data-timings="">
-    <p>And maybe a line of description, or a plot you want to appear above the columns</p>
+    <p><a class="btn btn-medium btn-warning" rel="popover" data-content="Windows support is weak and unstable :-(" id='example'>Warning!</a></p>
 
 <div style='float:left;width:48%;' class='centered'>
-  <h3>This will be the left header</h3>
+  <h3>R from Python</h3>
 
-<ul>
-<li>this is a list on the left</li>
-<li>second item in the list</li>
-</ul>
-
-<pre><code class="r">    randomvals&lt;-rnorm(75,5,.5)
-    par(mfrow=c(1,2))
-    hist(randomvals,xlab=&#39;Some random numbers&#39;)
-    plot(randomvals,xlab=&#39;Some random numbers&#39;,ylab=&#39;value&#39;,pch=3)
-</code></pre>
+<table><thead>
+<tr>
+<th>Packages</th>
+<th><a href="http://stackoverflow.com/questions/5630441/how-do-rpy2-pyrserve-and-pyper-compare">Comments</a></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="http://rpy2.bitbucket.org/"><em>rpy2</em></a></td>
+<td>- C-level interface<br>- direct support by pandas<br>- supports graphics (+ggplot2)<br>- <a href="http://eurekastatistics.com/installing-rpy2/">limited windows support</a></td>
+</tr>
+<tr>
+<td><a href="https://pypi.python.org/pypi/PypeR/1.1.0"><em>pyper</em></a></td>
+<td>- Python code<br>- use of pipes (on average faster)<br>- undirect support by pandas<br>- limited support for graphics<br>- documentation difficulties</td>
+</tr>
+<tr>
+<td><a href="https://pypi.python.org/pypi/pyRserve/"><em>pyrserve</em></a></td>
+<td>- Python code<br>- remote computation/through Rserve<br>- no support for data frames</td>
+</tr>
+</tbody></table>
 
 </div>
 <div style='float:right;width:48%;'>
-  <h3>This will be the right header</h3>
+  <h3>Python from R</h3>
 
-<p>you could place a descriptive image on the right</p>
+<table><thead>
+<tr>
+<th>Packages</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="https://rpython.readthedocs.io/en/latest/"><em>rPython</em></a></td>
+<td>- Java code<br>- data transportation through json<br>- no direct data frames transportation<br>- <a href="https://cran.r-project.org/web/packages/rPython/rPython.pdf">good documentation</a> (simple in use)<br>- <a href="https://github.com/cjgb/rPython-win">limited windows support</a><br>- fails with Anaconda Python installation</td>
+</tr>
+<tr>
+<td><a href="http://www.omegahat.net/RSPython/"><em>RSPython</em></a></td>
+<td>- two-sided interface<br>- no support after 2005<br>- weak windows support</td>
+</tr>
+<tr>
+<td><a href="http://gallery.rcpp.org/articles/rcpp-python/"><em>Rcpp</em></a></td>
+<td>- through C++ (<a href="http://www.boost.org/doc/libs/1_55_0/libs/python/doc/">Boost.Python</a> and <a href="http://www.rcpp.org/">Rcpp</a>)<br>- need of specific skills<br>- <a href="http://gallery.rcpp.org/articles/rcpp-python/">good example</a></td>
+</tr>
+</tbody></table>
 
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>How - Interfacing R and Python - Examples</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs" style="list-style-type: none;"> 
+    <li class="tab active"><a data-toggle="tab" href="#rpy2" >rpy2</a></li>
+    <li class="tab "><a data-toggle="tab" href="#rPython" >rPython</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade in active" id="rpy2">
+      <pre><code class="r">from rpy2.robjects import pandas2ri # loading rpy2
+from rpy2.robjects import r
+pandas2ri.activate() # activating pandas module
+df_iris_py = pandas2ri.ri2py(r[&#39;iris&#39;]) # from r data frame to pandas
+df_iris_r = pandas2ri.py2ri(df_iris_py) # from pandas to r data frame 
+plotFunc = r(&quot;&quot;&quot;
+   library(ggplot2)
+   function(df){
+   p &lt;- ggplot(iris, aes(x = Sepal.Length, y = Petal.Length)) 
+          + geom_point(aes(color = Species))
+   print(p)
+   ggsave(&#39;iris_plot.pdf&#39;, plot = p, width = 6.5, height = 5.5)
+ }
+&quot;&quot;&quot;) # ggplot2 example
+gr = importr(&#39;grDevices&#39;) # necessary to shut the graph off
+plotFunc(df_iris_r)
+gr.dev_off()
+</code></pre>
+
+    </div>
+    <div class="tab-pane fade in " id="rPython">
+      <pre><code class="r">library(rPython)
+
+# data frames transportation
+python.assign(&#39;iris_py_dict&#39;, iris) # r data.frame to python dict
+python.exec(&#39;import pandas as pd&#39;)
+# convert dict to pd data frame
+python.exec(&#39;iris_py_df = pd.DataFrame(iris_py_dict)&#39;)
+# convert pd df back to dict
+python.exec(&#39;iris_py_dict = iris_py_df.to_dict(outtype = &quot;list&quot;)&#39;) 
+# dict to r list to data frame
+iris_df &lt;- data.frame(python.get(&#39;py_dict2&#39;)) 
+
+# python get/python_load
+python.load(&quot;hello_world.py&quot;) ## hello_world = &#39;hello&#39; + &#39;world&#39; +&#39;!&#39;
+greeting &lt;- python.get(&quot;hello_world&quot;)
+print(greeting) # class character
+</code></pre>
+
+    </div>
+  </div>
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -418,18 +538,95 @@ Executing from one of the languages by system commands or directly through comma
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>How</h2>
+    <h2>How - Interfacing R and Python - Pros&amp;Cons</h2>
   </hgroup>
   <article data-timings="">
-    <h3>Extended example</h3>
+    <h3>Pros</h3>
 
-<p>Downloading data - inlation in IT countries (yearly for post-crisis period) - from WB (Python) and plotting beautiful radial boxplot in R (weather ... in my scripts)</p>
+<ul>
+<li>Most flexible and interactive method</li>
+<li>Fast in-memory objects transportation for the most packages</li>
+</ul>
+
+<h3>Cons</h3>
+
+<ul>
+<li><strong>Need to read tutorials!</strong></li>
+<li>Objects types coercion and objects transportation specifics</li>
+<li>Transporting large data could also be difficult</li>
+<li>Weak windows support (could be overcome for the most packages)</li>
+<li>Often unstable between versions</li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="thank-you-slide segue nobackground" id="slide-14" style="background:#F0F1EE;">
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>How - Other approaches</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Notebooks</p>
+
+<ul>
+<li><a href="http://jupyter.org/">Jupiter Notebook</a><br>
+ &gt; <a href="http://blog.revolutionanalytics.com/2015/09/using-r-with-jupyter-notebooks.html">IRKernel</a><br>
+ &gt; <a href="https://github.com/michhar/rpy2_sample_notebooks/blob/master/TestingRpy2.ipynb">R magic + rpy2</a><br></li>
+<li><a href="http://beakernotebook.com/">Beaker Notebook</a><br></li>
+</ul></li>
+<li><p>Platforms</p>
+
+<ul>
+<li><a href="https://sense.io/">Sense</a> --&gt; <a href="http://blog.sense.io/sense-joins-cloudera/">Cloudera</a></li>
+<li><a href="http://blog.revolutionanalytics.com/2015/05/call-r-and-python-from-base-sas.html">SAS</a></li>
+<li><a href="http://www.h2o.ai/product/">H2O</a><br>
+ &gt; <a href="https://pypi.python.org/pypi/h2o">connector for python</a><br>
+ &gt; <a href="https://cran.r-project.org/web/packages/h2o/h2o.pdf">connector for R</a><br></li>
+<li class='..</li>'></ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>How - Extended example</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src = "https://pub.beakernotebook.com/publications/bca2b1e2-7202-11e6-899f-7b213714358c?fullscreen=true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Conclusions</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><strong><em>possible and necessary to combine R and Python!</em></strong></li>
+<li>carefully choose combination methods based on your project goals<br>
+
+<ul>
+<li><strong>command line tools</strong>: simple, clear and definitely would work.<br>
+Good for the first step!<br>
+Attention to feather!</li>
+<li><strong>interfacing R and Python</strong>: faster, flexible and more interactive.<br>
+Have specific lexicon, need to read tutorial, more complex configuration.<br>
+Use proven and stable libraries: rpy2 and rPython.</li>
+<li><strong>other methods</strong>. Attention to Beaker Notebook!</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="thank-you-slide segue nobackground" id="slide-18" style="background:#F0F1EE;">
   <aside class="gdbar right"><img src="assets/img/logo2.jpg"></aside>
   <article class="flexbox vleft auto-fadein">
     <h2>Thank you for your attention</h2>
@@ -456,7 +653,7 @@ Executing from one of the languages by system commands or directly through comma
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Why'>
+        data-slide=2 title='РџРѕС‡РµРјСѓ'>
          2
       </a>
     </li>
@@ -504,32 +701,56 @@ Executing from one of the languages by system commands or directly through comma
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='How'>
+        data-slide=10 title='How - Command line tools - Examples'>
          10
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='How'>
+        data-slide=11 title='How - Command line tools - Pros&amp;Cons'>
          11
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='Put your header here'>
+        data-slide=12 title='How - Interfacing R and Python'>
          12
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=13 title='How'>
+        data-slide=13 title='How - Interfacing R and Python - Examples'>
          13
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=14 title='Thank you for your attention'>
+        data-slide=14 title='How - Interfacing R and Python - Pros&amp;Cons'>
          14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='How - Other approaches'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='How - Extended example'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Conclusions'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Thank you for your attention'>
+         18
       </a>
     </li>
   </ul>

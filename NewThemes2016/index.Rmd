@@ -223,7 +223,7 @@ ggpairs(mtcars[, 3:7],upper = list(continuous = "density", combo = "box"), lower
 # pkgs <- c("slidify", "slidifyLibraries", "rCharts")
 # devtools::install_github(pkgs, "ramnathv", ref = "dev")
 # library(devtools)
-# install_github('ramnathv/slidify', ref = github_pull(425))
+# devtools::install_github('ramnathv/slidify', ref = github_pull(425))
 # setInternet2(TRUE)
 require(rCharts)
 haireye = as.data.frame(HairEyeColor)
