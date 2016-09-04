@@ -1,8 +1,8 @@
 ---
-title       : Connecting R and Python
-subtitle    : Why, when and how
+title       : Совмещение R и Python
+subtitle    : Почему, когда и как
 author      : Irina Goloshchapova
-job         : Expert, CMASF
+job         : Эксперт Центра макроэкономического анализа и краткосрочного прогнозирования
 logo        : logo2.jpg
 framework   : io2012      # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
