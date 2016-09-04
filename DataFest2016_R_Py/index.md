@@ -242,7 +242,7 @@ print(paste("The Substrings are:\n", output))
   
 ## Как - Interfacing R and Python
   
-<a class="btn btn-medium btn-warning" rel="popover" data-content="Поддержка ОС Windows крайне слабая и неустойчивая :-(" id='example'>Внимание!</a>
+<a class="btn btn-medium btn-warning" rel="popover" data-content="Поддержка Windows ОС крайне слабая и неустойчивая :-(" id='example'>Внимание!</a>
 
 *** =left
 ### R из Python
