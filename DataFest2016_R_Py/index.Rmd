@@ -1,8 +1,8 @@
 ---
-title       : Совмещение R и Python
-subtitle    : Почему, когда и как
+title       : Connecting R and Python
+subtitle    : Why, when and where
 author      : Irina Goloshchapova
-job         : Эксперт ЦМАКП
+job         : Expert CMASF
 logo        : logo2.jpg
 framework   : io2012      # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
@@ -42,71 +42,71 @@ bigfont {
 
 ## Почему
 
-1. **_Синергия результата_**  
-     совмещение мощных и стабильных библиотек R и Python
-2. **_Скорость и удобство_**  
-    комбинация имеющихся навыков программирования на R и Python
+1. **_Синергия преимуществ_**.  
+     Совмещение мощных и стабильных библиотек R и Python
+2. **_Скорость и удобство_**.  
+    Комбинация имеющихся навыков программирования на R и Python
 
 --- .class #id 
 
-## Why
-### Synergy of inference  
-*Connecting powerful libs of two languages for specific themes of research*:
-- **_Python_**. General programming language:  
-       - Web scraping and crawling (beautifulsoup, Scrapy, etc.) 
-       - Connections to databases and other applications (sqlachemy, etc.) 
-       - Classical machine learning algorithms (scikit-learn, pandas, numpy, scipy, etc.)  
-- **_R_**. Extensive collection of packages:  
-   - Statistical analysis options. Especially in area of specific disciplines' models and tests - for example, time series analysis tools (trading, econometrics and other) 
-   - Interactive graphics/dashboards/applications. (htmlwidgets, flexdashboard, shiny, slidify, etc.)
-   - Wide tools for data munging (data.table, big.data.table, dplyr, etc.)
+## Почему
+### Синергия преимуществ 
+*Комбинация мощных и стабильных библиотек R и Python для отдельных задач исследования*:
+- **_Python_** - язык общего назначения:  
+       - Web scraping и crawling (beautifulsoup, Scrapy, и т.д.) 
+       - Работа с базами данных и различными приложениями (sqlachemy, и т.д.) 
+       - Реализация классических алгоритмов машинного обучения (scikit-learn, pandas, numpy, scipy, и т.д.)  
+- **_R_** - обширная коллекция библиотек:  
+   - Продвинутый статистический анализ. В особенности, для ряда специфических областей науки и практики (анализ временных рядов: trading, эконометрика, и т.д. и т.п.) 
+   - Интерактивная графика/dashboards/приложения (htmlwidgets, flexdashboard, shiny, slidify, и т.д.)
+   - Быстрые и эффективные библиотеки для сложных манипуляций с данными (data.table, big.data.table, dplyr, и т.д.)
 
 --- .class #id 
 
-## Why
-### Speed and comfort  
+## Почему
+### Скорость и удобство 
 
-*Combination of various skills in both languages*:
+*Комбинация имеющихся навыков программирования на R и Python*:
 
-- different language knowledge degree of your colleagues  
+- различный уровень знаний каждого языка у сотрудников в рамках проекта  
 
-- your relevant experience in specific tasks  
+- ваш опыт решения конкретных задач на разных языках
 
-- syntactic preferences
+- предпочтения по синтаксису
 
 --- &vcenter bg:#F0F1EE
 
-<bigfont>When</bigfont>
+<bigfont>Когда</bigfont>
 
 --- .class #id 
 
-## When
+## Когда
 
-1. Exploratory data analysis
-2. Prototyping
-3. Wide range of scientific and practical themes in the project
-4. Very ~~close deadline~~ short time limit for the task
+1. Исследовательский анализ данных
+2. Прототипирование
+3. Проект/набор задач с широким охватом по различным научно-практическим областям
+4. Очень ~~близкий дедлайн~~ короткие сроки на выполнение задачи
 
 --- &vcenter bg:#F0F1EE
 
-<bigfont>How</bigfont>
+<bigfont>Как</bigfont>
 
 --- .class #id 
 
-## How
+## Как
 
-1. **_Command line tools_**. Command line + medium storage as an 'air gap' combination.  
+1. **_Command line tools_**. Исполнение скриптов с помощью командной строки + промежуточное хранение файлов на диске (filling air gap)  
       
-2. **_Interfacing_**. Running two persistent R and Python processes at once, and passing data (in-memory) between them. 
+2. **_Interfacing R and Python_**. Одновременный запуск процессов R и Python и передача данных между ними в оперативной памяти (in-memory). 
 
-3. **_Other ways_**.
+3. **_Другие подходы_**.
 
 --- {class: class, tpl: tabs}
 
-## How - Command line tools
+## Как - Command line tools
 
 *** {class: active, id: cmd}
-Command line scripting
+Исполнение скриптов с помощью командной строки
 
 `<cmd_to_run> <path_to_script> <any_additional_args>`  
   
@@ -118,7 +118,7 @@ Command           |Python                                       | R
 
 *** {id: air_gap}
 
-Medium storage strategy
+Промежуточное хранение файлов
 
 Medium Storage  | Python     | R
 ----------------|------------|----------
@@ -140,7 +140,7 @@ for numpy objects | numpy      | [RcppCNPy](http://dirk.eddelbuettel.com/code/rc
 
 --- {class: class, tpl: tabs}
 
-## How - Command line tools - Examples
+## Как - Command line tools - Примеры
 
 *** {class: active, id: max_R}
 
@@ -216,32 +216,32 @@ print(paste("The Substrings are:\n", output))
 
 --- .class #id 
 
-## How - Command line tools - Pros&Cons
+## Как - Command line tools - Pros&Cons
 
-### Pros
+### Преимущества
 
-- Simplest method, so commonly the quickest
-- Can view the intermediate outputs easily
-- Parsers already exist for many common file formats
+- Простой метод и поэтому часто наиболее быстрый
+- Просто увидеть промежуточный результат
+- Возможность чтения/записи большинства форматов реализована в обоих языках
 
-### Cons
+### Недостатки
 
-- Need to agree upfront on a common schema or file format
-- Can become cumbersome to manage intermediate outputs and paths if the pipeline grows
-- Reading and writing to disk can become a bottleneck if data becomes large
+- Конструкция быстро становится громоздкой и сложноуправляемой по мере роста числа переходов между языками
+- Как правило, существенная потеря в скорости записи/чтения файлов при росте объема данных
+- Необходимость заранее согласовывать схему взаимодействия между языками и формат промежуточных файлов
 
 <div class='source'>
-  Source: <a href='http://www.mango-solutions.com/wp/2015/12/integrating-python-and-r-part-iii-an-extended-example/'>Mango-solutions posts series</a>
+  Source: <a href='http://www.mango-solutions.com/wp/2015/12/integrating-python-and-r-part-iii-an-extended-example/'>Блог Mango-solutions</a>
 </div>
 
 --- &twocol
   
-## How - Interfacing R and Python
+## Как - Interfacing R and Python
   
-<a class="btn btn-medium btn-warning" rel="popover" data-content="Windows support is weak and unstable :-(" id='example'>Warning!</a>
+<a class="btn btn-medium btn-warning" rel="popover" data-content="Поддержка ОС Windows крайне слабая и неустойчивая :-(" id='example'>Внимание!</a>
 
 *** =left
-### R from Python
+### R из Python
 
 Packages   | [Comments](http://stackoverflow.com/questions/5630441/how-do-rpy2-pyrserve-and-pyper-compare)
 -----------|------------
@@ -250,7 +250,7 @@ Packages   | [Comments](http://stackoverflow.com/questions/5630441/how-do-rpy2-p
 [*pyrserve*](https://pypi.python.org/pypi/pyRserve/) | - Python code<br>- remote computation/through Rserve<br>- no support for data frames
 
 *** =right
-### Python from R
+### Python из R
 
 Packages   | Comments
 -----------|------------
@@ -260,7 +260,7 @@ Packages   | Comments
 
 --- {class: class, tpl: tabs}
 
-## How - Interfacing R and Python - Examples
+## Как - Interfacing R and Python - Примеры
 
 *** {class: active, id: rpy2}
 
@@ -307,32 +307,32 @@ print(greeting) # class character
 
 --- .class #id 
 
-## How - Interfacing R and Python - Pros&Cons
+## Как - Interfacing R and Python - Pros&Cons
 
-### Pros
+### Преимущества
 
-- Flexible and interactive method
-- Fast in-memory objects transportation
+- Гибкий и интерактивный способ
+- Быстрая взаимная передача объектов в рамках оперативной памяти
 
-### Cons
+### Недостатки
 
-- **Need to read tutorials!**
-- Objects compatibility and transportation specifics
-- Transporting large amounts of data could also be difficult
-- Weak windows support
-- Unstable between versions
+- **Необходимость читать туториалы!**
+- Тонкости в сопоставимости объектов и способах их передачи между языками
+- Передача больших объемов данных также может быть затруднительной
+- Слабая поддержка Windows ОС
+- Нестабильность между версиями библиотек
 
 --- .class #id 
 
-## How - Other approaches
+## Как - Другие подходы
 
-- Notebooks
+- Ноутбуки
    - [Jupiter Notebook](http://jupyter.org/)  
          > [IRKernel](http://blog.revolutionanalytics.com/2015/09/using-r-with-jupyter-notebooks.html)  
          > [R magic + rpy2](https://github.com/michhar/rpy2_sample_notebooks/blob/master/TestingRpy2.ipynb)  
    - [Beaker Notebook](http://beakernotebook.com/)  
 
-- Platforms
+- Платформы
    - [Sense](https://sense.io/) --> [Cloudera](http://blog.sense.io/sense-joins-cloudera/)
    - [SAS](http://blog.revolutionanalytics.com/2015/05/call-r-and-python-from-base-sas.html)
    - [H2O](http://www.h2o.ai/product/)  
@@ -342,24 +342,24 @@ print(greeting) # class character
 
 --- .class #id 
 
-## How - Extended example  
+## Как - Расширенный пример 
 
 <iframe src = "https://pub.beakernotebook.com/publications/bca2b1e2-7202-11e6-899f-7b213714358c?fullscreen=true"> </iframe>
 
 --- .class #id 
 
-## Conclusions
+## Выводы
 
-- <strong><em>It's possible and great to combine R and Python!</em></strong>  
-  Especially for exploratory data analysis and prototyping
-- carefully choose combination methods based on your project goals  
-     - <strong>command line tools</strong>: simple, clear and definitely would work.  
-       Good for the first step!  
-       Pay attention to feather!
-     - <strong>interfacing R and Python</strong>: faster, flexible and more interactive.  
-       Have specific lexicon, need to read tutorial, more complex configuration.  
-       Use proven and stable libraries: rpy2 and rPython.
-     - <strong>other methods</strong>. Pay attention to Beaker Notebook!
+- <strong><em>Можнои нужно совмещать R и Python!</em></strong>  
+  В особенности в целях исследовательского анализа данных и прототипирования
+- Внимательно относитесь к выбору способов совмещения R и Python, основываясь на целях проекта:  
+     - <strong>command line tools</strong>: просто, понятно и обязательно будет работать.  
+       Отличный способ для начала!  
+       Внимание к формату feather!
+     - <strong>interfacing R and Python</strong>: быстро, гибко и временами интерактивно.  
+       Специфический синтаксис - необходимо читать туториалы, более сложная настройка.  
+       Используйте проверенные и стабильные библиотеки: rpy2 и rPython.
+     - <strong>другие подходы</strong>. Внимание к проекту Beaker Notebook!
 
 --- {
  tpl: thankyou,
@@ -369,6 +369,6 @@ print(greeting) # class character
  bg: "#F0F1EE"
 }
 
-## Thank you for your attention
+## Спасибо за внимание
 
-For more information you can contact me.
+Контакты для связи.
