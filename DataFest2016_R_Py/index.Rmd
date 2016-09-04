@@ -338,7 +338,7 @@ print(greeting) # class character
    - [H2O](http://www.h2o.ai/product/)  
          > [connector for python](https://pypi.python.org/pypi/h2o)  
          > [connector for R](https://cran.r-project.org/web/packages/h2o/h2o.pdf)  
-   - ...
+   - и т.д.
 
 --- .class #id 
 
