@@ -36,16 +36,16 @@ bigfont {
 
 </style>
 
-<bigfont>Why</bigfont>
+<bigfont>Почему</bigfont>
 
 --- .class #id 
 
-## Why
+## Почему
 
-1. **_Synergy of inference_**  
-     connecting powerful libs of two languages for specific themes of research 
-2. **_Speed and comfort_**  
-    combination of various skills in both languages
+1. **_Синергия результата_**  
+     совмещение мощных и стабильных библиотек R и Python
+2. **_Скорость и удобство_**  
+    комбинация имеющихся навыков программирования на R и Python
 
 --- .class #id 
 
