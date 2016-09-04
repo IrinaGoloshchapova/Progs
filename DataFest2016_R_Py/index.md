@@ -42,22 +42,24 @@ bigfont {
 
 ## Why
 
-1. **_Synergy of inference_**: connecting powerful libs of two languages for specific themes of research 
-2. **_Speed and comfort_**: combination of various skills in both languages
+1. **_Synergy of inference_**  
+     connecting powerful libs of two languages for specific themes of research 
+2. **_Speed and comfort_**  
+    combination of various skills in both languages
 
 --- .class #id 
 
 ## Why
 ### Synergy of inference  
 *Connecting powerful libs of two languages for specific themes of research*:
-- **_Python_**. General programming language. In favor by programmers. (More stable and logical, and on average faster):  
+- **_Python_**. General programming language:  
        - Web scraping and crawling (beautifulsoup, Scrapy, etc.) 
        - Connections to databases and other applications (sqlachemy, etc.) 
        - Classical machine learning algorithms (scikit-learn, pandas, numpy, scipy, etc.)  
-- **_R_**. Extensive collection of packages. (You are just have an idea about package but someone already done a package about that):  
+- **_R_**. Extensive collection of packages:  
    - Statistical analysis options. Especially in area of specific disciplines' models and tests - for example, time series analysis tools (trading, econometrics and other) 
-   - Interactive graphics/dashboards/applications. (htmlwidgets, flexdashboard, shiny, slidify and a lot a lot more etc., less code and great result + integration with js = great possibilities of relatively fast and deep customization)
-   - Wide tools for data munging (dplyr, data.table, big.data.table, etc.)
+   - Interactive graphics/dashboards/applications. (htmlwidgets, flexdashboard, shiny, slidify, etc.)
+   - Wide tools for data munging (data.table, big.data.table, dplyr, etc.)
 
 --- .class #id 
 
@@ -70,7 +72,7 @@ bigfont {
 
 - your relevant experience in specific tasks  
 
-- syntactic preferences for concrete tasks
+- syntactic preferences
 
 --- &vcenter bg:#F0F1EE
 
@@ -82,8 +84,8 @@ bigfont {
 
 1. Exploratory data analysis
 2. Prototyping
-3. Wide by scientific or practical areas project
-4. Very ~~close deadline~~ short time limits for the task
+3. Wide range of scientific and practical themes in the project
+4. Very ~~close deadline~~ short time limit for the task
 
 --- &vcenter bg:#F0F1EE
 
@@ -94,9 +96,8 @@ bigfont {
 ## How
 
 1. **_Command line tools_**. Command line + medium storage as an 'air gap' combination.  
-   Executing from one of the languages by system commands or directly through command line.  
       
-2. **_Interfacing_**. Running two persistent R and Python processes at once, and passing data between them. 
+2. **_Interfacing_**. Running two persistent R and Python processes at once, and passing data (in-memory) between them. 
 
 3. **_Other ways_**.
 
@@ -116,6 +117,7 @@ Command           |Python                                       | R
 
 
 *** {id: air_gap}
+
 Medium storage strategy
 
 Medium Storage  | Python     | R
@@ -129,6 +131,8 @@ SQL             | sqlalchemy, pandasql<br>pyodbc | sqlite, RODBS,<br>RMySQL, sql
 NoSQL           | PyMongo    | RMongo
 *Feather*       | =======    | =======
 for data frames | feather    | feather
+*Numpy*         | =======    | =======
+for numpy objects | numpy      | [RcppCNPy](http://dirk.eddelbuettel.com/code/rcpp.cnpy.html)
 
 *** {id: benchmark}
 
@@ -227,8 +231,8 @@ print(paste("The Substrings are:\n", output))
 ### Cons
 
 - Need to agree upfront on a common schema or file format
-- Can become cumbersome to manage intermediate outputs and paths if the pipeline grows.
-- Reading and writing to disk can become a bottleneck if data becomes large.
+- Can become cumbersome to manage intermediate outputs and paths if the pipeline grows
+- Reading and writing to disk can become a bottleneck if data becomes large
 
 <div class='source'>
   Source: <a href='http://www.mango-solutions.com/wp/2015/12/integrating-python-and-r-part-iii-an-extended-example/'>Mango-solutions posts series</a>
@@ -313,16 +317,16 @@ print(greeting) # class character
 
 ### Pros
 
-- Most flexible and interactive method
-- Fast in-memory objects transportation for the most packages
+- Flexible and interactive method
+- Fast in-memory objects transportation
 
 ### Cons
 
 - **Need to read tutorials!**
-- Objects types coercion and objects transportation specifics
-- Transporting large data could also be difficult
-- Weak windows support (could be overcome for the most packages)
-- Often unstable between versions
+- Objects compatibility and transportation specifics
+- Transporting large amounts of data could also be difficult
+- Weak windows support
+- Unstable between versions
 
 --- .class #id 
 
@@ -352,15 +356,16 @@ print(greeting) # class character
 
 ## Conclusions
 
-- <strong><em>possible and necessary to combine R and Python!</em></strong>
+- <strong><em>It's possible and great to combine R and Python!</em></strong>  
+  Especially for exploratory data analysis and prototyping
 - carefully choose combination methods based on your project goals  
      - <strong>command line tools</strong>: simple, clear and definitely would work.  
        Good for the first step!  
-       Attention to feather!
+       Pay attention to feather!
      - <strong>interfacing R and Python</strong>: faster, flexible and more interactive.  
        Have specific lexicon, need to read tutorial, more complex configuration.  
        Use proven and stable libraries: rpy2 and rPython.
-     - <strong>other methods</strong>. Attention to Beaker Notebook!
+     - <strong>other methods</strong>. Pay attention to Beaker Notebook!
 
 --- {
  tpl: thankyou,

@@ -86,8 +86,10 @@ bigfont {
   </hgroup>
   <article data-timings="">
     <ol>
-<li><strong><em>Synergy of inference</em></strong>: connecting powerful libs of two languages for specific themes of research </li>
-<li><strong><em>Speed and comfort</em></strong>: combination of various skills in both languages</li>
+<li><strong><em>Synergy of inference</em></strong><br>
+ connecting powerful libs of two languages for specific themes of research </li>
+<li><strong><em>Speed and comfort</em></strong><br>
+combination of various skills in both languages</li>
 </ol>
 
   </article>
@@ -104,19 +106,19 @@ bigfont {
 <p><em>Connecting powerful libs of two languages for specific themes of research</em>:</p>
 
 <ul>
-<li><strong><em>Python</em></strong>. General programming language. In favor by programmers. (More stable and logical, and on average faster):<br>
+<li><strong><em>Python</em></strong>. General programming language:<br>
 
 <ul>
 <li>Web scraping and crawling (beautifulsoup, Scrapy, etc.) </li>
 <li>Connections to databases and other applications (sqlachemy, etc.) </li>
 <li>Classical machine learning algorithms (scikit-learn, pandas, numpy, scipy, etc.)<br></li>
 </ul></li>
-<li><strong><em>R</em></strong>. Extensive collection of packages. (You are just have an idea about package but someone already done a package about that):<br>
+<li><strong><em>R</em></strong>. Extensive collection of packages:<br>
 
 <ul>
 <li>Statistical analysis options. Especially in area of specific disciplines&#39; models and tests - for example, time series analysis tools (trading, econometrics and other) </li>
-<li>Interactive graphics/dashboards/applications. (htmlwidgets, flexdashboard, shiny, slidify and a lot a lot more etc., less code and great result + integration with js = great possibilities of relatively fast and deep customization)</li>
-<li>Wide tools for data munging (dplyr, data.table, big.data.table, etc.)</li>
+<li>Interactive graphics/dashboards/applications. (htmlwidgets, flexdashboard, shiny, slidify, etc.)</li>
+<li>Wide tools for data munging (data.table, big.data.table, dplyr, etc.)</li>
 </ul></li>
 </ul>
 
@@ -136,7 +138,7 @@ bigfont {
 <ul>
 <li><p>different language knowledge degree of your colleagues  </p></li>
 <li><p>your relevant experience in specific tasks  </p></li>
-<li><p>syntactic preferences for concrete tasks</p></li>
+<li><p>syntactic preferences</p></li>
 </ul>
 
   </article>
@@ -161,8 +163,8 @@ bigfont {
     <ol>
 <li>Exploratory data analysis</li>
 <li>Prototyping</li>
-<li>Wide by scientific or practical areas project</li>
-<li>Very <del>close deadline</del> short time limits for the task</li>
+<li>Wide range of scientific and practical themes in the project</li>
+<li>Very <del>close deadline</del> short time limit for the task</li>
 </ol>
 
   </article>
@@ -185,9 +187,8 @@ bigfont {
   </hgroup>
   <article data-timings="">
     <ol>
-<li><p><strong><em>Command line tools</em></strong>. Command line + medium storage as an &#39;air gap&#39; combination.<br>
-Executing from one of the languages by system commands or directly through command line.  </p></li>
-<li><p><strong><em>Interfacing</em></strong>. Running two persistent R and Python processes at once, and passing data between them. </p></li>
+<li><p><strong><em>Command line tools</em></strong>. Command line + medium storage as an &#39;air gap&#39; combination.  </p></li>
+<li><p><strong><em>Interfacing</em></strong>. Running two persistent R and Python processes at once, and passing data (in-memory) between them. </p></li>
 <li><p><strong><em>Other ways</em></strong>.</p></li>
 </ol>
 
@@ -287,6 +288,16 @@ Executing from one of the languages by system commands or directly through comma
 <td>for data frames</td>
 <td>feather</td>
 <td>feather</td>
+</tr>
+<tr>
+<td><em>Numpy</em></td>
+<td>=======</td>
+<td>=======</td>
+</tr>
+<tr>
+<td>for numpy objects</td>
+<td>numpy</td>
+<td><a href="http://dirk.eddelbuettel.com/code/rcpp.cnpy.html">RcppCNPy</a></td>
 </tr>
 </tbody></table>
 
@@ -406,8 +417,8 @@ print(paste(&quot;The Substrings are:\n&quot;, output))
 
 <ul>
 <li>Need to agree upfront on a common schema or file format</li>
-<li>Can become cumbersome to manage intermediate outputs and paths if the pipeline grows.</li>
-<li>Reading and writing to disk can become a bottleneck if data becomes large.</li>
+<li>Can become cumbersome to manage intermediate outputs and paths if the pipeline grows</li>
+<li>Reading and writing to disk can become a bottleneck if data becomes large</li>
 </ul>
 
 <div class='source'>
@@ -544,18 +555,18 @@ print(greeting) # class character
     <h3>Pros</h3>
 
 <ul>
-<li>Most flexible and interactive method</li>
-<li>Fast in-memory objects transportation for the most packages</li>
+<li>Flexible and interactive method</li>
+<li>Fast in-memory objects transportation</li>
 </ul>
 
 <h3>Cons</h3>
 
 <ul>
 <li><strong>Need to read tutorials!</strong></li>
-<li>Objects types coercion and objects transportation specifics</li>
-<li>Transporting large data could also be difficult</li>
-<li>Weak windows support (could be overcome for the most packages)</li>
-<li>Often unstable between versions</li>
+<li>Objects compatibility and transportation specifics</li>
+<li>Transporting large amounts of data could also be difficult</li>
+<li>Weak windows support</li>
+<li>Unstable between versions</li>
 </ul>
 
   </article>
@@ -608,17 +619,18 @@ print(greeting) # class character
   </hgroup>
   <article data-timings="">
     <ul>
-<li><strong><em>possible and necessary to combine R and Python!</em></strong></li>
+<li><strong><em>It&#39;s possible and great to combine R and Python!</em></strong><br>
+Especially for exploratory data analysis and prototyping</li>
 <li>carefully choose combination methods based on your project goals<br>
 
 <ul>
 <li><strong>command line tools</strong>: simple, clear and definitely would work.<br>
 Good for the first step!<br>
-Attention to feather!</li>
+Pay attention to feather!</li>
 <li><strong>interfacing R and Python</strong>: faster, flexible and more interactive.<br>
 Have specific lexicon, need to read tutorial, more complex configuration.<br>
 Use proven and stable libraries: rpy2 and rPython.</li>
-<li><strong>other methods</strong>. Attention to Beaker Notebook!</li>
+<li><strong>other methods</strong>. Pay attention to Beaker Notebook!</li>
 </ul></li>
 </ul>
 
