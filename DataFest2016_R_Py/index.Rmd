@@ -1,8 +1,8 @@
 ---
-title       : РЎРѕРІРјРµС‰РµРЅРёРµ R Рё Python
-subtitle    : РџРѕС‡РµРјСѓ, РєРѕРіРґР° Рё РєР°Рє
-author      : Irina Goloshchapova
-job         : Р­РєСЃРїРµСЂС‚ Р¦РµРЅС‚СЂР° РјР°РєСЂРѕСЌРєРѕРЅРѕРјРёС‡РµСЃРєРѕРіРѕ Р°РЅР°Р»РёР·Р° Рё РєСЂР°С‚РєРѕСЃСЂРѕС‡РЅРѕРіРѕ РїСЂРѕРіРЅРѕР·РёСЂРѕРІР°РЅРёСЏ
+title       : Совмещение R и Python
+subtitle    : Почему, когда и как
+author      : Ирина Голощапова
+job         : Эксперт ЦМАКП
 logo        : logo2.jpg
 framework   : io2012      # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
