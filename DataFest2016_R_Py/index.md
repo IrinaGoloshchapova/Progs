@@ -247,20 +247,20 @@ print(paste("The Substrings are:\n", output))
 *** =left
 ### R из Python
 
-Packages   | [Comments](http://stackoverflow.com/questions/5630441/how-do-rpy2-pyrserve-and-pyper-compare)
+Библиотеки   | [Комментарии](http://stackoverflow.com/questions/5630441/how-do-rpy2-pyrserve-and-pyper-compare)
 -----------|------------
-[*rpy2*](http://rpy2.bitbucket.org/)    | - C-level interface<br>- direct support by pandas<br>- supports graphics (+ggplot2)<br>- [limited windows support](http://eurekastatistics.com/installing-rpy2/)  
-[*pyper*](https://pypi.python.org/pypi/PypeR/1.1.0)  | - Python code<br>- use of pipes (on average faster)<br>- undirect support by pandas<br>- limited support for graphics<br>- documentation difficulties
-[*pyrserve*](https://pypi.python.org/pypi/pyRserve/) | - Python code<br>- remote computation/through Rserve<br>- no support for data frames
+[*rpy2*](http://rpy2.bitbucket.org/)    | - C-level interface<br>- прямая поддержка pandas<br>- поддержка графики (+ggplot2)<br>- [слабая поддержка Windows](http://eurekastatistics.com/installing-rpy2/)  
+[*pyper*](https://pypi.python.org/pypi/PypeR/1.1.0)  | - Python code<br>- use of pipes (в среднем быстрее)<br>- косвенная поддержка pandas<br>- ограниченная поддержка графики<br>- плохая документация
+[*pyrserve*](https://pypi.python.org/pypi/pyRserve/) | - Python code<br>- удаленные вычисления/через Rserve<br>- нет поддержки для data frames
 
 *** =right
 ### Python из R
 
-Packages   | Comments
+Библиотеки   | Комментарии
 -----------|------------
-[*rPython*](https://rpython.readthedocs.io/en/latest/)    | - Java code<br>- data transportation through json<br>- no direct data frames transportation<br>- [good documentation](https://cran.r-project.org/web/packages/rPython/rPython.pdf) (simple in use)<br>- [limited windows support](https://github.com/cjgb/rPython-win)<br>- fails with Anaconda Python installation
-[*RSPython*](http://www.omegahat.net/RSPython/) | - two-sided interface<br>- no support after 2005<br>- weak windows support
-[*Rcpp*](http://gallery.rcpp.org/articles/rcpp-python/) | - through C++ ([Boost.Python](http://www.boost.org/doc/libs/1_55_0/libs/python/doc/) and [Rcpp](http://www.rcpp.org/))<br>- need of specific skills<br>- [good example](http://gallery.rcpp.org/articles/rcpp-python/)
+[*rPython*](https://rpython.readthedocs.io/en/latest/)    | - Java code<br>- передача данных через json<br>- непрямая передача data frames<br>- [хорошая документация](https://cran.r-project.org/web/packages/rPython/rPython.pdf) (просто в использовании)<br>- [слабая поддержка Windows](https://github.com/cjgb/rPython-win)<br>- часто падает при Anaconda Python
+[*RSPython*](http://www.omegahat.net/RSPython/) | - двухсторонний интерфейс<br>- нет поддержки после 2005<br>- слабая поддержка Windows
+[*Rcpp*](http://gallery.rcpp.org/articles/rcpp-python/) | - с помощью C++ ([Boost.Python](http://www.boost.org/doc/libs/1_55_0/libs/python/doc/) и [Rcpp](http://www.rcpp.org/))<br>- нужны специфические навыки<br>- [хороший пример](http://gallery.rcpp.org/articles/rcpp-python/)
 
 --- {class: class, tpl: tabs}
 

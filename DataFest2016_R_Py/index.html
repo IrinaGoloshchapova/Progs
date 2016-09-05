@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Connecting R and Python</title>
+  <title>Совмещение R и Python</title>
   <meta charset="utf-8">
-  <meta name="description" content="Connecting R and Python">
-  <meta name="author" content="Irina Goloshchapova">
+  <meta name="description" content="Совмещение R и Python">
+  <meta name="author" content="Ирина Голощапова">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -36,9 +36,9 @@
     <img src="assets/img/logo2.jpg">
   </aside>
   <hgroup class="auto-fadein">
-    <h1>Connecting R and Python</h1>
-    <h2>Why, when and where</h2>
-    <p>Irina Goloshchapova<br/>Expert CMASF</p>
+    <h1>Совмещение R и Python</h1>
+    <h2>Почему, когда и как</h2>
+    <p>Ирина Голощапова<br/>Эксперт Центра макроэкономического анализа и краткосрочного прогнозирования</p>
   </hgroup>
   <article></article>  
 </slide>
@@ -441,21 +441,21 @@ print(paste(&quot;The Substrings are:\n&quot;, output))
 
 <table><thead>
 <tr>
-<th>Packages</th>
-<th><a href="http://stackoverflow.com/questions/5630441/how-do-rpy2-pyrserve-and-pyper-compare">Comments</a></th>
+<th>Библиотеки</th>
+<th><a href="http://stackoverflow.com/questions/5630441/how-do-rpy2-pyrserve-and-pyper-compare">Комментарии</a></th>
 </tr>
 </thead><tbody>
 <tr>
 <td><a href="http://rpy2.bitbucket.org/"><em>rpy2</em></a></td>
-<td>- C-level interface<br>- direct support by pandas<br>- supports graphics (+ggplot2)<br>- <a href="http://eurekastatistics.com/installing-rpy2/">limited windows support</a></td>
+<td>- C-level interface<br>- прямая поддержка pandas<br>- поддержка графики (+ggplot2)<br>- <a href="http://eurekastatistics.com/installing-rpy2/">слабая поддержка Windows</a></td>
 </tr>
 <tr>
 <td><a href="https://pypi.python.org/pypi/PypeR/1.1.0"><em>pyper</em></a></td>
-<td>- Python code<br>- use of pipes (on average faster)<br>- undirect support by pandas<br>- limited support for graphics<br>- documentation difficulties</td>
+<td>- Python code<br>- use of pipes (в среднем быстрее)<br>- косвенная поддержка pandas<br>- ограниченная поддержка графики<br>- плохая документация</td>
 </tr>
 <tr>
 <td><a href="https://pypi.python.org/pypi/pyRserve/"><em>pyrserve</em></a></td>
-<td>- Python code<br>- remote computation/through Rserve<br>- no support for data frames</td>
+<td>- Python code<br>- удаленные вычисления/через Rserve<br>- нет поддержки для data frames</td>
 </tr>
 </tbody></table>
 
@@ -465,21 +465,21 @@ print(paste(&quot;The Substrings are:\n&quot;, output))
 
 <table><thead>
 <tr>
-<th>Packages</th>
-<th>Comments</th>
+<th>Библиотеки</th>
+<th>Комментарии</th>
 </tr>
 </thead><tbody>
 <tr>
 <td><a href="https://rpython.readthedocs.io/en/latest/"><em>rPython</em></a></td>
-<td>- Java code<br>- data transportation through json<br>- no direct data frames transportation<br>- <a href="https://cran.r-project.org/web/packages/rPython/rPython.pdf">good documentation</a> (simple in use)<br>- <a href="https://github.com/cjgb/rPython-win">limited windows support</a><br>- fails with Anaconda Python installation</td>
+<td>- Java code<br>- передача данных через json<br>- непрямая передача data frames<br>- <a href="https://cran.r-project.org/web/packages/rPython/rPython.pdf">хорошая документация</a> (просто в использовании)<br>- <a href="https://github.com/cjgb/rPython-win">слабая поддержка Windows</a><br>- часто падает при Anaconda Python</td>
 </tr>
 <tr>
 <td><a href="http://www.omegahat.net/RSPython/"><em>RSPython</em></a></td>
-<td>- two-sided interface<br>- no support after 2005<br>- weak windows support</td>
+<td>- двухсторонний интерфейс<br>- нет поддержки после 2005<br>- слабая поддержка Windows</td>
 </tr>
 <tr>
 <td><a href="http://gallery.rcpp.org/articles/rcpp-python/"><em>Rcpp</em></a></td>
-<td>- through C++ (<a href="http://www.boost.org/doc/libs/1_55_0/libs/python/doc/">Boost.Python</a> and <a href="http://www.rcpp.org/">Rcpp</a>)<br>- need of specific skills<br>- <a href="http://gallery.rcpp.org/articles/rcpp-python/">good example</a></td>
+<td>- с помощью C++ (<a href="http://www.boost.org/doc/libs/1_55_0/libs/python/doc/">Boost.Python</a> и <a href="http://www.rcpp.org/">Rcpp</a>)<br>- нужны специфические навыки<br>- <a href="http://gallery.rcpp.org/articles/rcpp-python/">хороший пример</a></td>
 </tr>
 </tbody></table>
 
