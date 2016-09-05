@@ -247,14 +247,14 @@ print(paste("The Substrings are:\n", output))
 -----------|------------
 [*rpy2*](http://rpy2.bitbucket.org/)    | - C-level interface<br>- прямая поддержка pandas<br>- поддержка графики (+ggplot2)<br>- [слабая поддержка Windows](http://eurekastatistics.com/installing-rpy2/)  
 [*pyper*](https://pypi.python.org/pypi/PypeR/1.1.0)  | - Python code<br>- use of pipes (в среднем быстрее)<br>- косвенная поддержка pandas<br>- ограниченная поддержка графики<br>- плохая документация
-[*pyrserve*](https://pypi.python.org/pypi/pyRserve/) | - Python code<br>- удаленные вычисления/через Rserve<br>- нет поддержки для data frames
+[*pyrserve*](https://pypi.python.org/pypi/pyRserve/) | - Python code<br>- удаленные вычисления/Rserve<br>- нет поддержки для таблиц
 
 *** =right
 ### Python из R
 
 Библиотеки   | Комментарии
 -----------|------------
-[*rPython*](https://rpython.readthedocs.io/en/latest/)    | - Java code<br>- передача данных через json<br>- непрямая передача data frames<br>- [хорошая документация](https://cran.r-project.org/web/packages/rPython/rPython.pdf) (просто в использовании)<br>- [слабая поддержка Windows](https://github.com/cjgb/rPython-win)<br>- часто падает при Anaconda Python
+[*rPython*](https://rpython.readthedocs.io/en/latest/)    | - Java code<br>- передача данных через json<br>- непрямая передача таблиц<br>- [хорошая документация](https://cran.r-project.org/web/packages/rPython/rPython.pdf) (просто в использовании)<br>- [слабая поддержка Windows](https://github.com/cjgb/rPython-win)
 [*RSPython*](http://www.omegahat.net/RSPython/) | - двухсторонний интерфейс<br>- нет поддержки после 2005<br>- слабая поддержка Windows
 [*Rcpp*](http://gallery.rcpp.org/articles/rcpp-python/) | - с помощью C++ ([Boost.Python](http://www.boost.org/doc/libs/1_55_0/libs/python/doc/) и [Rcpp](http://www.rcpp.org/))<br>- нужны специфические навыки<br>- [хороший пример](http://gallery.rcpp.org/articles/rcpp-python/)
 
