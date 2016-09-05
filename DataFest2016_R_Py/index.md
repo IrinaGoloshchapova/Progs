@@ -260,7 +260,7 @@ print(paste("The Substrings are:\n", output))
 -----------|------------
 [*rPython*](https://rpython.readthedocs.io/en/latest/)    | - Java code<br>- передача данных через json<br>- непрямая передача таблиц<br>- [хорошая документация](https://cran.r-project.org/web/packages/rPython/rPython.pdf) (просто в использовании)<br>- [слабая поддержка Windows](https://github.com/cjgb/rPython-win)
 [*RSPython*](http://www.omegahat.net/RSPython/) | - двухсторонний интерфейс<br>- нет поддержки после 2005<br>- слабая поддержка Windows
-[*Rcpp*](http://gallery.rcpp.org/articles/rcpp-python/) | - с помощью C++ ([Boost.Python](http://www.boost.org/doc/libs/1_55_0/libs/python/doc/) и [Rcpp](http://www.rcpp.org/))<br>- нужны специфические навыки<br>- [хороший пример](http://gallery.rcpp.org/articles/rcpp-python/)
+[*Rcpp*](http://gallery.rcpp.org/articles/rcpp-python/) | - через C++ ([Boost.Python](http://www.boost.org/doc/libs/1_55_0/libs/python/doc/) и [Rcpp](http://www.rcpp.org/))<br>- нужны специфические навыки<br>- [хороший пример](http://gallery.rcpp.org/articles/rcpp-python/)
 
 --- {class: class, tpl: tabs}
 
