@@ -1,0 +1,750 @@
+---
+title       : ���������� R � Python
+subtitle    : ������, ����� � ���
+author      : ����� ����������
+job         : ������� ������ ������������������� ������� � �������������� ���������������
+logo        : logo2.jpg
+framework   : io2012      # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+widgets     : [bootstrap]    
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+--- &vcenter bg:#F0F1EE
+
+<style>
+em {
+  font-style: italic
+}
+
+strong {
+  font-weight: bold;
+}
+
+sup {
+  top: -0.5em;
+  vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+bigfont {
+  font-size: 70px;
+  font-weight: bold;
+  color: #535E43;
+}
+
+</style>
+
+<bigfont>Почему</bigfont>
+
+--- .class #id 
+
+## Почему
+
+1. **_Синергия преимуществ_**  
+     Совмещение мощных и стабильных библиотек R и Python
+2. **_Скорость и удобство_**  
+    Комбинация имеющихся навыков программирования на R и Python
+
+--- .class #id 
+
+## Почему
+### Синергия преимуществ 
+*Комбинация мощных и стабильных библиотек R и Python*:
+- **_Python_** - язык общего назначения:  
+       - Web scraping и crawling (beautifulsoup, Scrapy, и т.д.) 
+       - Работа с базами данных и приложениями (sqlachemy, и т.д.) 
+       - Реализация классических ML алгоритмов (scikit-learn, pandas, numpy, scipy, и т.д.)  
+- **_R_** - обширная коллекция библиотек:  
+   - Продвинутый статистический анализ. В особенности, для ряда специфических областей науки и практики (анализ врем. рядов и многое другое) 
+   - Интерактивная графика/dashboards/приложения (htmlwidgets, flexdashboard, shiny, slidify, и т.д.)
+   - Быстрые и эффективные библиотеки для сложных манипуляций с данными (data.table, big.data.table, dplyr, и т.д.)
+
+--- .class #id 
+
+## Почему
+### Скорость и удобство  
+
+*Комбинация имеющихся навыков программирования на R и Python*:
+
+- различный уровень знаний каждого языка у сотрудников в рамках проекта  
+
+- ваш опыт решения конкретных задач на разных языках
+
+- предпочтения по синтаксису
+
+--- &vcenter bg:#F0F1EE
+
+<bigfont>Когда</bigfont>
+
+--- .class #id 
+
+## Когда
+
+1. Исследовательский анализ данных
+2. Прототипирование
+3. Проект/набор задач с широким охватом по различным научно-практическим областям
+4. Очень ~~близкий дедлайн~~ короткие сроки на выполнение задачи
+
+--- &vcenter bg:#F0F1EE
+
+<bigfont>Как</bigfont>
+
+--- .class #id 
+
+## Как
+
+1. **_Command line tools_**. Исполнение скриптов с помощью командной строки + промежуточное хранение файлов на диске (filling air gap)  
+      
+2. **_Interfacing R and Python_**. Одновременный запуск процессов R и Python и передача данных между ними в оперативной памяти (in-memory) 
+
+3. **_Другие подходы_**
+
+--- {class: class, tpl: tabs}
+
+## Как - Command line tools
+
+*** {class: active, id: cmd}
+Исполнение скриптов с помощью командной строки
+
+`<cmd_to_run> <path_to_script> <any_additional_args>`  
+  
+Command           |Python                                       | R
+------------------|---------------------------------------------|--------------------------------------------
+*Cmd*   |`python path/to/myscript.py arg1 arg2 arg3`  | `Rscript path/to/myscript.R arg1 arg2 arg3` 
+*Fetch arguments* |`#character vector of args`<br>`myArgs <- commandArgs(trailingOnly = TRUE)` | `#list, 1st el. - file executed`<br>`import sys` <br>`my_args = sys.argv`
+
+
+*** {id: air_gap}
+
+Промежуточное хранение файлов
+
+Medium Storage  | Python     | R
+----------------|------------|----------
+*Flat files*    | =======    | =======
+csv             | csv        | readr, data.table
+json            | json       | jsonlite
+yaml            | PyYAML     | yaml
+*Databases*     | =======    | =======
+SQL             | sqlalchemy, pandasql<br>pyodbc | sqlite, RODBS,<br>RMySQL, sqldf, dplyr
+NoSQL           | PyMongo    | RMongo
+*Feather*       | =======    | =======
+for data frames | feather    | feather
+*Numpy*         | =======    | =======
+for numpy objects | numpy      | RcppCNPy
+
+*** {id: benchmark}
+
+![bench_feather](assets/img/Mbchm_r_py.png)
+
+--- {class: class, tpl: tabs}
+
+## Как - Command line tools
+
+*** {id: cmd}
+Исполнение скриптов с помощью командной строки
+
+`<cmd_to_run> <path_to_script> <any_additional_args>`  
+  
+Command           |Python                                       | R
+------------------|---------------------------------------------|--------------------------------------------
+*Cmd*   |`python path/to/myscript.py arg1 arg2 arg3`  | `Rscript path/to/myscript.R arg1 arg2 arg3` 
+*Fetch arguments* |`#character vector of args`<br>`myArgs <- commandArgs(trailingOnly = TRUE)` | `#list, 1st el. - file executed`<br>`import sys` <br>`my_args = sys.argv`
+
+
+*** {class: active, id: air_gap}
+
+Промежуточное хранение файлов
+
+Medium Storage  | Python     | R
+----------------|------------|----------
+*Flat files*    | =======    | =======
+csv             | csv        | readr, data.table
+json            | json       | jsonlite
+yaml            | PyYAML     | yaml
+*Databases*     | =======    | =======
+SQL             | sqlalchemy, pandasql<br>pyodbc | sqlite, RODBS,<br>RMySQL, sqldf, dplyr
+NoSQL           | PyMongo    | RMongo
+*Feather*       | =======    | =======
+for data frames | feather    | feather
+*Numpy*         | =======    | =======
+for numpy objects | numpy      | RcppCNPy
+
+*** {id: benchmark}
+
+![bench_feather](assets/img/Mbchm_r_py.png)
+
+--- {class: class, tpl: tabs}
+
+## Как - Command line tools
+
+*** {id: cmd}
+Исполнение скриптов с помощью командной строки
+
+`<cmd_to_run> <path_to_script> <any_additional_args>`  
+  
+Command           |Python                                       | R
+------------------|---------------------------------------------|--------------------------------------------
+*Cmd*   |`python path/to/myscript.py arg1 arg2 arg3`  | `Rscript path/to/myscript.R arg1 arg2 arg3` 
+*Fetch arguments* |`#character vector of args`<br>`myArgs <- commandArgs(trailingOnly = TRUE)` | `#list, 1st el. - file executed`<br>`import sys` <br>`my_args = sys.argv`
+
+
+*** {id: air_gap}
+
+Промежуточное хранение файлов
+
+Medium Storage  | Python     | R
+----------------|------------|----------
+*Flat files*    | =======    | =======
+csv             | csv        | readr, data.table
+json            | json       | jsonlite
+yaml            | PyYAML     | yaml
+*Databases*     | =======    | =======
+SQL             | sqlalchemy, pandasql<br>pyodbc | sqlite, RODBS,<br>RMySQL, sqldf, dplyr
+NoSQL           | PyMongo    | RMongo
+*Feather*       | =======    | =======
+for data frames | feather    | feather
+*Numpy*         | =======    | =======
+for numpy objects | numpy      | RcppCNPy
+
+*** {class: active, id: benchmark}
+
+![bench_feather](assets/img/Mbchm_r_py.png)
+
+--- {class: class, tpl: tabs}
+
+## Как - Command line tools - Примеры
+
+*** {class: active, id: max_R}
+
+```{r max_r, echo = TRUE, eval = FALSE}
+# max.R
+randomvals <- rnorm(75, 5, 0.5)
+par(mfrow = c(1, 2))
+hist(randomvals, xlab = 'Some random numbers')
+plot(randomvals, xlab = 'Some random numbers', ylab = 'value', pch = 3)
+```
+
+*** {id: splitstr_py}
+
+```{r splitstr_py, echo = TRUE, eval = FALSE}
+# splitstr.py
+import sys
+
+# Get the arguments passed in
+string = sys.argv[1]
+pattern = sys.argv[2]
+
+# Perform the splitting
+ans = string.split(pattern)
+
+# Join the resulting list of elements into a single newline
+# delimited string and print
+print('\n'.join(ans))
+```
+
+*** {id: RfromPy}
+
+```{r r_from_py, echo = TRUE, eval = FALSE}
+# calling R from Python
+import subprocess
+
+# Define command and arguments
+command = 'Rscript'
+path2script = 'path/to your script/max.R'
+
+# Variable number of args in a list
+args = ['11', '3', '9', '42']
+
+# Build subprocess command
+cmd = [command, path2script] + args
+
+# check_output will run the command and store to result
+x = subprocess.check_output(cmd, universal_newlines=True)
+
+print('The maximum of the numbers is:', x)
+```
+
+*** {id: PyfromR}
+
+```{r py_from_r, echo = TRUE, eval = FALSE}
+# calling Python from R
+command = "python"
+
+# Note the single + double quotes in the string (needed if paths have spaces)
+path2script ='"path/to your script/splitstr.py"'
+
+# Build up args in a vector
+string = "3523462---12413415---4577678---7967956---5456439"
+pattern = "---"
+args = c(string, pattern)
+
+# Add path to script as first arg
+allArgs = c(path2script, args)
+
+output = system2(command, args=allArgs, stdout=TRUE)
+
+print(paste("The Substrings are:\n", output))
+```
+
+--- {class: class, tpl: tabs}
+
+## Как - Command line tools - Примеры
+
+*** {id: max_R}
+
+```{r max_r_2, echo = TRUE, eval = FALSE}
+# max.R
+randomvals <- rnorm(75, 5, 0.5)
+par(mfrow = c(1, 2))
+hist(randomvals, xlab = 'Some random numbers')
+plot(randomvals, xlab = 'Some random numbers', ylab = 'value', pch = 3)
+```
+
+*** {class: active, id: splitstr_py}
+
+```{r splitstr_py_2, echo = TRUE, eval = FALSE}
+# splitstr.py
+import sys
+
+# Get the arguments passed in
+string = sys.argv[1]
+pattern = sys.argv[2]
+
+# Perform the splitting
+ans = string.split(pattern)
+
+# Join the resulting list of elements into a single newline
+# delimited string and print
+print('\n'.join(ans))
+```
+
+*** {id: RfromPy}
+
+```{r r_from_py_2, echo = TRUE, eval = FALSE}
+# calling R from Python
+import subprocess
+
+# Define command and arguments
+command = 'Rscript'
+path2script = 'path/to your script/max.R'
+
+# Variable number of args in a list
+args = ['11', '3', '9', '42']
+
+# Build subprocess command
+cmd = [command, path2script] + args
+
+# check_output will run the command and store to result
+x = subprocess.check_output(cmd, universal_newlines=True)
+
+print('The maximum of the numbers is:', x)
+```
+
+*** {id: PyfromR}
+
+```{r py_from_r_2, echo = TRUE, eval = FALSE}
+# calling Python from R
+command = "python"
+
+# Note the single + double quotes in the string (needed if paths have spaces)
+path2script ='"path/to your script/splitstr.py"'
+
+# Build up args in a vector
+string = "3523462---12413415---4577678---7967956---5456439"
+pattern = "---"
+args = c(string, pattern)
+
+# Add path to script as first arg
+allArgs = c(path2script, args)
+
+output = system2(command, args=allArgs, stdout=TRUE)
+
+print(paste("The Substrings are:\n", output))
+```
+
+--- {class: class, tpl: tabs}
+
+## Как - Command line tools - Примеры
+
+*** {id: max_R}
+
+```{r max_r_3, echo = TRUE, eval = FALSE}
+# max.R
+randomvals <- rnorm(75, 5, 0.5)
+par(mfrow = c(1, 2))
+hist(randomvals, xlab = 'Some random numbers')
+plot(randomvals, xlab = 'Some random numbers', ylab = 'value', pch = 3)
+```
+
+*** {id: splitstr_py}
+
+```{r splitstr_py_3, echo = TRUE, eval = FALSE}
+# splitstr.py
+import sys
+
+# Get the arguments passed in
+string = sys.argv[1]
+pattern = sys.argv[2]
+
+# Perform the splitting
+ans = string.split(pattern)
+
+# Join the resulting list of elements into a single newline
+# delimited string and print
+print('\n'.join(ans))
+```
+
+*** {class: active, id: RfromPy}
+
+```{r r_from_py_3, echo = TRUE, eval = FALSE}
+# calling R from Python
+import subprocess
+
+# Define command and arguments
+command = 'Rscript'
+path2script = 'path/to your script/max.R'
+
+# Variable number of args in a list
+args = ['11', '3', '9', '42']
+
+# Build subprocess command
+cmd = [command, path2script] + args
+
+# check_output will run the command and store to result
+x = subprocess.check_output(cmd, universal_newlines=True)
+
+print('The maximum of the numbers is:', x)
+```
+
+*** {id: PyfromR}
+
+```{r py_from_r_3, echo = TRUE, eval = FALSE}
+# calling Python from R
+command = "python"
+
+# Note the single + double quotes in the string (needed if paths have spaces)
+path2script ='"path/to your script/splitstr.py"'
+
+# Build up args in a vector
+string = "3523462---12413415---4577678---7967956---5456439"
+pattern = "---"
+args = c(string, pattern)
+
+# Add path to script as first arg
+allArgs = c(path2script, args)
+
+output = system2(command, args=allArgs, stdout=TRUE)
+
+print(paste("The Substrings are:\n", output))
+```
+
+--- {class: class, tpl: tabs}
+
+## Как - Command line tools - Примеры
+
+*** {id: max_R}
+
+```{r max_r_4, echo = TRUE, eval = FALSE}
+# max.R
+randomvals <- rnorm(75, 5, 0.5)
+par(mfrow = c(1, 2))
+hist(randomvals, xlab = 'Some random numbers')
+plot(randomvals, xlab = 'Some random numbers', ylab = 'value', pch = 3)
+```
+
+*** {id: splitstr_py}
+
+```{r splitstr_py_4, echo = TRUE, eval = FALSE}
+# splitstr.py
+import sys
+
+# Get the arguments passed in
+string = sys.argv[1]
+pattern = sys.argv[2]
+
+# Perform the splitting
+ans = string.split(pattern)
+
+# Join the resulting list of elements into a single newline
+# delimited string and print
+print('\n'.join(ans))
+```
+
+*** {id: RfromPy}
+
+```{r r_from_py_4, echo = TRUE, eval = FALSE}
+# calling R from Python
+import subprocess
+
+# Define command and arguments
+command = 'Rscript'
+path2script = 'path/to your script/max.R'
+
+# Variable number of args in a list
+args = ['11', '3', '9', '42']
+
+# Build subprocess command
+cmd = [command, path2script] + args
+
+# check_output will run the command and store to result
+x = subprocess.check_output(cmd, universal_newlines=True)
+
+print('The maximum of the numbers is:', x)
+```
+
+*** {class: active, id: PyfromR}
+
+```{r py_from_r_4, echo = TRUE, eval = FALSE}
+# calling Python from R
+command = "python"
+
+# Note the single + double quotes in the string (needed if paths have spaces)
+path2script ='"path/to your script/splitstr.py"'
+
+# Build up args in a vector
+string = "3523462---12413415---4577678---7967956---5456439"
+pattern = "---"
+args = c(string, pattern)
+
+# Add path to script as first arg
+allArgs = c(path2script, args)
+
+output = system2(command, args=allArgs, stdout=TRUE)
+
+print(paste("The Substrings are:\n", output))
+```
+
+--- .class #id 
+
+## Как - Command line tools - Pros&Cons
+
+### Преимущества
+
+- Простой метод и поэтому часто наиболее быстрый
+- Просто увидеть промежуточный результат
+- Возможность чтения/записи большинства форматов реализована в обоих языках
+
+### Недостатки
+
+- Конструкция быстро становится громоздкой и сложноуправляемой по мере роста числа переходов между языками
+- Как правило, существенная потеря в скорости записи/чтения файлов при росте объема данных
+- Необходимость заранее согласовывать схему взаимодействия между языками и формат промежуточных файлов
+
+<div class='source'>
+  Source: Блог Mango-solutions
+</div>
+
+--- &twocol
+  
+## Как - Interfacing R and Python
+
+*** =left
+### R из Python
+
+Библиотеки   | Комментарии
+-----------|------------
+rpy2  | - C-level interface<br>- прямая поддержка pandas<br>- поддержка графики (+ggplot2)<br>- слабая поддержка Windows
+pyper  | - Python code<br>- use of pipes (в среднем быстрее)<br>- косвенная поддержка pandas<br>- ограниченная поддержка графики<br>- плохая документация
+pyrserve | - Python code<br>- удаленные вычисления/Rserve<br>- нет поддержки для таблиц
+
+*** =right
+### Python из R
+
+Библиотеки   | Комментарии
+-----------|------------
+rPython  | - Java code<br>- передача данных через json<br>- непрямая передача таблиц<br>- хорошая документация<br>- слабая поддержка Windows<br>- часто падает с Anaconda
+RSPython | - двухсторонний интерфейс<br>- нет поддержки после 2005<br>- слабая поддержка Windows
+Rcpp | - через C++ (Boost.Python и Rcpp)<br>- нужны специфические навыки<br>- хороший пример
+
+--- {class: class, tpl: tabs}
+
+## Как - Interfacing R and Python - Примеры
+
+*** {class: active, id: rpy2}
+
+```{r rpy2, echo = TRUE, eval = FALSE}
+from rpy2.robjects import pandas2ri # loading rpy2
+from rpy2.robjects import r
+pandas2ri.activate() # activating pandas module
+df_iris_py = pandas2ri.ri2py(r['iris']) # from r data frame to pandas
+df_iris_r = pandas2ri.py2ri(df_iris_py) # from pandas to r data frame 
+plotFunc = r("""
+   library(ggplot2)
+   function(df){
+   p <- ggplot(iris, aes(x = Sepal.Length, y = Petal.Length)) 
+          + geom_point(aes(color = Species))
+   print(p)
+   ggsave('iris_plot.pdf', plot = p, width = 6.5, height = 5.5)
+ }
+""") # ggplot2 example
+gr = importr('grDevices') # necessary to shut the graph off
+plotFunc(df_iris_r)
+gr.dev_off()
+```
+
+*** {id: rPython}
+
+```{r rpython, echo = TRUE, eval = FALSE}
+library(rPython)
+
+# data frames transportation
+python.assign('iris_py_dict', iris) # r data.frame to python dict
+python.exec('import pandas as pd')
+# convert dict to pd data frame
+python.exec('iris_py_df = pd.DataFrame(iris_py_dict)')
+# convert pd df back to dict
+python.exec('iris_py_dict = iris_py_df.to_dict(outtype = "list")') 
+# dict to r list to data frame
+iris_df <- data.frame(python.get('py_dict2')) 
+
+# python get/python_load
+python.load("hello_world.py") ## hello_world = 'hello' + 'world' +'!'
+greeting <- python.get("hello_world")
+print(greeting) # class character
+```
+
+--- {class: class, tpl: tabs}
+
+## Как - Interfacing R and Python - Примеры
+
+*** {id: rpy2}
+
+```{r rpy2_2, echo = TRUE, eval = FALSE}
+from rpy2.robjects import pandas2ri # loading rpy2
+from rpy2.robjects import r
+pandas2ri.activate() # activating pandas module
+df_iris_py = pandas2ri.ri2py(r['iris']) # from r data frame to pandas
+df_iris_r = pandas2ri.py2ri(df_iris_py) # from pandas to r data frame 
+plotFunc = r("""
+   library(ggplot2)
+   function(df){
+   p <- ggplot(iris, aes(x = Sepal.Length, y = Petal.Length)) 
+          + geom_point(aes(color = Species))
+   print(p)
+   ggsave('iris_plot.pdf', plot = p, width = 6.5, height = 5.5)
+ }
+""") # ggplot2 example
+gr = importr('grDevices') # necessary to shut the graph off
+plotFunc(df_iris_r)
+gr.dev_off()
+```
+
+*** {class: active, id: rPython}
+
+```{r rpython_2, echo = TRUE, eval = FALSE}
+library(rPython)
+
+# data frames transportation
+python.assign('iris_py_dict', iris) # r data.frame to python dict
+python.exec('import pandas as pd')
+# convert dict to pd data frame
+python.exec('iris_py_df = pd.DataFrame(iris_py_dict)')
+# convert pd df back to dict
+python.exec('iris_py_dict = iris_py_df.to_dict(outtype = "list")') 
+# dict to r list to data frame
+iris_df <- data.frame(python.get('py_dict2')) 
+
+# python get/python_load
+python.load("hello_world.py") ## hello_world = 'hello' + 'world' +'!'
+greeting <- python.get("hello_world")
+print(greeting) # class character
+```
+
+--- .class #id 
+
+## Как - Interfacing R and Python - Pros&Cons
+
+### Преимущества
+
+- Гибкий и интерактивный способ
+- Быстрая взаимная передача объектов в рамках оперативной памяти
+
+### Недостатки
+
+- **Необходимость читать туториалы!**
+- Тонкости в сопоставимости объектов и способах их передачи между языками
+- Передача больших объемов данных также может быть затруднительной
+- Слабая поддержка Windows ОС
+- Нестабильность между версиями библиотек
+
+--- .class #id 
+
+## Как - Другие подходы
+
+- Ноутбуки
+   - Jupiter Notebook 
+         > IRKernel
+         > R magic + rpy2 
+   - Beaker Notebook 
+
+- Платформы
+   - Sense
+   - SAS
+   - H2O
+   - и т.д.
+
+--- .class #id 
+
+## Как - Расширенный пример 
+
+<iframe src = "https://pub.beakernotebook.com/publications/bca2b1e2-7202-11e6-899f-7b213714358c?fullscreen=true"> </iframe>
+
+--- .class #id 
+
+## Как - Расширенный пример 
+
+<iframe src = "https://pub.beakernotebook.com/publications/bca2b1e2-7202-11e6-899f-7b213714358c?fullscreen=true"> </iframe>
+
+--- .class #id 
+
+## Как - Расширенный пример 
+
+<iframe src = "https://pub.beakernotebook.com/publications/bca2b1e2-7202-11e6-899f-7b213714358c?fullscreen=true"> </iframe>
+
+--- .class #id 
+
+## Как - Расширенный пример 
+
+<iframe src = "https://pub.beakernotebook.com/publications/bca2b1e2-7202-11e6-899f-7b213714358c?fullscreen=true"> </iframe>
+
+--- .class #id 
+
+## Как - Расширенный пример 
+
+<iframe src = "https://pub.beakernotebook.com/publications/bca2b1e2-7202-11e6-899f-7b213714358c?fullscreen=true"> </iframe>
+
+--- .class #id 
+
+## Как - Расширенный пример 
+
+<iframe src = "https://pub.beakernotebook.com/publications/bca2b1e2-7202-11e6-899f-7b213714358c?fullscreen=true"> </iframe>
+
+--- .class #id 
+
+## Выводы
+
+- <strong><em>Можно и нужно совмещать R и Python!</em></strong>  
+  В особенности в целях исследовательского анализа данных и прототипирования
+- Внимательно относитесь к выбору способов совмещения, основываясь на целях проекта:  
+     - Command line tools: просто, понятно и обязательно будет работать.  
+       Отличный способ для начала!  
+       Внимание к формату feather!
+     - Interfacing R and Python: быстро, гибко и временами интерактивно.  
+       Специфический синтаксис - необходимо читать туториалы, более сложная настройка.  
+       Используйте проверенные и стабильные библиотеки: rpy2 и rPython.
+     - Другие подходы: Внимание к проекту Beaker Notebook!
+
+--- {
+ tpl: thankyou,
+ bg: "#F0F1EE"
+}
+
+## Спасибо за внимание!
+
+Контакты для связи
+
+mail: igoloshchapova (at) forecast.ru  
+github: irinagoloshchapova  
+repo: Progs/DataFest2016_R_Py

@@ -123,7 +123,7 @@ Command           |Python                                       | R
 Medium Storage  | Python     | R
 ----------------|------------|----------
 *Flat files*    | =======    | =======
-csv             | csv        | readr, data.table
+csv             | csv, pandas        | readr, data.table
 json            | json       | jsonlite
 yaml            | PyYAML     | yaml
 *Databases*     | =======    | =======
