@@ -89,11 +89,9 @@ Open Data Science</p>
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use</h2>
+    <h2>How to use: R Packages</h2>
 
-<h3>R Packages</h3>
-
-<p>Firstly: <a href="http://bfy.tw/AJQ6">Google</a></p>
+<p>Firstly: <a href="http://bfy.tw/AJQ6">Google it!</a></p>
 
 <p><img src="assets/img/lazy_cat.gif" alt="cat_lazy_google"></p>
 
@@ -102,9 +100,7 @@ Open Data Science</p>
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use</h2>
-
-<h3>R Packages</h3>
+    <h2>How to use: R Packages</h2>
 
 <ul>
 <li><p><strong>World Bank</strong>: <a href="https://github.com/vincentarelbundock/WDI">WDI</a>, <a href="https://github.com/GIST-ORNL/wbstats">wbstats</a>  </p></li>
@@ -116,11 +112,9 @@ Open Data Science</p>
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use</h2>
+    <h2>How to use: R Packages</h2>
 
-<h3>R Packages</h3>
-
-<h4>Key principles</h4>
+<h3>Key principles</h3>
 
 <ul>
 <li><p><strong>Read materials and choose package</strong>: CRAN, <em>GitHub</em>  </p></li>
@@ -134,11 +128,26 @@ Open Data Science</p>
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use</h2>
+    <h2>How to use: R Packages</h2>
 
-<h3>R Packages</h3>
+<h3>Prerequisites</h3>
 
-<h4>Example: World Bank</h4>
+<pre><code class="r">install.packages(&#39;devtools&#39;)
+install.packages(&#39;tidyverse&#39;)
+devtools::install_github(&quot;vincentarelbundock/WDI&quot;)
+devtools::install_github(&quot;GIST-ORNL/wbstats&quot;)
+devtools::install_github(&#39;mingjerli/IMFData&#39;)
+devtools::install_github(&#39;christophergandrud/imfr&#39;)
+</code></pre>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use: R Packages</h2>
+
+<h3>Example: World Bank</h3>
 
 <p><strong>Read materials and choose package</strong></p>
 
@@ -153,18 +162,16 @@ Open Data Science</p>
 
 <h3>Example: World Bank</h3>
 
-<iframe src='http://github.com/GIST-ORNL/wbstats' width = '960px' height = '600px'></iframe>
+<iframe src='https://cran.r-project.org/web/packages/wbstats/vignettes/Using_the_wbstats_package.html' width = '960px' height = '600px'></iframe>
 
     <aside class='notes'>
       
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use</h2>
+    <h2>How to use: R Packages</h2>
 
-<h3>R Packages</h3>
-
-<h4>Example: World Bank</h4>
+<h3>Example: World Bank</h3>
 
 <p><strong>Undestand searching and downloading structure in the chosen package</strong>  </p>
 
@@ -182,11 +189,9 @@ Open Data Science</p>
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use</h2>
+    <h2>How to use: R Packages</h2>
 
-<h3>R Packages</h3>
-
-<h4>Example: World Bank</h4>
+<h3>Example: World Bank</h3>
 
 <p><strong>Try simple example</strong>  </p>
 
@@ -205,11 +210,9 @@ ggplot(oil_data, aes(x = date_ct, y = value, colour = indicator)) + geom_line(si
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use</h2>
+    <h2>How to use: R Packages</h2>
 
-<h3>R Packages</h3>
-
-<h4>Example: World Bank</h4>
+<h3>Example: World Bank</h3>
 
 <p><strong>Download what do you need</strong>  </p>
 
@@ -241,15 +244,142 @@ g
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use</h2>
+    <h2>How to use: R Packages</h2>
 
-<h3>R Packages</h3>
+<h3>Example: World Bank</h3>
 
-<h4>Example: World Bank</h4>
-
-<p><strong>Download what do you need</strong> </p>
+<p><strong>Visualize results</strong> </p>
 
 <p><img src="assets/img/wbstats_inflation.png" alt="inflation_wb_results"></p>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use: R Packages</h2>
+
+<h3>Example: International Monetary Fund</h3>
+
+<p><strong>Read materials and choose package</strong></p>
+
+<p><a href="https://github.com/mingjerli/IMFData">IMFData</a> <strong><em>or</em></strong> <a href="https://github.com/christophergandrud/imfr">imfr</a></p>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use: R Packages</h2>
+
+<h3>Example: International Monetary Fund</h3>
+
+<iframe src='https://cran.r-project.org/web/packages/IMFData/README.html' width = '960px' height = '600px'></iframe>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use: R Packages</h2>
+
+<h3>Example: International Monetary Fund</h3>
+
+<p><strong>Undestand searching and downloading structure in the chosen package</strong>  </p>
+
+<ul>
+<li><p>install package  </p></li>
+<li><p>choose database ID</p></li>
+<li><p>define database dimensions and their codes</p></li>
+<li><p>search needed indicators codes  </p></li>
+<li><p>define sample of countries  </p></li>
+<li><p>define period of time  </p></li>
+<li><p>define final data format  </p></li>
+<li><p>download</p></li>
+</ul>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use: R Packages</h2>
+
+<h3>Example: International Monetary Fund</h3>
+
+<p><strong>Try simple example</strong>  </p>
+
+<pre><code class="r">library(IMFData)
+
+databaseID &lt;- &quot;IFS&quot;
+startdate = &quot;2001-01-01&quot;
+enddate = &quot;2016-12-31&quot;
+checkquery = FALSE
+
+## Germany, Norminal GDP in Euros, Norminal GDP in National Currency
+queryfilter &lt;- list(CL_FREQ = &quot;&quot;, CL_AREA_IFS = &quot;GR&quot;, CL_INDICATOR_IFS = c(&quot;NGDP_EUR&quot;, 
+    &quot;NGDP_XDC&quot;))
+
+GR.NGDP.query &lt;- CompactDataMethod(databaseID, queryfilter, startdate, enddate, 
+    checkquery)
+
+GR.NGDP.query$Obs[[1]][1:5, ]
+#   @TIME_PERIOD @OBS_VALUE
+# 1      2001-Q1    35.2366
+# 2      2001-Q2    36.7264
+# 3      2001-Q3    39.8428
+# 4      2001-Q4    40.3881
+# 5      2002-Q1    37.4971
+</code></pre>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use: R Packages</h2>
+
+<h3>Example: International Monetary Fund</h3>
+
+<p><strong>Download what do you need</strong>  </p>
+
+<pre><code class="r">library(IMFData)
+library(ggplot2)
+
+availableDB$DatabaseID
+# FSI
+# &quot;Financial Soundness Indicators (FSI)&quot; 
+FSI.available.codes &lt;- DataStructureMethod(&quot;FSI&quot;)
+names(FSI.available.codes)
+# [1] &quot;CL_FREQ&quot;          &quot;CL_AREA_FSI&quot;      &quot;CL_INDICATOR_FSI&quot;
+
+CodeSearch(FSI.available.codes, &quot;CL_INDICATOR_FSI&quot;, &quot;stability&quot;)
+CodeSearch(FSI.available.codes, &quot;CL_INDICATOR_FSI&quot;, &quot;Debt&quot;)
+# FSHG_PT
+# Financial Soundness Indicators, Encouraged Set, Households, Household Debt to Gross Domestic Product (GDP), Percent
+
+databaseID &lt;- &quot;FSI&quot;
+startdate = &quot;2000-01-01&quot;
+enddate = &quot;2016-12-31&quot;
+checkquery = FALSE
+
+queryfilter &lt;- list(CL_FREQ = &quot;&quot;, CL_AREA_FSI = &quot;RU&quot;, CL_INDICATOR_FSI = &quot;FSHG_PT&quot;)
+indicator_query &lt;- CompactDataMethod(databaseID, queryfilter, startdate, enddate, checkquery)
+indicator_query$Obs[[1]]
+</code></pre>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use: R Packages</h2>
+
+<h3>Example: World Bank</h3>
+
+<p><strong>Visualize results</strong> </p>
+
+<p><img src="assets/img/hous_debt.png" alt="fsi_results"></p>
 
     <aside class='notes'>
       
@@ -258,8 +388,14 @@ g
 </section>
 <section>
    <section class='' data-state=''>
-    <h2>Slide 2</h2>
-    <iframe src='http://www.statdistributions.com' width = '960px' height = '600px'></iframe>
+    <h2>Contacts and collaboration</h2>
+    <p>Irina Goloshchapova - @irina_g (<a href="http://ods.ai/">ods</a>), <a href="mailto:igoloshchapova@forecast.ru">igoloshchapova@forecast.ru</a>  </p>
+
+<p><a href="https://www.meetup.com/rMoscow/">R Moscow Meetup</a>  </p>
+
+<p><a href="https://www.meetup.com/Moscow-Data-Visualization-Meetup/">Data Visualization Meetup</a>  </p>
+
+<iframe src='http://ods.ai/' width = '960px' height = '600px'></iframe>
 
     <aside class='notes'>
       

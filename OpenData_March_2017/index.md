@@ -74,25 +74,22 @@ Open Data Science
 ## How to use  
 
 ***
-## How to use  
-### R Packages  
+## How to use: R Packages  
 
-Firstly: [Google](http://bfy.tw/AJQ6)
+Firstly: [Google it!](http://bfy.tw/AJQ6)
 
 ![cat_lazy_google](assets/img/lazy_cat.gif)
 
 ***
-## How to use  
-### R Packages  
+## How to use: R Packages  
 
 - **World Bank**: [WDI](https://github.com/vincentarelbundock/WDI), [wbstats](https://github.com/GIST-ORNL/wbstats)  
 
 - **International Monetary Fund**: [IMFData](https://github.com/mingjerli/IMFData), [imfr](https://github.com/christophergandrud/imfr) 
 
 ***
-## How to use  
-### R Packages  
-#### Key principles  
+## How to use: R Packages  
+### Key principles  
 
 - **Read materials and choose package**: CRAN, *GitHub*  
 
@@ -103,9 +100,23 @@ Firstly: [Google](http://bfy.tw/AJQ6)
 - **Download what do you need**: R  
 
 ***
-## How to use  
-### R Packages  
-#### Example: World Bank
+## How to use: R Packages  
+### Prerequisites 
+
+
+```r
+install.packages('devtools')
+install.packages('tidyverse')
+devtools::install_github("vincentarelbundock/WDI")
+devtools::install_github("GIST-ORNL/wbstats")
+devtools::install_github('mingjerli/IMFData')
+devtools::install_github('christophergandrud/imfr')
+```
+
+
+***
+## How to use: R Packages  
+### Example: World Bank
 
 **Read materials and choose package**
 
@@ -115,12 +126,11 @@ Firstly: [Google](http://bfy.tw/AJQ6)
 ## How to use: R Packages  
 ### Example: World Bank  
 
-<iframe src='http://github.com/GIST-ORNL/wbstats' width = '960px' height = '600px'></iframe>
+<iframe src='https://cran.r-project.org/web/packages/wbstats/vignettes/Using_the_wbstats_package.html' width = '960px' height = '600px'></iframe>
 
 ***
-## How to use  
-### R Packages  
-#### Example: World Bank  
+## How to use: R Packages  
+### Example: World Bank  
 
 **Undestand searching and downloading structure in the chosen package**  
 
@@ -137,9 +147,8 @@ Firstly: [Google](http://bfy.tw/AJQ6)
 - download
 
 ***
-## How to use  
-### R Packages  
-#### Example: World Bank  
+## How to use: R Packages  
+### Example: World Bank  
 
 **Try simple example**  
 
@@ -156,9 +165,8 @@ ggplot(oil_data, aes(x = date_ct, y = value, colour = indicator)) + geom_line(si
 ```
 
 ***
-## How to use  
-### R Packages  
-#### Example: World Bank  
+## How to use: R Packages  
+### Example: World Bank  
 
 **Download what do you need**  
 
@@ -188,16 +196,129 @@ g
 ```
 
 ***
-## How to use  
-### R Packages  
-#### Example: World Bank  
+## How to use: R Packages  
+### Example: World Bank  
 
-**Download what do you need** 
+**Visualize results** 
 
 ![inflation_wb_results](assets/img/wbstats_inflation.png)
 
+***
+## How to use: R Packages  
+### Example: International Monetary Fund
+
+**Read materials and choose package**
+
+[IMFData](https://github.com/mingjerli/IMFData) **_or_** [imfr](https://github.com/christophergandrud/imfr)
+
+***
+## How to use: R Packages  
+### Example: International Monetary Fund
+
+<iframe src='https://cran.r-project.org/web/packages/IMFData/README.html' width = '960px' height = '600px'></iframe>
+
+***
+## How to use: R Packages  
+### Example: International Monetary Fund
+
+**Undestand searching and downloading structure in the chosen package**  
+
+- install package  
+
+- choose database ID
+
+- define database dimensions and their codes
+
+- search needed indicators codes  
+
+- define sample of countries  
+
+- define period of time  
+
+- define final data format  
+
+- download
+
+***
+## How to use: R Packages  
+### Example: International Monetary Fund
+
+**Try simple example**  
+
+
+```r
+library(IMFData)
+
+databaseID <- "IFS"
+startdate = "2001-01-01"
+enddate = "2016-12-31"
+checkquery = FALSE
+
+## Germany, Norminal GDP in Euros, Norminal GDP in National Currency
+queryfilter <- list(CL_FREQ = "", CL_AREA_IFS = "GR", CL_INDICATOR_IFS = c("NGDP_EUR", 
+    "NGDP_XDC"))
+
+GR.NGDP.query <- CompactDataMethod(databaseID, queryfilter, startdate, enddate, 
+    checkquery)
+
+GR.NGDP.query$Obs[[1]][1:5, ]
+#   @TIME_PERIOD @OBS_VALUE
+# 1      2001-Q1    35.2366
+# 2      2001-Q2    36.7264
+# 3      2001-Q3    39.8428
+# 4      2001-Q4    40.3881
+# 5      2002-Q1    37.4971
+```
+
+***
+## How to use: R Packages  
+### Example: International Monetary Fund
+
+**Download what do you need**  
+
+
+```r
+library(IMFData)
+library(ggplot2)
+
+availableDB$DatabaseID
+# FSI
+# "Financial Soundness Indicators (FSI)" 
+FSI.available.codes <- DataStructureMethod("FSI")
+names(FSI.available.codes)
+# [1] "CL_FREQ"          "CL_AREA_FSI"      "CL_INDICATOR_FSI"
+
+CodeSearch(FSI.available.codes, "CL_INDICATOR_FSI", "stability")
+CodeSearch(FSI.available.codes, "CL_INDICATOR_FSI", "Debt")
+# FSHG_PT
+# Financial Soundness Indicators, Encouraged Set, Households, Household Debt to Gross Domestic Product (GDP), Percent
+
+databaseID <- "FSI"
+startdate = "2000-01-01"
+enddate = "2016-12-31"
+checkquery = FALSE
+
+queryfilter <- list(CL_FREQ = "", CL_AREA_FSI = "RU", CL_INDICATOR_FSI = "FSHG_PT")
+indicator_query <- CompactDataMethod(databaseID, queryfilter, startdate, enddate, checkquery)
+indicator_query$Obs[[1]]
+```
+
+***
+## How to use: R Packages  
+### Example: World Bank  
+
+**Visualize results** 
+
+![fsi_results](assets/img/hous_debt.png)
+
 --- &vertical
 
-## Slide 2
+## Contacts and collaboration
 
-<iframe src='http://www.statdistributions.com' width = '960px' height = '600px'></iframe>
+Irina Goloshchapova - @irina_g ([ods](http://ods.ai/)), igoloshchapova@forecast.ru  
+
+[R Moscow Meetup](https://www.meetup.com/rMoscow/)  
+
+[Data Visualization Meetup](https://www.meetup.com/Moscow-Data-Visualization-Meetup/)  
+
+<iframe src='http://ods.ai/' width = '960px' height = '600px'></iframe>
