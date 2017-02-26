@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Intro to download economic data in R</title>
+  <meta name="description" content="">
+  <meta name="author" content="Irina Goloshchapova - Senior Expert in CMASF">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="./frameworks/revealjs/css/reveal.min.css">
+  <link rel="stylesheet" href="./frameworks/revealjs/css/theme/solarized.css" id="theme">
+  <link rel="stylesheet" href="./highlighters/highlight.js/css/zenburn.css" id="theme">
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->  <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section class='' data-state='' id='slide-1'>
+  <h1>Intro to download economic data in R</h1>
+  <p>Irina Goloshchapova<br>
+Center for Macroeconomic Analysis and Short-Term Forecasting<br>
+Open Data Science</p>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</section>
+<section class='' data-state='' id='slide-2'>
+  <h2>Plan</h2>
+  <ul>
+<li><p>Why we want to automate the download data process  </p></li>
+<li><p>What we should use in R if we want download open economic data  </p></li>
+<li><p>How we should use it  </p></li>
+</ul>
+
+</section>
+<section>
+   <section class='' data-state=''>
+    <h2>Why automate</h2>
+    
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>Why automate</h2>
+
+<ul>
+<li>Frequent need to quickly access the data: regular monitoring, dashboard<br></li>
+<li>Complex computations with data to obtain final dataset<br></li>
+<li>You need big data<br></li>
+<li>Database structure in your pocket </li>
+</ul>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+</section>
+<section>
+   <section class='' data-state=''>
+    <h2>What we should use</h2>
+    
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>What we should use</h2>
+
+<ul>
+<li>R Packages<br></li>
+<li>Self connection functions to API<br></li>
+</ul>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+</section>
+<section>
+   <section class='' data-state=''>
+    <h2>How to use</h2>
+    
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use</h2>
+
+<h3>R Packages</h3>
+
+<p>Firstly: <a href="http://bfy.tw/AJQ6">Google</a></p>
+
+<p><img src="assets/img/lazy_cat.gif" alt="cat_lazy_google"></p>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use</h2>
+
+<h3>R Packages</h3>
+
+<ul>
+<li><p><strong>World Bank</strong>: <a href="https://github.com/vincentarelbundock/WDI">WDI</a>, <a href="https://github.com/GIST-ORNL/wbstats">wbstats</a>  </p></li>
+<li><p><strong>International Monetary Fund</strong>: <a href="https://github.com/mingjerli/IMFData">IMFData</a>, <a href="https://github.com/christophergandrud/imfr">imfr</a> </p></li>
+</ul>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use</h2>
+
+<h3>R Packages</h3>
+
+<h4>Key principles</h4>
+
+<ul>
+<li><p><strong>Read materials and choose package</strong>: CRAN, <em>GitHub</em>  </p></li>
+<li><p><strong>Undestand searching and downloading structure in the chosen package</strong>: Tutorials  </p></li>
+<li><p><strong>Try simple example</strong>: GitHub, R-Bloggers, Google  </p></li>
+<li><p><strong>Download what do you need</strong>: R  </p></li>
+</ul>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use</h2>
+
+<h3>R Packages</h3>
+
+<h4>Example: World Bank</h4>
+
+<p><strong>Read materials and choose package</strong></p>
+
+<p><a href="https://github.com/vincentarelbundock/WDI">WDI</a> <strong><em>or</em></strong> <a href="https://github.com/GIST-ORNL/wbstats">wbstats</a></p>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use: R Packages</h2>
+
+<h3>Example: World Bank</h3>
+
+<iframe src='http://github.com/GIST-ORNL/wbstats' width = '960px' height = '600px'></iframe>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use</h2>
+
+<h3>R Packages</h3>
+
+<h4>Example: World Bank</h4>
+
+<p><strong>Undestand searching and downloading structure in the chosen package</strong>  </p>
+
+<ul>
+<li><p>install package  </p></li>
+<li><p>search needed indicators codes  </p></li>
+<li><p>define sample of countries  </p></li>
+<li><p>define period of time  </p></li>
+<li><p>define final data format  </p></li>
+<li><p>download</p></li>
+</ul>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use</h2>
+
+<h3>R Packages</h3>
+
+<h4>Example: World Bank</h4>
+
+<p><strong>Try simple example</strong>  </p>
+
+<pre><code class="r">library(wbstats)
+library(ggplot2)
+
+oil_data &lt;- wb(indicator = c(&quot;CRUDE_DUBAI&quot;, &quot;CRUDE_BRENT&quot;, &quot;CRUDE_WTI&quot;, &quot;CRUDE_PETRO&quot;),
+               startdate = &quot;2012M01&quot;, enddate = &quot;2014M12&quot;, freq = &quot;M&quot;, POSIXct = TRUE)
+
+ggplot(oil_data, aes(x = date_ct, y = value, colour = indicator)) + geom_line(size = 1) +
+  labs(title = &quot;Crude Oil Price Comparisons&quot;, x = &quot;Date&quot;, y = &quot;US Dollars&quot;)
+</code></pre>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use</h2>
+
+<h3>R Packages</h3>
+
+<h4>Example: World Bank</h4>
+
+<p><strong>Download what do you need</strong>  </p>
+
+<pre><code class="r">library(wbstats)
+library(ggplot2)
+
+wbsearch(pattern = &quot;inflation&quot;, fields = &quot;indicator&quot;, extra = TRUE)
+
+#             indicatorID                             indicator
+# 8294  NY.GDP.DEFL.KD.ZG    Inflation, GDP deflator (annual %)
+# 10895    FP.CPI.TOTL.ZG Inflation, consumer prices (annual %)
+
+deflator &lt;- wb(indicator = &quot;NY.GDP.DEFL.KD.ZG&quot;, country = &quot;RU&quot;, mrv = 16, freq = &quot;Y&quot;, POSIXct = TRUE)
+CPI &lt;- wb(indicator = &quot;FP.CPI.TOTL.ZG&quot;, country = &quot;RU&quot;, mrv = 16, freq = &quot;Y&quot;, POSIXct = TRUE)
+
+inflation_data &lt;- rbind(deflator, CPI)
+
+g &lt;- ggplot(inflation_data, aes(x = date_ct, y = value, colour = indicator)) + geom_line(size = 1)
+g &lt;- g + labs(title = &quot;Inflation data&quot;, x = NULL, y = NULL)
+g &lt;- g + guides(colour = guide_legend(title = &#39;&#39;, size = 3.5))
+g &lt;- g + theme_minimal()
+g &lt;- g + scale_colour_brewer(palette = &#39;Set2&#39;)
+g &lt;- g + theme(legend.position = &#39;top&#39;)
+g
+</code></pre>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use</h2>
+
+<h3>R Packages</h3>
+
+<h4>Example: World Bank</h4>
+
+<p><strong>Download what do you need</strong> </p>
+
+<p><img src="assets/img/wbstats_inflation.png" alt="inflation_wb_results"></p>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+</section>
+<section>
+   <section class='' data-state=''>
+    <h2>Slide 2</h2>
+    <iframe src='http://www.statdistributions.com' width = '960px' height = '600px'></iframe>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+</section>
+    </div>
+  </div>
+</body>
+  <script src="./frameworks/revealjs/lib/js/head.min.js"></script>
+  <script src="./frameworks/revealjs/js/reveal.min.js"></script>
+  <script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    theme: Reveal.getQueryHash().theme || 'solarized', 
+    transition: Reveal.getQueryHash().transition || 'none', 
+    dependencies: [
+    // Cross-browser shim that fully implements classList -
+    // https://github.com/eligrey/classList.js/
+      { src: './frameworks/revealjs/lib/js/classList.js', condition: function() { return !document.body.classList;}},
+      // Zoom in and out with Alt+click
+      { src: './frameworks/revealjs/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Speaker notes
+      { src: './frameworks/revealjs/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Remote control your reveal.js presentation using a touch device
+      //{ src: './frameworks/revealjs/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+  });
+  </script>  <!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="./highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+ 
+
+</html>
