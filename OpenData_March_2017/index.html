@@ -19,9 +19,9 @@
   <div class="reveal">
     <div class="slides">
       <section class='' data-state='' id='slide-1'>
-  <h1>Intro to download economic data in R</h1>
-  <p>Irina Goloshchapova<br>
-Center for Macroeconomic Analysis and Short-Term Forecasting<br>
+  <h1>Introduction to downloading economic data in R</h1>
+  <p>Ирина Голощапова<br>
+Центр макроэкономического анализа и краткосрочного прогнозирования<br>
 Open Data Science</p>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -29,11 +29,11 @@ Open Data Science</p>
 </section>
 <section>
    <section class='' data-state=''>
-    <h2>Plan</h2>
+    <h2>План</h2>
     <ul>
-<li><p>Why we want to automate the download data process  </p></li>
-<li><p>What we should use in R if we want download open economic data  </p></li>
-<li><p>How we should use it </p></li>
+<li><p><strong>Зачем</strong> нужна автоматизация выгрузки данных  </p></li>
+<li><p><strong>Что</strong> мы можем использовать в R для выгрузки экономических данных  </p></li>
+<li><p><strong>Как</strong> мы можем это использовать</p></li>
 </ul>
 
     <aside class='notes'>
@@ -41,13 +41,12 @@ Open Data Science</p>
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>Plan</h2>
+    <h2>План</h2>
 
-<p>One thing first!  </p>
+<p>Подготовимся!</p>
 
-<p>Please, open the presentation in local PCs!</p>
-
-<p><a href="http://irinagoloshchapova.github.io/Progs/OpenData_March_2017/">http://irinagoloshchapova.github.io/Progs/OpenData_March_2017/</a>  </p>
+<p>Ссылка на презентацию:
+<a href="http://irinagoloshchapova.github.io/Progs/OpenData_March_2017/">http://irinagoloshchapova.github.io/Progs/OpenData_March_2017/</a>  </p>
 
     <aside class='notes'>
       
@@ -56,20 +55,20 @@ Open Data Science</p>
 </section>
 <section>
    <section class='' data-state=''>
-    <h2>Why automate</h2>
+    <h2>Зачем автоматизировать</h2>
     
     <aside class='notes'>
       
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>Why automate</h2>
+    <h2>Зачем автоматизировать</h2>
 
 <ul>
-<li>Frequent need to quickly access the data: regular monitoring, dashboard<br></li>
-<li>Complex computations with data to obtain final dataset<br></li>
-<li>You need big data<br></li>
-<li>Database structure in your pocket </li>
+<li><p>Частая необходимость быстро выгрузить данные: регулярные мониторинги и отчеты, dashboards </p></li>
+<li><p>Громоздкие, но повторяющиеся вычисления</p></li>
+<li><p>Нужно скачивать мно-о-о-го данных  </p></li>
+<li><p>Нужен быстрый доступ к полной структуре баз данных</p></li>
 </ul>
 
     <aside class='notes'>
@@ -79,18 +78,18 @@ Open Data Science</p>
 </section>
 <section>
    <section class='' data-state=''>
-    <h2>What we should use</h2>
+    <h2>Что использовать</h2>
     
     <aside class='notes'>
       
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>What we should use</h2>
+    <h2>Что использовать</h2>
 
 <ul>
 <li>R Packages<br></li>
-<li>Self connection functions to API<br></li>
+<li>Подключение к API<br></li>
 </ul>
 
     <aside class='notes'>
@@ -100,55 +99,16 @@ Open Data Science</p>
 </section>
 <section>
    <section class='' data-state=''>
-    <h2>How to use: R packages</h2>
+    <h2>Как использовать</h2>
     
     <aside class='notes'>
       
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: R Packages</h2>
+    <h2>Как использовать</h2>
 
-<p>Firstly: <a href="http://bfy.tw/AJQ6">Google it!</a></p>
-
-<p><img src="assets/img/lazy_cat.gif" alt="cat_lazy_google"></p>
-
-    <aside class='notes'>
-      
-    </aside>
-   </section>
-   <section class='' data-state=''>
-    <h2>How to use: R Packages</h2>
-
-<ul>
-<li><p><strong>World Bank</strong>: <a href="https://github.com/vincentarelbundock/WDI">WDI</a>, <a href="https://github.com/GIST-ORNL/wbstats">wbstats</a>  </p></li>
-<li><p><strong>International Monetary Fund</strong>: <a href="https://github.com/mingjerli/IMFData">IMFData</a>, <a href="https://github.com/christophergandrud/imfr">imfr</a> </p></li>
-</ul>
-
-    <aside class='notes'>
-      
-    </aside>
-   </section>
-   <section class='' data-state=''>
-    <h2>How to use: R Packages</h2>
-
-<h3>Key principles</h3>
-
-<ul>
-<li><p><strong>Read materials and choose package</strong>: CRAN, <em>GitHub</em>  </p></li>
-<li><p><strong>Undestand searching and downloading structure in the chosen package</strong>: Tutorials  </p></li>
-<li><p><strong>Try simple example</strong>: GitHub, R-Bloggers, Google  </p></li>
-<li><p><strong>Download what do you need</strong>: R  </p></li>
-</ul>
-
-    <aside class='notes'>
-      
-    </aside>
-   </section>
-   <section class='' data-state=''>
-    <h2>How to use: R Packages</h2>
-
-<h3>Prerequisites</h3>
+<h3>Начало работы в R</h3>
 
 <pre><code class="r">install.packages(c(&#39;devtools&#39;, &#39;tidyverse&#39;, &#39;ggthemes&#39;, &#39;httr&#39;, &#39;jsonlite&#39;))
 
@@ -162,23 +122,71 @@ devtools::install_github(&#39;christophergandrud/imfr&#39;)
       
     </aside>
    </section>
+</section>
+<section>
    <section class='' data-state=''>
-    <h2>How to use: R Packages</h2>
+    <h2>Как использовать: R packages</h2>
+    
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>Как использовать: R Packages</h2>
 
-<h3>Example: World Bank</h3>
+<p>В первую очередь: <a href="http://bfy.tw/AJQ6">Google it!</a></p>
 
-<p><strong>Read materials and choose package</strong></p>
-
-<p><a href="https://github.com/vincentarelbundock/WDI">WDI</a> <strong><em>or</em></strong> <a href="https://github.com/GIST-ORNL/wbstats">wbstats</a></p>
+<p><img src="assets/img/lazy_cat.gif" alt="cat_lazy_google"></p>
 
     <aside class='notes'>
       
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: R Packages</h2>
+    <h2>Как использовать: R Packages</h2>
 
-<h3>Example: World Bank</h3>
+<ul>
+<li><p><strong>World Bank</strong>: <a href="https://github.com/vincentarelbundock/WDI">WDI</a>, <a href="https://github.com/GIST-ORNL/wbstats">wbstats</a>  </p></li>
+<li><p><strong>International Monetary Fund</strong>: <a href="https://github.com/mingjerli/IMFData">IMFData</a>, <a href="https://github.com/christophergandrud/imfr">imfr</a> </p></li>
+</ul>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>Как использовать: R Packages</h2>
+
+<h3>Ключевые принципы</h3>
+
+<ul>
+<li><p><strong>Просмотреть документацию и выбрать нужную библиотеку</strong>: CRAN, <em>GitHub</em>  </p></li>
+<li><p><strong>Понять структуру поиска данных и их загрузки</strong>: Tutorials  </p></li>
+<li><p><strong>Попробовать простой пример</strong>: GitHub, R-Bloggers, Google  </p></li>
+<li><p><strong>Загружать все, что хочется</strong>: R  </p></li>
+</ul>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>Как использовать: R Packages</h2>
+
+<h3>Пример: World Bank</h3>
+
+<p><strong>Просмотреть документацию и выбрать нужную библиотеку</strong></p>
+
+<p><a href="https://github.com/vincentarelbundock/WDI">WDI</a> <strong><em>или</em></strong> <a href="https://github.com/GIST-ORNL/wbstats">wbstats</a></p>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>Как использовать: R Packages</h2>
+
+<h3>Пример: World Bank</h3>
 
 <iframe src='https://cran.r-project.org/web/packages/wbstats/vignettes/Using_the_wbstats_package.html' width = '960px' height = '600px'></iframe>
 
@@ -187,19 +195,19 @@ devtools::install_github(&#39;christophergandrud/imfr&#39;)
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: R Packages</h2>
+    <h2>Как использовать: R Packages</h2>
 
-<h3>Example: World Bank</h3>
+<h3>Пример: World Bank</h3>
 
-<p><strong>Undestand searching and downloading structure in the chosen package</strong>  </p>
+<p><strong>Понять структуру поиска данных и их загрузки в выбранной библиотеке</strong>  </p>
 
 <ul>
-<li><p>install package  </p></li>
-<li><p>search needed indicators codes  </p></li>
-<li><p>define sample of countries  </p></li>
-<li><p>define period of time  </p></li>
-<li><p>define final data format  </p></li>
-<li><p>download</p></li>
+<li><p>установить библиотеку  </p></li>
+<li><p>найти коды нужных индикаторов  </p></li>
+<li><p>определиться с выборкой стран </p></li>
+<li><p>определиться с временным периодом выгрузки</p></li>
+<li><p>выбрать формат выгрузки данных  </p></li>
+<li><p>загрузить!</p></li>
 </ul>
 
     <aside class='notes'>
@@ -207,11 +215,11 @@ devtools::install_github(&#39;christophergandrud/imfr&#39;)
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: R Packages</h2>
+    <h2>Как использовать: R Packages</h2>
 
-<h3>Example: World Bank</h3>
+<h3>Пример: World Bank</h3>
 
-<p><strong>Try simple example</strong>  </p>
+<p><strong>Попробовать простой пример</strong>  </p>
 
 <pre><code class="r">library(wbstats)
 library(ggplot2)
@@ -228,11 +236,11 @@ ggplot(oil_data, aes(x = date_ct, y = value, colour = indicator)) + geom_line(si
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: R Packages</h2>
+    <h2>Как использовать: R Packages</h2>
 
-<h3>Example: World Bank</h3>
+<h3>Пример: World Bank</h3>
 
-<p><strong>Download what do you need</strong>  </p>
+<p><strong>Загружать все, что хочется!</strong>  </p>
 
 <pre><code class="r">library(wbstats)
 library(ggplot2)
@@ -263,11 +271,11 @@ g
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: R Packages</h2>
+    <h2>Как использовать: R Packages</h2>
 
-<h3>Example: World Bank</h3>
+<h3>Пример: World Bank</h3>
 
-<p><strong>Visualize results</strong> </p>
+<p><strong>Визуализация результата</strong> </p>
 
 <p><img src="assets/img/wbstats_inflation.png" alt="inflation_wb_results"></p>
 
@@ -276,22 +284,22 @@ g
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: R Packages</h2>
+    <h2>Как использовать: R Packages</h2>
 
-<h3>Example: International Monetary Fund</h3>
+<h3>Пример: International Monetary Fund</h3>
 
-<p><strong>Read materials and choose package</strong></p>
+<p><strong>Просмотреть документацию и выбрать нужную библиотеку</strong></p>
 
-<p><a href="https://github.com/mingjerli/IMFData">IMFData</a> <strong><em>or</em></strong> <a href="https://github.com/christophergandrud/imfr">imfr</a></p>
+<p><a href="https://github.com/mingjerli/IMFData">IMFData</a> <strong><em>или</em></strong> <a href="https://github.com/christophergandrud/imfr">imfr</a></p>
 
     <aside class='notes'>
       
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: R Packages</h2>
+    <h2>Как использовать: R Packages</h2>
 
-<h3>Example: International Monetary Fund</h3>
+<h3>Пример: International Monetary Fund</h3>
 
 <iframe src='https://cran.r-project.org/web/packages/IMFData/README.html' width = '960px' height = '600px'></iframe>
 
@@ -300,21 +308,21 @@ g
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: R Packages</h2>
+    <h2>Как использовать: R Packages</h2>
 
-<h3>Example: International Monetary Fund</h3>
+<h3>Пример: International Monetary Fund</h3>
 
-<p><strong>Undestand searching and downloading structure in the chosen package</strong>  </p>
+<p><strong>Понять структуру поиска данных и их загрузки в выбранной библиотеке</strong>  </p>
 
 <ul>
-<li><p>install package  </p></li>
-<li><p>choose database ID</p></li>
-<li><p>define database dimensions and their codes</p></li>
-<li><p>search needed indicators codes  </p></li>
-<li><p>define sample of countries  </p></li>
-<li><p>define period of time  </p></li>
-<li><p>define final data format  </p></li>
-<li><p>download</p></li>
+<li><p>установить библиотеку  </p></li>
+<li><p>выбрать базу данных (database ID)</p></li>
+<li><p>определиться с параметрами данной базы данных (dimensions)</p></li>
+<li><p>найти коды нужных индикаторов  </p></li>
+<li><p>определиться с выборкой стран  </p></li>
+<li><p>определиться с временным периодом  </p></li>
+<li><p>определиться с финальным форматом выгрузки данных  </p></li>
+<li><p>загрузить!</p></li>
 </ul>
 
     <aside class='notes'>
@@ -322,11 +330,11 @@ g
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: R Packages</h2>
+    <h2>Как использовать: R Packages</h2>
 
-<h3>Example: International Monetary Fund</h3>
+<h3>Пример: International Monetary Fund</h3>
 
-<p><strong>Try simple example</strong>  </p>
+<p><strong>Попробовать простой пример</strong>  </p>
 
 <pre><code class="r">library(IMFData)
 
@@ -356,11 +364,11 @@ GR.NGDP.query$Obs[[1]][1:5, ]
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: R Packages</h2>
+    <h2>Как использовать: R Packages</h2>
 
-<h3>Example: International Monetary Fund</h3>
+<h3>Пример: International Monetary Fund</h3>
 
-<p><strong>Download what do you need</strong>  </p>
+<p><strong>Загружать все, что хочется!</strong>  </p>
 
 <pre><code class="r">library(IMFData)
 library(ggplot2)
@@ -392,11 +400,11 @@ indicator_query$Obs[[1]]
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: R Packages</h2>
+    <h2>Как использовать: R Packages</h2>
 
-<h3>Example: World Bank</h3>
+<h3>Пример: International Monetary Fund</h3>
 
-<p><strong>Visualize results</strong> </p>
+<p><strong>Визуализация результата</strong> </p>
 
 <p><img src="assets/img/hous_debt.png" alt="fsi_results"></p>
 
@@ -407,16 +415,16 @@ indicator_query$Obs[[1]]
 </section>
 <section>
    <section class='' data-state=''>
-    <h2>How to use: API connection</h2>
+    <h2>Как использовать: подключение к API</h2>
     
     <aside class='notes'>
       
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: API connection</h2>
+    <h2>Как использовать: подключение к API</h2>
 
-<p>Firstly: <a href="https://ru.wikipedia.org/wiki/API">Read API documentation!</a></p>
+<p>В первую очередь: <a href="https://ru.wikipedia.org/wiki/API">Вчитаться в документацию к API!</a></p>
 
 <p><img src="assets/img/spongebob.gif" alt="cat_lazy_google">  </p>
 
@@ -425,15 +433,15 @@ indicator_query$Obs[[1]]
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: API connection</h2>
+    <h2>Как использовать: подключение к API</h2>
 
-<h3>Key principles</h3>
+<h3>Ключевые принципы</h3>
 
 <ul>
-<li><p><strong>Read API documentation</strong>: official websites of stat resources  </p></li>
-<li><p><strong>Undestand searching and downloading structure of API</strong>: things hided in R libraries  </p></li>
-<li><p><strong>Generate code to download simple piece of data</strong>: download almost anything - at least once  </p></li>
-<li><p><strong>Generalize code to download all what you need</strong>: functions to download, parameterisation for your purposes  </p></li>
+<li><p><strong>Вчитаться в документацию к API</strong>: официальные сайты статведомств  </p></li>
+<li><p><strong>Понять структуру работы с API</strong>: подключение, формирование запроса, формат получения данных </p></li>
+<li><p><strong>Написать код для загрузки простого примера</strong>: загрузить хоть что-нибудь </p></li>
+<li><p><strong>Обобщить код для своих потребностей</strong>: функции для загрузки, введение нужных параметров </p></li>
 </ul>
 
     <aside class='notes'>
@@ -441,9 +449,9 @@ indicator_query$Obs[[1]]
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: API connection</h2>
+    <h2>Как использовать: подключение к API</h2>
 
-<h3>Example: World Bank</h3>
+<h3>Пример: World Bank</h3>
 
 <p><a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-api-documentation">World Bank for Developers: API Documentation</a></p>
 
@@ -452,27 +460,27 @@ indicator_query$Obs[[1]]
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: API connection</h2>
+    <h2>Как использовать: подключение к API</h2>
 
-<h3>Example: World Bank</h3>
+<h3>Пример: World Bank</h3>
 
-<p><strong>Undestand searching and downloading structure of API</strong>  </p>
+<p><strong>Понять структуру работы с API</strong>  </p>
 
 <ul>
-<li><p>what kind of API is it  </p></li>
-<li><p>available formats to download </p>
+<li><p>вид API  </p></li>
+<li><p>форматы данных, доступные для загрузки </p>
 
 <pre><code>format=json
 </code></pre></li>
-<li><p>get list of available countries </p>
+<li><p>получить список стран </p>
 
 <pre><code>http://api.worldbank.org/countries
 </code></pre></li>
-<li><p>get list of available indicators  </p>
+<li><p>получить список показателей  </p>
 
 <pre><code>http://api.worldbank.org/indicators
 </code></pre></li>
-<li><p>define time period  </p>
+<li><p>определить формат и период времени для загрузки </p>
 
 <pre><code>date=2000:2001; date=2009Q1:2010Q3; date=2009M01:2010M08
 </code></pre></li>
@@ -483,14 +491,14 @@ indicator_query$Obs[[1]]
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: API connection</h2>
+    <h2>Как использовать: подключение к API</h2>
 
-<h3>Example: World Bank</h3>
+<h3>Пример: World Bank</h3>
 
-<p><strong>Undestand searching and downloading structure of API</strong>  </p>
+<p><strong>Понять структуру работы с API</strong>  </p>
 
 <ul>
-<li>understand link structure<br></li>
+<li>понять структуру формирования url<br></li>
 </ul>
 
 <pre><code class="r"># url parameters
@@ -513,11 +521,11 @@ paste0(base_url, countries, &lt;COUNTRIES_QUERY&gt;, indicators, &lt;INDICATOR_Q
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: API connection</h2>
+    <h2>Как использовать: подключение к API</h2>
 
-<h3>Example: World Bank</h3>
+<h3>Пример: World Bank</h3>
 
-<p><strong>Generate code to download simple piece of data</strong> </p>
+<p><strong>Написать код для загрузки простого примера</strong> </p>
 
 <pre><code class="r">#  get list of countries 
 ## loading libraries
@@ -544,11 +552,11 @@ wb_countries &lt;- this.content[[2]]
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: API connection</h2>
+    <h2>Как использовать: подключение к API</h2>
 
-<h3>Example: World Bank</h3>
+<h3>Пример: World Bank</h3>
 
-<p><strong>Generate code to download simple piece of data</strong> </p>
+<p><strong>Написать код для загрузки простого примера</strong> </p>
 
 <pre><code class="r">#  get list of indicators
 ## generate url 
@@ -571,11 +579,11 @@ View(wb_indicators)
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: API connection</h2>
+    <h2>Как использовать: подключение к API</h2>
 
-<h3>Example: World Bank</h3>
+<h3>Пример: World Bank</h3>
 
-<p><strong>Generate code to download simple piece of data</strong> </p>
+<p><strong>Написать код для загрузки простого примера</strong> </p>
 
 <pre><code class="r"># example query for one indicator
 url &lt;- &#39;http://api.worldbank.org/countries/br;ru/indicators/SP.POP.TOTL?date=2013Q1:2015Q4&amp;format=json&#39;
@@ -591,15 +599,15 @@ View(example_query[[2]])
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: API connection</h2>
+    <h2>Как использовать: подключение к API</h2>
 
-<h3>Example: World Bank</h3>
+<h3>Пример: World Bank</h3>
 
-<p><strong>Generalize code to download all what you need</strong> </p>
+<p><strong>Обобщить код для своих потребностей</strong> </p>
 
 <ul>
-<li><p>saving tables with values for needed parameters</p></li>
-<li><p>functions to download, useful for you  </p></li>
+<li><p>сохранение таблиц со значениями нужных параметров</p></li>
+<li><p>функции для загрузки, подходящие под задачу </p></li>
 </ul>
 
     <aside class='notes'>
@@ -607,11 +615,11 @@ View(example_query[[2]])
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: API connection</h2>
+    <h2>Как использовать: подключение к API</h2>
 
-<h3>Example: World Bank</h3>
+<h3>Пример: World Bank</h3>
 
-<p><strong>Generalize code to download all what you need</strong> </p>
+<p><strong>Обобщить код для своих потребностей</strong> </p>
 
 <pre><code class="r"># generalizing previous url building code for several indicators
 queries &lt;- lapply(&lt;INPUT_CODES&gt;, FUN = function(x) paste0(base_url, countries, wb_countries_query, indicators, x, date, start_period, &#39;:&#39;, end_period, per_page, format))
@@ -625,11 +633,11 @@ input_codes &lt;- c(&#39;i_acc_deposit_A1&#39;, &#39;GFDD.AI.25&#39;)
     </aside>
    </section>
    <section class='' data-state=''>
-    <h2>How to use: API connection</h2>
+    <h2>Как использовать: подключение к API</h2>
 
-<h3>Example: World Bank</h3>
+<h3>Пример: World Bank</h3>
 
-<p><strong>Generalize code to download all what you need</strong> </p>
+<p><strong>Обобщить код для своих потребностей</strong> </p>
 
 <pre><code class="r"># download_wb_function.R
 # source(&#39;download_wb_function.R&#39;)
@@ -700,7 +708,7 @@ download_WB &lt;- function(queries) {
 </section>
 <section>
    <section class='' data-state=''>
-    <h2>Contacts and collaboration</h2>
+    <h2>Спасибо за внимание!</h2>
     <p>Irina Goloshchapova - @irina_g (<a href="http://ods.ai/">ods</a>), <a href="mailto:igoloshchapova@forecast.ru">igoloshchapova@forecast.ru</a>  </p>
 
 <p><a href="https://www.meetup.com/rMoscow/">R Moscow Meetup</a>  </p>

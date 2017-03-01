@@ -29,88 +29,63 @@ navbar:
     - {item: Extend, href: extend, icon: cogs}
     - {item: Publish, href: publish, icon: github}
 ---
-# Intro to download economic data in R
+# Introduction to downloading economic data in R
 
-
-Irina Goloshchapova  
-Center for Macroeconomic Analysis and Short-Term Forecasting   
+Ирина Голощапова  
+Центр макроэкономического анализа и краткосрочного прогнозирования  
 Open Data Science
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 --- &vertical
-## Plan
+## План
 
-- Why we want to automate the download data process  
+- **Зачем** нужна автоматизация выгрузки данных  
 
-- What we should use in R if we want download open economic data  
+- **Что** мы можем использовать в R для выгрузки экономических данных  
 
-- How we should use it 
+- **Как** мы можем это использовать
 
 ***
-## Plan  
+## План  
 
-One thing first!  
+Подготовимся!
 
-Please, open the presentation in local PCs!
-
+Ссылка на презентацию:
 http://irinagoloshchapova.github.io/Progs/OpenData_March_2017/  
 
 
 --- &vertical
-## Why automate
+## Зачем автоматизировать
 
 ***
-## Why automate  
+## Зачем автоматизировать  
 
-- Frequent need to quickly access the data: regular monitoring, dashboard  
-- Complex computations with data to obtain final dataset  
-- You need big data  
-- Database structure in your pocket 
+- Частая необходимость быстро выгрузить данные: регулярные мониторинги и отчеты, dashboards 
+
+- Громоздкие, но повторяющиеся вычисления
+
+- Нужно скачивать мно-о-о-го данных  
+
+- Нужен быстрый доступ к полной структуре баз данных
 
 --- &vertical
 
-## What we should use
+## Что использовать
 
 ***
-## What we should use   
+## Что использовать   
 
 - R Packages  
-- Self connection functions to API  
+- Подключение к API  
 
 --- &vertical
 
-## How to use: R packages  
+## Как использовать
 
 ***
-## How to use: R Packages  
-
-Firstly: [Google it!](http://bfy.tw/AJQ6)
-
-![cat_lazy_google](assets/img/lazy_cat.gif)
-
-***
-## How to use: R Packages  
-
-- **World Bank**: [WDI](https://github.com/vincentarelbundock/WDI), [wbstats](https://github.com/GIST-ORNL/wbstats)  
-
-- **International Monetary Fund**: [IMFData](https://github.com/mingjerli/IMFData), [imfr](https://github.com/christophergandrud/imfr) 
-
-***
-## How to use: R Packages  
-### Key principles  
-
-- **Read materials and choose package**: CRAN, *GitHub*  
-
-- **Undestand searching and downloading structure in the chosen package**: Tutorials  
-
-- **Try simple example**: GitHub, R-Bloggers, Google  
-
-- **Download what do you need**: R  
-
-***
-## How to use: R Packages  
-### Prerequisites 
+## Как использовать
+### Начало работы в R
 
 ```{r initialization, echo = TRUE, eval = FALSE}
 install.packages(c('devtools', 'tidyverse', 'ggthemes', 'httr', 'jsonlite'))
@@ -121,43 +96,73 @@ devtools::install_github('mingjerli/IMFData')
 devtools::install_github('christophergandrud/imfr')
 ```
 
-***
-## How to use: R Packages  
-### Example: World Bank
+--- &vertical
 
-**Read materials and choose package**
-
-[WDI](https://github.com/vincentarelbundock/WDI) **_or_** [wbstats](https://github.com/GIST-ORNL/wbstats)
+## Как использовать: R packages  
 
 ***
-## How to use: R Packages  
-### Example: World Bank  
+## Как использовать: R Packages  
+
+В первую очередь: [Google it!](http://bfy.tw/AJQ6)
+
+![cat_lazy_google](assets/img/lazy_cat.gif)
+
+***
+## Как использовать: R Packages  
+
+- **World Bank**: [WDI](https://github.com/vincentarelbundock/WDI), [wbstats](https://github.com/GIST-ORNL/wbstats)  
+
+- **International Monetary Fund**: [IMFData](https://github.com/mingjerli/IMFData), [imfr](https://github.com/christophergandrud/imfr) 
+
+***
+## Как использовать: R Packages  
+### Ключевые принципы  
+
+- **Просмотреть документацию и выбрать нужную библиотеку**: CRAN, *GitHub*  
+
+- **Понять структуру поиска данных и их загрузки**: Tutorials  
+
+- **Попробовать простой пример**: GitHub, R-Bloggers, Google  
+
+- **Загружать все, что хочется**: R  
+
+***
+## Как использовать: R Packages  
+### Пример: World Bank
+
+**Просмотреть документацию и выбрать нужную библиотеку**
+
+[WDI](https://github.com/vincentarelbundock/WDI) **_или_** [wbstats](https://github.com/GIST-ORNL/wbstats)
+
+***
+## Как использовать: R Packages  
+### Пример: World Bank  
 
 <iframe src='https://cran.r-project.org/web/packages/wbstats/vignettes/Using_the_wbstats_package.html' width = '960px' height = '600px'></iframe>
 
 ***
-## How to use: R Packages  
-### Example: World Bank  
+## Как использовать: R Packages  
+### Пример: World Bank  
 
-**Undestand searching and downloading structure in the chosen package**  
+**Понять структуру поиска данных и их загрузки в выбранной библиотеке**  
 
-- install package  
+- установить библиотеку  
 
-- search needed indicators codes  
+- найти коды нужных индикаторов  
 
-- define sample of countries  
+- определиться с выборкой стран 
 
-- define period of time  
+- определиться с временным периодом выгрузки
 
-- define final data format  
+- выбрать формат выгрузки данных  
 
-- download
+- загрузить!
 
 ***
-## How to use: R Packages  
-### Example: World Bank  
+## Как использовать: R Packages  
+### Пример: World Bank  
 
-**Try simple example**  
+**Попробовать простой пример**  
 
 ```{r simple_download_example, echo = TRUE, eval = FALSE}
 library(wbstats)
@@ -171,10 +176,10 @@ ggplot(oil_data, aes(x = date_ct, y = value, colour = indicator)) + geom_line(si
 ```
 
 ***
-## How to use: R Packages  
-### Example: World Bank  
+## Как использовать: R Packages  
+### Пример: World Bank  
 
-**Download what do you need**  
+**Загружать все, что хочется!**  
 
 ```{r our_download_example, echo = TRUE, eval = FALSE}
 library(wbstats)
@@ -202,54 +207,54 @@ g
 ```
 
 ***
-## How to use: R Packages  
-### Example: World Bank  
+## Как использовать: R Packages  
+### Пример: World Bank  
 
-**Visualize results** 
+**Визуализация результата** 
 
 ![inflation_wb_results](assets/img/wbstats_inflation.png)
 
 ***
-## How to use: R Packages  
-### Example: International Monetary Fund
+## Как использовать: R Packages  
+### Пример: International Monetary Fund
 
-**Read materials and choose package**
+**Просмотреть документацию и выбрать нужную библиотеку**
 
-[IMFData](https://github.com/mingjerli/IMFData) **_or_** [imfr](https://github.com/christophergandrud/imfr)
+[IMFData](https://github.com/mingjerli/IMFData) **_или_** [imfr](https://github.com/christophergandrud/imfr)
 
 ***
-## How to use: R Packages  
-### Example: International Monetary Fund
+## Как использовать: R Packages  
+### Пример: International Monetary Fund
 
 <iframe src='https://cran.r-project.org/web/packages/IMFData/README.html' width = '960px' height = '600px'></iframe>
 
 ***
-## How to use: R Packages  
-### Example: International Monetary Fund
+## Как использовать: R Packages  
+### Пример: International Monetary Fund
 
-**Undestand searching and downloading structure in the chosen package**  
+**Понять структуру поиска данных и их загрузки в выбранной библиотеке**  
 
-- install package  
+- установить библиотеку  
 
-- choose database ID
+- выбрать базу данных (database ID)
 
-- define database dimensions and their codes
+- определиться с параметрами данной базы данных (dimensions)
 
-- search needed indicators codes  
+- найти коды нужных индикаторов  
 
-- define sample of countries  
+- определиться с выборкой стран  
 
-- define period of time  
+- определиться с временным периодом  
+				
+- определиться с финальным форматом выгрузки данных  
 
-- define final data format  
-
-- download
+- загрузить!
 
 ***
-## How to use: R Packages  
-### Example: International Monetary Fund
+## Как использовать: R Packages  
+### Пример: International Monetary Fund
 
-**Try simple example**  
+**Попробовать простой пример**  
 
 ```{r simple_download_example_ifs, echo = TRUE, eval = FALSE}
 library(IMFData)
@@ -276,10 +281,10 @@ GR.NGDP.query$Obs[[1]][1:5, ]
 ```
 
 ***
-## How to use: R Packages  
-### Example: International Monetary Fund
+## Как использовать: R Packages  
+### Пример: International Monetary Fund
 
-**Download what do you need**  
+**Загружать все, что хочется!**  
 
 ```{r our_download_example_fsi, echo = TRUE, eval = FALSE}
 library(IMFData)
@@ -308,74 +313,74 @@ indicator_query$Obs[[1]]
 ```
 
 ***
-## How to use: R Packages  
-### Example: World Bank  
+## Как использовать: R Packages  
+### Пример: International Monetary Fund 
 
-**Visualize results** 
+**Визуализация результата** 
 
 ![fsi_results](assets/img/hous_debt.png)
 
 --- &vertical
 
-## How to use: API connection  
+## Как использовать: подключение к API 
 
 ***
-## How to use: API connection  
+## Как использовать: подключение к API 
 
-Firstly: [Read API documentation!](https://ru.wikipedia.org/wiki/API)
+В первую очередь: [Вчитаться в документацию к API!](https://ru.wikipedia.org/wiki/API)
 
 ![cat_lazy_google](assets/img/spongebob.gif)  
 
 ***
-## How to use: API connection  
-### Key principles  
+## Как использовать: подключение к API 
+### Ключевые принципы  
 
-- **Read API documentation**: official websites of stat resources  
+- **Вчитаться в документацию к API**: официальные сайты статведомств  
 
-- **Undestand searching and downloading structure of API**: things hided in R libraries  
+- **Понять структуру работы с API**: подключение, формирование запроса, формат получения данных 
 
-- **Generate code to download simple piece of data**: download almost anything - at least once  
+- **Написать код для загрузки простого примера**: загрузить хоть что-нибудь 
 
-- **Generalize code to download all what you need**: functions to download, parameterisation for your purposes  
+- **Обобщить код для своих потребностей**: функции для загрузки, введение нужных параметров 
 
 ***
-## How to use: API connection  
-### Example: World Bank
+## Как использовать: подключение к API 
+### Пример: World Bank
 
 [World Bank for Developers: API Documentation](https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-api-documentation)
 
 ***
-## How to use: API connection  
-### Example: World Bank  
+## Как использовать: подключение к API 
+### Пример: World Bank  
 
-**Undestand searching and downloading structure of API**  
+**Понять структуру работы с API**  
 
-- what kind of API is it  
+- вид API  
 
-- available formats to download 
+- форматы данных, доступные для загрузки 
 ```
 format=json
 ```
-- get list of available countries 
+- получить список стран 
 ```
 http://api.worldbank.org/countries
 ```
-- get list of available indicators  
+- получить список показателей  
 ```
 http://api.worldbank.org/indicators
 ```
-- define time period  
+- определить формат и период времени для загрузки 
 ```
 date=2000:2001; date=2009Q1:2010Q3; date=2009M01:2010M08
 ```
 
 ***
-## How to use: API connection  
-### Example: World Bank  
+## Как использовать: подключение к API 
+### Пример: World Bank  
 
-**Undestand searching and downloading structure of API**  
+**Понять структуру работы с API**  
 
-- understand link structure  
+- понять структуру формирования url  
 
 ``` {r url_structure_wb, echo = TRUE, eval = FALSE}
 # url parameters
@@ -394,10 +399,10 @@ paste0(base_url, countries, <COUNTRIES_QUERY>, indicators, <INDICATOR_QUERY>, da
 ```
 
 ***
-## How to use: API connection  
-### Example: World Bank  
+## Как использовать: подключение к API  
+### Пример: World Bank  
 
-**Generate code to download simple piece of data** 
+**Написать код для загрузки простого примера** 
 
 ``` {r simple_example_wb_url_countries, echo = TRUE, eval = FALSE}
 #  get list of countries 
@@ -421,10 +426,10 @@ wb_countries <- this.content[[2]]
 ```
 
 ***
-## How to use: API connection  
-### Example: World Bank  
+## Как использовать: подключение к API    
+### Пример: World Bank  
 
-**Generate code to download simple piece of data** 
+**Написать код для загрузки простого примера** 
 
 ``` {r simple_example_wb_url_indicators, echo = TRUE, eval = FALSE}
 #  get list of indicators
@@ -444,10 +449,10 @@ View(wb_indicators)
 ```
 
 ***
-## How to use: API connection  
-### Example: World Bank  
+## Как использовать: подключение к API   
+### Пример: World Bank  
 
-**Generate code to download simple piece of data** 
+**Написать код для загрузки простого примера** 
 
 ``` {r simple_example_wb_url_query_trying, echo = TRUE, eval = FALSE}
 # example query for one indicator
@@ -460,20 +465,20 @@ View(example_query[[2]])
 ```
 
 ***
-## How to use: API connection  
-### Example: World Bank  
+## Как использовать: подключение к API  
+### Пример: World Bank  
 
-**Generalize code to download all what you need** 
+**Обобщить код для своих потребностей** 
 
-- saving tables with values for needed parameters
+- сохранение таблиц со значениями нужных параметров
 
-- functions to download, useful for you  
+- функции для загрузки, подходящие под задачу 
 
 ***
-## How to use: API connection  
-### Example: World Bank  
+## Как использовать: подключение к API  
+### Пример: World Bank  
 
-**Generalize code to download all what you need** 
+**Обобщить код для своих потребностей** 
 ``` {r generalizing code_queries, echo = TRUE, eval = FALSE}
 # generalizing previous url building code for several indicators
 queries <- lapply(<INPUT_CODES>, FUN = function(x) paste0(base_url, countries, wb_countries_query, indicators, x, date, start_period, ':', end_period, per_page, format))
@@ -483,10 +488,10 @@ input_codes <- c('i_acc_deposit_A1', 'GFDD.AI.25')
 ```
 
 ***
-## How to use: API connection  
-### Example: World Bank  
+## Как использовать: подключение к API  
+### Пример: World Bank  
 
-**Generalize code to download all what you need** 
+**Обобщить код для своих потребностей** 
 ``` {r generalizing code_function, echo = TRUE, eval = FALSE}
 # download_wb_function.R
 # source('download_wb_function.R')
@@ -552,7 +557,7 @@ download_WB <- function(queries) {
 
 --- &vertical
 
-## Contacts and collaboration
+## Спасибо за внимание!
 
 Irina Goloshchapova - @irina_g ([ods](http://ods.ai/)), igoloshchapova@forecast.ru  
 
