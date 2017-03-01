@@ -203,7 +203,7 @@ inflation_data <- rbind(deflator, CPI)
 g <- ggplot(inflation_data, aes(x = date_ct, y = value, colour = indicator)) + geom_line(size = 1)
 g <- g + labs(title = "Inflation data", x = NULL, y = NULL)
 g <- g + guides(colour = guide_legend(title = '', size = 3.5))
-g <- g + theme_solarized()
+g <- g + theme_solarized(light = FALSE)
 g <- g + scale_colour_solarized()
 g <- g + theme(legend.position = 'top')
 g
@@ -295,6 +295,7 @@ GR.NGDP.query$Obs[[1]][1:5, ]
 library(IMFData)
 library(ggplot2)
 
+availableDB <- DataflowMethod()
 availableDB$DatabaseID
 # FSI
 # "Financial Soundness Indicators (FSI)" 
@@ -302,7 +303,6 @@ FSI.available.codes <- DataStructureMethod("FSI")
 names(FSI.available.codes)
 # [1] "CL_FREQ"          "CL_AREA_FSI"      "CL_INDICATOR_FSI"
 
-CodeSearch(FSI.available.codes, "CL_INDICATOR_FSI", "stability")
 CodeSearch(FSI.available.codes, "CL_INDICATOR_FSI", "Debt")
 # FSHG_PT
 # Financial Soundness Indicators, Encouraged Set, Households, Household Debt to Gross Domestic Product (GDP), Percent
