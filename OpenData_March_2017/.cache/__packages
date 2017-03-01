@@ -10,3 +10,6 @@ readr
 purrr
 dplyr
 IMFData
+devtools
+httr
+jsonlite

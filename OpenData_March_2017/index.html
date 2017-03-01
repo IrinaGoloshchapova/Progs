@@ -27,14 +27,32 @@ Open Data Science</p>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 </section>
-<section class='' data-state='' id='slide-2'>
-  <h2>Plan</h2>
-  <ul>
+<section>
+   <section class='' data-state=''>
+    <h2>Plan</h2>
+    <ul>
 <li><p>Why we want to automate the download data process  </p></li>
 <li><p>What we should use in R if we want download open economic data  </p></li>
-<li><p>How we should use it  </p></li>
+<li><p>How we should use it </p></li>
 </ul>
 
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>Plan</h2>
+
+<p>One thing first!  </p>
+
+<p>Please, open the presentation in local PCs!</p>
+
+<p>Link: <a href="http://irinagoloshchapova.github.io/Progs/OpenData_March_2017/">http://irinagoloshchapova.github.io/Progs/OpenData_March_2017/</a>  </p>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
 </section>
 <section>
    <section class='' data-state=''>
@@ -82,7 +100,7 @@ Open Data Science</p>
 </section>
 <section>
    <section class='' data-state=''>
-    <h2>How to use</h2>
+    <h2>How to use: R packages</h2>
     
     <aside class='notes'>
       
@@ -132,8 +150,8 @@ Open Data Science</p>
 
 <h3>Prerequisites</h3>
 
-<pre><code class="r">install.packages(&#39;devtools&#39;)
-install.packages(&#39;tidyverse&#39;)
+<pre><code class="r">install.packages(c(&#39;devtools&#39;, &#39;tidyverse&#39;, &#39;ggthemes&#39;, &#39;httr&#39;, &#39;jsonlite&#39;))
+
 devtools::install_github(&quot;vincentarelbundock/WDI&quot;)
 devtools::install_github(&quot;GIST-ORNL/wbstats&quot;)
 devtools::install_github(&#39;mingjerli/IMFData&#39;)
@@ -380,6 +398,299 @@ indicator_query$Obs[[1]]
 <p><strong>Visualize results</strong> </p>
 
 <p><img src="assets/img/hous_debt.png" alt="fsi_results"></p>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+</section>
+<section>
+   <section class='' data-state=''>
+    <h2>How to use: API connection</h2>
+    
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use: API connection</h2>
+
+<p>Firstly: <a href="https://ru.wikipedia.org/wiki/API">Read API documentation!</a></p>
+
+<p><img src="assets/img/spongebob.gif" alt="cat_lazy_google">  </p>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use: API connection</h2>
+
+<h3>Key principles</h3>
+
+<ul>
+<li><p><strong>Read API documentation</strong>: official websites of stat resources  </p></li>
+<li><p><strong>Undestand searching and downloading structure of API</strong>: things hided in R libraries  </p></li>
+<li><p><strong>Generate code to download simple piece of data</strong>: download almost anything - at least once  </p></li>
+<li><p><strong>Generalize code to download all what you need</strong>: functions to download, parameterisation for your purposes  </p></li>
+</ul>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use: API connection</h2>
+
+<h3>Example: World Bank</h3>
+
+<p><a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-api-documentation">World Bank for Developers: API Documentation</a></p>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use: API connection</h2>
+
+<h3>Example: World Bank</h3>
+
+<p><strong>Undestand searching and downloading structure of API</strong>  </p>
+
+<ul>
+<li><p>what kind of API is it  </p></li>
+<li><p>available formats to download </p>
+
+<pre><code>format=json
+</code></pre></li>
+<li><p>get list of available countries </p>
+
+<pre><code>http://api.worldbank.org/countries
+</code></pre></li>
+<li><p>get list of available indicators  </p>
+
+<pre><code>http://api.worldbank.org/indicators
+</code></pre></li>
+<li><p>define time period  </p>
+
+<pre><code>date=2000:2001; date=2009Q1:2010Q3; date=2009M01:2010M08
+</code></pre></li>
+</ul>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use: API connection</h2>
+
+<h3>Example: World Bank</h3>
+
+<p><strong>Undestand searching and downloading structure of API</strong>  </p>
+
+<ul>
+<li>understand link structure<br></li>
+</ul>
+
+<pre><code class="r"># url parameters
+base_url &lt;- &#39;http://api.worldbank.org&#39;
+countries &lt;- &#39;/countries/&#39;
+indicators &lt;- &#39;/indicators/&#39;
+date &lt;- &#39;?date=&#39;
+per_page &lt;- &#39;&amp;per_page=20000&#39;
+format &lt;- &#39;&amp;format=json&#39;
+
+start_period &lt;- &#39;1950&#39;
+end_period &lt;- &#39;2016&#39;
+
+# building url for API call
+paste0(base_url, countries, &lt;COUNTRIES_QUERY&gt;, indicators, &lt;INDICATOR_QUERY&gt;, date, start_period, &#39;:&#39;, end_period, per_page, format)
+</code></pre>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use: API connection</h2>
+
+<h3>Example: World Bank</h3>
+
+<p><strong>Generate code to download simple piece of data</strong> </p>
+
+<pre><code class="r">#  get list of countries 
+## loading libraries
+library(httr)
+library(jsonlite)
+library(tidyverse)
+library(ggplot2)
+
+## generate url 
+url &lt;- &#39;http://api.worldbank.org/countries?format=json&amp;per_page=300&#39;
+
+## get data
+raw.result &lt;- GET(url)
+names(raw.result)
+this.content &lt;- fromJSON(rawToChar(raw.result$content))
+str(this.content)
+length(this.content)
+View(this.content[[2]])
+wb_countries &lt;- this.content[[2]]
+</code></pre>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use: API connection</h2>
+
+<h3>Example: World Bank</h3>
+
+<p><strong>Generate code to download simple piece of data</strong> </p>
+
+<pre><code class="r">#  get list of indicators
+## generate url 
+url &lt;- &#39;http://api.worldbank.org/indicators?format=json&amp;per_page=20000&#39;
+
+## get data
+raw.result &lt;- GET(url)
+this.content &lt;- fromJSON(rawToChar(raw.result$content))
+# str(this.content)
+# length(this.content)
+wb_indicators &lt;- this.content[[2]]
+
+# view data
+View(wb_indicators)
+# Attention! Nested data.frame for topics!
+</code></pre>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use: API connection</h2>
+
+<h3>Example: World Bank</h3>
+
+<p><strong>Generate code to download simple piece of data</strong> </p>
+
+<pre><code class="r"># example query for one indicator
+url &lt;- &#39;http://api.worldbank.org/countries/br;ru/indicators/SP.POP.TOTL?date=2013Q1:2015Q4&amp;format=json&#39;
+raw.result &lt;- GET(url)
+
+example_query &lt;- fromJSON(rawToChar(raw.result$content))
+# str(example_query)
+View(example_query[[2]])
+</code></pre>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use: API connection</h2>
+
+<h3>Example: World Bank</h3>
+
+<p><strong>Generalize code to download all what you need</strong> </p>
+
+<ul>
+<li><p>saving tables with values for needed parameters</p></li>
+<li><p>functions to download, useful for you  </p></li>
+</ul>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use: API connection</h2>
+
+<h3>Example: World Bank</h3>
+
+<p><strong>Generalize code to download all what you need</strong> </p>
+
+<pre><code class="r"># generalizing previous url building code for several indicators
+queries &lt;- lapply(&lt;INPUT_CODES&gt;, FUN = function(x) paste0(base_url, countries, wb_countries_query, indicators, x, date, start_period, &#39;:&#39;, end_period, per_page, format))
+
+# example of input codes
+input_codes &lt;- c(&#39;i_acc_deposit_A1&#39;, &#39;GFDD.AI.25&#39;)
+</code></pre>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>How to use: API connection</h2>
+
+<h3>Example: World Bank</h3>
+
+<p><strong>Generalize code to download all what you need</strong> </p>
+
+<pre><code class="r"># download_wb_function.R
+# source(&#39;download_wb_function.R&#39;)
+
+library(dplyr)
+library(tidyr)
+library(purrr)
+library(lubridate)
+library(httr)
+library(jsonlite)
+library(data.table)
+
+options(stringsAsFactors = FALSE)
+
+##--------------------------------------------------------------------------
+## Functions: download and basic processing
+##--------------------------------------------------------------------------
+# try.error function
+try.error &lt;- function(x)
+{
+  y = NA
+  try_error = tryCatch(data.frame(x), error = function(e) e)
+  if (!inherits(try_error, &quot;error&quot;))
+    y = data.frame(x)
+  return(y)
+}
+
+# download_WB function
+download_WB &lt;- function(queries) {
+  new_data_list &lt;- list()
+
+  for (i in length(queries):1) {
+    cat(&quot;Iteration = &quot;, iter &lt;- i, &quot;\n&quot;)
+    this.query       &lt;- queries[[i]]
+    this.raw.answer  &lt;- GET(this.query)
+    this.content &lt;- fromJSON(rawToChar(this.raw.answer$content))
+    new_data_list[[i]] &lt;- try.error(this.content[[2]])
+    cat(ifelse(is.na(new_data_list[i]), &#39;False\n&#39;, &#39;True\n&#39;))
+
+    if (!is.na(new_data_list[i])) {
+      metadata &lt;- data.frame(Indicator_Id = new_data_list[[i]]$indicator$id, 
+                             Indicator_Value = new_data_list[[i]]$indicator$value, 
+                             Country_Id = new_data_list[[i]]$country$id, 
+                             Country_Value = new_data_list[[i]]$country$value)
+      new_data_list[[i]] &lt;- select(new_data_list[[i]], -c(indicator, country))
+      new_data_list[[i]] &lt;- mutate(new_data_list[[i]], Indicator_Id = metadata$Indicator_Id, 
+                                    Indicator_Value = metadata$Indicator_Value, 
+                                    Country_Id = metadata$Country_Id, 
+                                    Country_Value = metadata$Country_Value)
+    }
+    else {new_data_list[i] &lt;- NULL}
+
+    Sys.sleep(time = 0.01)
+  }
+
+  new_data_df &lt;- rbindlist(new_data_list) 
+  return(new_data_df)
+}
+## ----------------------------------------------------------------------
+# new_data_df &lt;- download_WB(queries)
+## ----------------------------------------------------------------------
+</code></pre>
 
     <aside class='notes'>
       

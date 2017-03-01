@@ -1,0 +1,11 @@
+rm(list = ls())
+
+library(slidify)
+library(slidifyLibraries)
+setwd('~/GitHub/Progs/OpenData_March_2017')
+
+source('D:/Programming/R/R_code/functions/my_publish.R')
+
+
+
+<iframe src='https://datahelpdesk.worldbank.org/knowledgebase/topics/125589' width = '960px' height = '600px'></iframe>

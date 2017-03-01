@@ -38,14 +38,23 @@ Open Data Science
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
----
+--- &vertical
 ## Plan
 
 - Why we want to automate the download data process  
 
 - What we should use in R if we want download open economic data  
 
-- How we should use it  
+- How we should use it 
+
+***
+## Plan  
+
+One thing first!  
+
+Please, open the presentation in local PCs!
+
+Link: http://irinagoloshchapova.github.io/Progs/OpenData_March_2017/  
 
 
 --- &vertical
@@ -71,7 +80,7 @@ Open Data Science
 
 --- &vertical
 
-## How to use  
+## How to use: R packages  
 
 ***
 ## How to use: R Packages  
@@ -105,14 +114,13 @@ Firstly: [Google it!](http://bfy.tw/AJQ6)
 
 
 ```r
-install.packages('devtools')
-install.packages('tidyverse')
+install.packages(c('devtools', 'tidyverse', 'ggthemes', 'httr', 'jsonlite'))
+
 devtools::install_github("vincentarelbundock/WDI")
 devtools::install_github("GIST-ORNL/wbstats")
 devtools::install_github('mingjerli/IMFData')
 devtools::install_github('christophergandrud/imfr')
 ```
-
 
 ***
 ## How to use: R Packages  
@@ -310,6 +318,247 @@ indicator_query$Obs[[1]]
 **Visualize results** 
 
 ![fsi_results](assets/img/hous_debt.png)
+
+--- &vertical
+
+## How to use: API connection  
+
+***
+## How to use: API connection  
+
+Firstly: [Read API documentation!](https://ru.wikipedia.org/wiki/API)
+
+![cat_lazy_google](assets/img/spongebob.gif)  
+
+***
+## How to use: API connection  
+### Key principles  
+
+- **Read API documentation**: official websites of stat resources  
+
+- **Undestand searching and downloading structure of API**: things hided in R libraries  
+
+- **Generate code to download simple piece of data**: download almost anything - at least once  
+
+- **Generalize code to download all what you need**: functions to download, parameterisation for your purposes  
+
+***
+## How to use: API connection  
+### Example: World Bank
+
+[World Bank for Developers: API Documentation](https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-api-documentation)
+
+***
+## How to use: API connection  
+### Example: World Bank  
+
+**Undestand searching and downloading structure of API**  
+
+- what kind of API is it  
+
+- available formats to download 
+```
+format=json
+```
+- get list of available countries 
+```
+http://api.worldbank.org/countries
+```
+- get list of available indicators  
+```
+http://api.worldbank.org/indicators
+```
+- define time period  
+```
+date=2000:2001; date=2009Q1:2010Q3; date=2009M01:2010M08
+```
+
+***
+## How to use: API connection  
+### Example: World Bank  
+
+**Undestand searching and downloading structure of API**  
+
+- understand link structure  
+
+
+```r
+# url parameters
+base_url <- 'http://api.worldbank.org'
+countries <- '/countries/'
+indicators <- '/indicators/'
+date <- '?date='
+per_page <- '&per_page=20000'
+format <- '&format=json'
+
+start_period <- '1950'
+end_period <- '2016'
+
+# building url for API call
+paste0(base_url, countries, <COUNTRIES_QUERY>, indicators, <INDICATOR_QUERY>, date, start_period, ':', end_period, per_page, format)
+```
+
+***
+## How to use: API connection  
+### Example: World Bank  
+
+**Generate code to download simple piece of data** 
+
+
+```r
+#  get list of countries 
+## loading libraries
+library(httr)
+library(jsonlite)
+library(tidyverse)
+library(ggplot2)
+
+## generate url 
+url <- 'http://api.worldbank.org/countries?format=json&per_page=300'
+
+## get data
+raw.result <- GET(url)
+names(raw.result)
+this.content <- fromJSON(rawToChar(raw.result$content))
+str(this.content)
+length(this.content)
+View(this.content[[2]])
+wb_countries <- this.content[[2]]
+```
+
+***
+## How to use: API connection  
+### Example: World Bank  
+
+**Generate code to download simple piece of data** 
+
+
+```r
+#  get list of indicators
+## generate url 
+url <- 'http://api.worldbank.org/indicators?format=json&per_page=20000'
+
+## get data
+raw.result <- GET(url)
+this.content <- fromJSON(rawToChar(raw.result$content))
+# str(this.content)
+# length(this.content)
+wb_indicators <- this.content[[2]]
+
+# view data
+View(wb_indicators)
+# Attention! Nested data.frame for topics!
+```
+
+***
+## How to use: API connection  
+### Example: World Bank  
+
+**Generate code to download simple piece of data** 
+
+
+```r
+# example query for one indicator
+url <- 'http://api.worldbank.org/countries/br;ru/indicators/SP.POP.TOTL?date=2013Q1:2015Q4&format=json'
+raw.result <- GET(url)
+
+example_query <- fromJSON(rawToChar(raw.result$content))
+# str(example_query)
+View(example_query[[2]])
+```
+
+***
+## How to use: API connection  
+### Example: World Bank  
+
+**Generalize code to download all what you need** 
+
+- saving tables with values for needed parameters
+
+- functions to download, useful for you  
+
+***
+## How to use: API connection  
+### Example: World Bank  
+
+**Generalize code to download all what you need** 
+
+```r
+# generalizing previous url building code for several indicators
+queries <- lapply(<INPUT_CODES>, FUN = function(x) paste0(base_url, countries, wb_countries_query, indicators, x, date, start_period, ':', end_period, per_page, format))
+
+# example of input codes
+input_codes <- c('i_acc_deposit_A1', 'GFDD.AI.25')
+```
+
+***
+## How to use: API connection  
+### Example: World Bank  
+
+**Generalize code to download all what you need** 
+
+```r
+# download_wb_function.R
+# source('download_wb_function.R')
+
+library(dplyr)
+library(tidyr)
+library(purrr)
+library(lubridate)
+library(httr)
+library(jsonlite)
+library(data.table)
+
+options(stringsAsFactors = FALSE)
+
+##--------------------------------------------------------------------------
+## Functions: download and basic processing
+##--------------------------------------------------------------------------
+# try.error function
+try.error <- function(x)
+{
+  y = NA
+  try_error = tryCatch(data.frame(x), error = function(e) e)
+  if (!inherits(try_error, "error"))
+    y = data.frame(x)
+  return(y)
+}
+
+# download_WB function
+download_WB <- function(queries) {
+  new_data_list <- list()
+  
+  for (i in length(queries):1) {
+    cat("Iteration = ", iter <- i, "\n")
+    this.query       <- queries[[i]]
+    this.raw.answer  <- GET(this.query)
+    this.content <- fromJSON(rawToChar(this.raw.answer$content))
+    new_data_list[[i]] <- try.error(this.content[[2]])
+    cat(ifelse(is.na(new_data_list[i]), 'False\n', 'True\n'))
+    
+    if (!is.na(new_data_list[i])) {
+      metadata <- data.frame(Indicator_Id = new_data_list[[i]]$indicator$id, 
+                             Indicator_Value = new_data_list[[i]]$indicator$value, 
+                             Country_Id = new_data_list[[i]]$country$id, 
+                             Country_Value = new_data_list[[i]]$country$value)
+      new_data_list[[i]] <- select(new_data_list[[i]], -c(indicator, country))
+      new_data_list[[i]] <- mutate(new_data_list[[i]], Indicator_Id = metadata$Indicator_Id, 
+                                    Indicator_Value = metadata$Indicator_Value, 
+                                    Country_Id = metadata$Country_Id, 
+                                    Country_Value = metadata$Country_Value)
+    }
+    else {new_data_list[i] <- NULL}
+    
+    Sys.sleep(time = 0.01)
+  }
+  
+  new_data_df <- rbindlist(new_data_list) 
+  return(new_data_df)
+}
+## ----------------------------------------------------------------------
+# new_data_df <- download_WB(queries)
+## ----------------------------------------------------------------------
+```
 
 --- &vertical
 
