@@ -54,7 +54,7 @@ One thing first!
 
 Please, open the presentation in local PCs!
 
-Link: http://irinagoloshchapova.github.io/Progs/OpenData_March_2017/  
+http://irinagoloshchapova.github.io/Progs/OpenData_March_2017/  
 
 
 --- &vertical
@@ -179,6 +179,7 @@ ggplot(oil_data, aes(x = date_ct, y = value, colour = indicator)) + geom_line(si
 ```{r our_download_example, echo = TRUE, eval = FALSE}
 library(wbstats)
 library(ggplot2)
+library(ggthemes)
 
 wbsearch(pattern = "inflation", fields = "indicator", extra = TRUE)
 
@@ -194,8 +195,8 @@ inflation_data <- rbind(deflator, CPI)
 g <- ggplot(inflation_data, aes(x = date_ct, y = value, colour = indicator)) + geom_line(size = 1)
 g <- g + labs(title = "Inflation data", x = NULL, y = NULL)
 g <- g + guides(colour = guide_legend(title = '', size = 3.5))
-g <- g + theme_minimal()
-g <- g + scale_colour_brewer(palette = 'Set2')
+g <- g + theme_solarized()
+g <- g + scale_colour_solarized()
 g <- g + theme(legend.position = 'top')
 g
 ```

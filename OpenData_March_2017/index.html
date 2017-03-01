@@ -47,7 +47,7 @@ Open Data Science</p>
 
 <p>Please, open the presentation in local PCs!</p>
 
-<p>Link: <a href="http://irinagoloshchapova.github.io/Progs/OpenData_March_2017/">http://irinagoloshchapova.github.io/Progs/OpenData_March_2017/</a>  </p>
+<p><a href="http://irinagoloshchapova.github.io/Progs/OpenData_March_2017/">http://irinagoloshchapova.github.io/Progs/OpenData_March_2017/</a>  </p>
 
     <aside class='notes'>
       
@@ -236,6 +236,7 @@ ggplot(oil_data, aes(x = date_ct, y = value, colour = indicator)) + geom_line(si
 
 <pre><code class="r">library(wbstats)
 library(ggplot2)
+library(ggthemes)
 
 wbsearch(pattern = &quot;inflation&quot;, fields = &quot;indicator&quot;, extra = TRUE)
 
@@ -251,8 +252,8 @@ inflation_data &lt;- rbind(deflator, CPI)
 g &lt;- ggplot(inflation_data, aes(x = date_ct, y = value, colour = indicator)) + geom_line(size = 1)
 g &lt;- g + labs(title = &quot;Inflation data&quot;, x = NULL, y = NULL)
 g &lt;- g + guides(colour = guide_legend(title = &#39;&#39;, size = 3.5))
-g &lt;- g + theme_minimal()
-g &lt;- g + scale_colour_brewer(palette = &#39;Set2&#39;)
+g &lt;- g + theme_solarized()
+g &lt;- g + scale_colour_solarized()
 g &lt;- g + theme(legend.position = &#39;top&#39;)
 g
 </code></pre>
