@@ -3,7 +3,7 @@ title       : Connecting R and Python
 subtitle    : Why, when and where
 author      : Irina Goloshchapova
 job         : Chief Macroeconomist, X5 Retail Group
-logo        : 022_D2D_DevPRO_logo_.png
+logo        : conf_logo_2.jpg
 framework   : io2012      # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 widgets     : [bootstrap]    
