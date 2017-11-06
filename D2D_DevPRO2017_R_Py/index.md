@@ -400,7 +400,7 @@ print(greeting) # class character
  tpl: thankyou,
  social: [{title: gmail, href: "i.o.goloshchapova@gmail.com"},
  {title: github, href: "irinagoloshchapova"},
- {title: repo, href: "http://irinagoloshchapova.github.io/Progs/D2D_DevPRO2017_R_Py/"}],
+ {title: repo, href: "http://bit.ly/D2D_DevPRO2017_R_Py"}],
  bg: "#F0F1EE"
 }
 
