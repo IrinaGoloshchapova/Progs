@@ -370,7 +370,7 @@ print(greeting) # class character
 
 ## Как - Расширенный пример 
 
-<iframe src = "https://pub.beakernotebook.com/publications/bca2b1e2-7202-11e6-899f-7b213714358c?fullscreen=true"> </iframe>
+<iframe src = "http://irinagoloshchapova.github.io/Progs/Inflation_targeting_Rnotebook/"> </iframe>
 
 --- .class #id 
 
