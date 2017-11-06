@@ -3,8 +3,10 @@ title: "R Notebook"
 output: html_notebook
 ---
 
-# Совмещение R и Python. Почему, когда и как
+# Connecting R and Python. Why, when and where
 ## Extended Example with R Notebook
+
+**TASK**: Compare inflation rates in countries under inflation targeting monetary policy framework in the post-crisis period from 2013 - the beginning of the regime implementation in Russia.
 
 ### Download data: Python
 
