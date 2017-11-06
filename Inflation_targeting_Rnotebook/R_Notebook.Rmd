@@ -1,0 +1,81 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Совмещение R и Python. Почему, когда и как
+## Extended Example with R Notebook
+
+### Download data: Python
+
+```{python}
+import pandas as pd
+import wbdata as wd
+
+# define a period of time
+start_year = 2013
+end_year = 2016
+
+# list of countries under inflation targeting monetary policy regime
+countries = ['AM', 'AU', 'AT', 'BE', 'BG', 'BR', 'CA', 'CH', 'CL', 'CO', 'CY', 'CZ', 'DE', 'DK', 'XC', 'ES', 'EE', 'FI', 'FR', 'GB', 'GR', 'HU', 'IN', 'IE', 'IS', 'IL', 'IT', 'JM', 'JP', 'KR', 'LK', 'LT', 'LU', 'LV', 'MA', 'MD', 'MX', 'MT', 'MY', 'NL', 'NO', 'NZ', 'PK', 'PE', 'PH', 'PL', 'PT', 'RO', 'RU', 'SG', 'SK', 'SI', 'SE', 'TH', 'TR', 'US', 'ZA']
+
+# set dictionary for wbdata
+inflation = {'FP.CPI.TOTL.ZG': 'CPI_annual', 'NY.GDP.MKTP.KD.ZG': 'GDP_annual'}
+
+# download wb data
+df = wd.get_dataframe(inflation, country = countries, data_date = (pd.datetime(start_year, 1, 1), pd.datetime(end_year, 1, 1)))
+
+print(df.head())
+df.to_csv('WB_data.csv', index = True)
+```
+
+### Process data: R
+```{r}
+library(tidyverse)
+library(data.table)
+library(DT)
+
+# get df with python results
+cpi <- fread('WB_data.csv')
+
+cpi <- cpi %>% group_by(country) %>% summarize(cpi_av = mean(CPI_annual), cpi_max = max(CPI_annual),
+                                               cpi_min = min(CPI_annual), gdp_av = mean(GDP_annual)) %>% ungroup
+cpi <- cpi %>% mutate(country = replace(country, country %in% c('Czech Republic', 'Korea, Rep.', 'Philippines',
+                                                                'Russian Federation', 'Singapore', 'Switzerland',
+                                                                'Thailand', 'United Kingdom', 'United States'),
+                                        c('Czech', 'Korea', 'Phil', 'Russia', 'Singap', 'Switz', 'Thai', 'UK', 'US')),
+                      gdp_sign = ifelse(gdp_av > 0, 'Positive', 'Negative'),
+                      gdp_sign = factor(gdp_sign, levels = c('Positive', 'Negative')),
+                      country = fct_reorder(country, gdp_av),
+                      gdp_av = abs(gdp_av),
+                      coord = rep(ceiling(max(cpi_max)) + 2, dim(cpi)[1])
+                     )
+
+print(head(data.frame(cpi)))
+```
+
+### Visualization: R
+```{r}
+library(viridis)
+library(scales)
+
+ggplot(cpi, aes(country, y = cpi_av)) +
+  geom_linerange(aes(x = country, y = cpi_av, ymin = cpi_min, ymax = cpi_max, colour = cpi_av), size = 1.8, alpha = 0.9) + 
+  geom_point(aes(x = country, y = coord, size = gdp_av, shape = gdp_sign), alpha = 0.5) +
+  scale_size_area(max_size = 8) +
+  scale_colour_viridis() +
+  guides(size = guide_legend(title = 'Average annual\nGDP growth, %', title.theme = element_text(size = 7, angle = 0)),
+         shape = guide_legend(title = 'Sign of\nGDP growth, %', title.theme = element_text(size = 7, angle = 0)),
+         colour = guide_legend(title = 'Average\nannual CPI, %', title.theme = element_text(size = 7, angle = 0))) +
+  ylim(floor(min(cpi$cpi_min)) - 2, ceiling(max(cpi$cpi_max)) + 2) +
+  labs(title = 'Average Inflation and GDP Rates in Inflation Targeting Countries',
+       subtitle = paste0('For the period 2013-2016'),
+       x = NULL, y = NULL) +
+  coord_polar() +
+  theme_bw() +
+  theme(legend.position = 'right',
+        panel.border = element_blank(),
+        axis.text.x = element_text(colour = '#442D25', size = 6, angle = 21, vjust = 1))
+
+```
+Done.
