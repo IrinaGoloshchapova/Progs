@@ -392,9 +392,9 @@ print(greeting) # class character
 
 --- {
  tpl: thankyou,
- social: [{title: gmail, href: "igoloshchapova@forecast.ru"},
+ social: [{title: gmail, href: "i.o.goloshchapova@gmail.com"},
  {title: github, href: "irinagoloshchapova"},
- {title: repo, href: "Progs/DataFest2016_R_Py"}],
+ {title: repo, href: "http://irinagoloshchapova.github.io/Progs/D2D_DevPRO2017_R_Py/"}],
  bg: "#F0F1EE"
 }
 
